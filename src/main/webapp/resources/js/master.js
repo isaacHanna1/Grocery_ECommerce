@@ -12,18 +12,25 @@ menu_icon.onclick = function () {
 // btn as a href ok 
 let deleteBtns = document.querySelectorAll(".delete-btn");
 let editBtns = document.querySelectorAll  (".edit-btn");
+let parent_tr  = "";
+let categoryId = "";
+let categoryName = "";
+
 	/* when user click on delete <a> element
 	 make full screen grba transparent color to show confirmation
 	 div to delete category*/	
+
+
+
 
 deleteBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
 	e.preventDefault();
 	
-	let parent_tr  = e.target.closest('tr');
-	let categoryId = parent_tr.querySelector('td:first-child').textContent;	
-    let overlay_div = document.createElement("div");
-    overlay_div.classList.add("overlay");
+	 parent_tr  = e.target.closest('tr');
+	 categoryId = parent_tr.querySelector('td:first-child').textContent;	
+     overlay_div = document.createElement("div");
+     overlay_div.classList.add("overlay");
     document.body.appendChild(overlay_div);
     let dialogContainer = document.createElement("div");
     dialogContainer.classList.add("dialogContainer");
@@ -96,9 +103,9 @@ editBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
 	e.preventDefault();
 	
-	let parent_tr  = e.target.closest('tr');
-	let categoryId = parent_tr.querySelector('td:first-child').textContent;
-	let categoryName = parent_tr.querySelector('#categoryNameCol').textContent;	
+	 parent_tr  = e.target.closest('tr');
+	 categoryId = parent_tr.querySelector('td:first-child').textContent;
+	 categoryName = parent_tr.querySelector('#categoryNameCol').textContent;	
     let overlay_div = document.createElement("div");
     overlay_div.classList.add("overlay");
     document.body.appendChild(overlay_div);
@@ -135,15 +142,45 @@ editBtns.forEach((btn) => {
 	  dialogContainer.style.display="none";
     };
     okBtn.onclick = function () {
-	
-
+	  categoryName = editInput.value
       overlay_div.classList.remove("overlay");
-	
       dialogContainer.classList.remove("dialogContainer");
 	  dialogContainer.style.display="none";
-	  //reomve tr after deleted from database	
+	  editCategory(categoryId ,editInput.value);
+	  parent_tr.querySelector('#categoryNameCol').textContent = editInput.value;		
+	  //remove tr after deleted from database	
     };
 
   });
   });
+async function editCategory(categoryId,updatedCategoryName){
+	
+	let categoryobj = {id:categoryId , categoryName:updatedCategoryName};
+	const editObject = JSON.stringify(categoryobj);	
+	console.log("created ",editCategory);
+	try{
+		const headers={
+			'Content-Type':'application/json',
+		};
+		const requestOption = {
+			method:'PUT',
+			headers:headers,
+			body:editObject,
+		};
+		const host = window.location.origin;
+		const link = host+"/categoryApi/editCategory";
+		console.log(link);
+		const response = await fetch(link,requestOption);
+		
+		if(!response.ok){
+			throw new Error("Network response was not ok");
+		}
+		const data = await response.json();
+		console.log(data);
+		return data;
+	}
+	catch(err){
+		console.error("there was an error when fetching data (exception)" , err);
+	}
+}
 // End dialog for editing category btn  
