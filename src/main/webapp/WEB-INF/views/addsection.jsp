@@ -1,9 +1,9 @@
-<%@page  contentType="text/html; charset=UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  	<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="<c:url value="resources/css/all.min.css"/>" />
     <link rel="stylesheet" href="<c:url value="resources/css/normalize.css" />" />
@@ -26,6 +26,9 @@
         <form method="post" action="/addCategory" accept-charset="UTF-8">
           <label for="categoryName">اسم القسم : </label>
           <input type="text" id="categoryName" name="categoryName" placeholder="ادخل اسم  القسم" required="required" th:field="*{categoryName}" />
+			 <div class="errMessage">
+				${param.errMessage}
+			</div>           
           <button class="btn">اضافة</button>
         </form>
       </div>

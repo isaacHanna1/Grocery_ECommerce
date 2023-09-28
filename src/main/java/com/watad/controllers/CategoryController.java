@@ -1,34 +1,26 @@
 package com.watad.controllers;
 
 
-
-import java.io.UnsupportedEncodingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.watad.Dao.CategoryDao;
-import com.watad.api.APiResponse;
 import com.watad.model.Category;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import javax.servlet.http.HttpServletResponse;
 
 @Transactional
 @RestController
@@ -38,12 +30,11 @@ public class CategoryController {
 	// to use db function in categoryDaoImp
 	@Autowired
 	private CategoryDao categoryDao; 
-
 	
 	// this function for geting jsp page for category page
 	@GetMapping(path = "/categoryPage")
 	public ModelAndView retrivingCategoryPage(ModelAndView modelAndView) {
-		List allCategories = categoryDao.getListOfCategory();
+		List<Category>allCategories = categoryDao.getListOfCategory();
 		modelAndView.setViewName("addsection");
 		modelAndView.addObject("allCategories",allCategories);
 		return modelAndView;
@@ -51,11 +42,15 @@ public class CategoryController {
 
 	// function for saving new category  
 	@PostMapping("/addCategory")
-	public ModelAndView AddCategory(Category category) {
-		ModelAndView modelAndView = new ModelAndView("redirect:/categoryPage");
+	public ModelAndView AddCategory(Category category ) {
+		ModelAndView modelAndView  = null;
+		modelAndView = new ModelAndView("redirect:/categoryPage");
+		if(existsInDataBase(category)) {
+			String message = " category name is aready saved before *";
+			modelAndView.addObject("errMessage", message);
+			return modelAndView;		
+		}
 		categoryDao.insertNewCategory(category);
-		List<Category> allCategories = categoryDao.getListOfCategory();
-		modelAndView.addObject("allCategories", allCategories);
 		return modelAndView;		
 	}
 	/* this api function to delete category from database
@@ -69,9 +64,28 @@ public class CategoryController {
 	}
 	
 	@PutMapping("/categoryApi/editCategory")
-	public Category updateCategory(@RequestBody Category category) {
-		return categoryDao.editCategory(category);
+	public ResponseEntity<?> updateCategory(@RequestBody Category category  ) {
+		
+		if(existsInDataBase(category)) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Category Name aready exists");
+		}
+
+			return ResponseEntity.ok(categoryDao.editCategory(category));	
 	}
 
+	// i check if category that i want insert/update in database exists or not 
+	public boolean existsInDataBase(Category category) {
 
+		List<Category> allCategories = categoryDao.getListOfCategory();
+		Set <String> categoryNames = new HashSet<>();
+		for(Category c : allCategories) {
+			categoryNames.add(c.getCategoryName());
+		}
+		if(categoryNames.contains(category.getCategoryName())) {
+				return true;
+		}else {
+			    return false;
+		}
+	}
+	
 }

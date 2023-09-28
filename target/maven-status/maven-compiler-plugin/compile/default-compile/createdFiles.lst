@@ -1,7 +1,0 @@
-com\watad\controllers\CategoryController.class
-com\watad\customFilter\CharacterEncodingFilter.class
-com\watad\model\Category.class
-com\watad\Dao\CategoryDao.class
-com\watad\aspects\TransactionAspects.class
-com\watad\Dao\CategoryDaoImp.class
-com\watad\api\APiResponse.class
