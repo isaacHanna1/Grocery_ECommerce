@@ -71,7 +71,7 @@ public class CategoryDaoImp implements CategoryDao{
 	@Override
 	public Category editCategory(Category category) {
 		 Session session = this.mySessionFactory.getCurrentSession();
-		 session.update(category);
+		 session.merge(category);
 		 return category;
 	}
 
