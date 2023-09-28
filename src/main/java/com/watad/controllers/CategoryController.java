@@ -69,7 +69,6 @@ public class CategoryController {
 		if(existsInDataBase(category)) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Category Name aready exists");
 		}
-
 			return ResponseEntity.ok(categoryDao.editCategory(category));	
 	}
 
