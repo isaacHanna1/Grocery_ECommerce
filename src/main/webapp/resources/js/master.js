@@ -136,21 +136,29 @@ editBtns.forEach((btn) => {
     btnContainer.appendChild(cancelBtn);
     btnContainer.classList.add("btnContainer");
     dialogContainer.appendChild(btnContainer);
+
       cancelBtn.onclick = function () {
       overlay_div.classList.remove("overlay");
       dialogContainer.classList.remove("dialogContainer");
 	  dialogContainer.style.display="none";
     };
-    okBtn.onclick = function () {
-	  categoryName = editInput.value
-      overlay_div.classList.remove("overlay");
-      dialogContainer.classList.remove("dialogContainer");
-	  dialogContainer.style.display="none";
-	  editCategory(categoryId ,editInput.value);
-	  parent_tr.querySelector('#categoryNameCol').textContent = editInput.value;		
-	  //remove tr after deleted from database	
-    };
-
+      okBtn.onclick =  function () {
+		  categoryName = editInput.value
+	      overlay_div.classList.remove("overlay");
+	      dialogContainer.classList.remove("dialogContainer");
+		  dialogContainer.style.display="none";
+		  const fetching = editCategory(categoryId ,editInput.value);
+			fetching.then(value=>{
+				if(value === null){
+					alert("Category Is already Exists");
+					return;
+				}
+				else{
+					parent_tr.querySelector('#categoryNameCol').textContent = editInput.value;
+				}
+			});
+				
+	    };
   });
   });
 async function editCategory(categoryId,updatedCategoryName){
@@ -158,7 +166,6 @@ async function editCategory(categoryId,updatedCategoryName){
 	let categoryobj = {id:categoryId , categoryName:updatedCategoryName};
 	const editObject = JSON.stringify(categoryobj);	
 	console.log("created ",editCategory);
-	try{
 		const headers={
 			'Content-Type':'application/json',
 		};
@@ -167,20 +174,27 @@ async function editCategory(categoryId,updatedCategoryName){
 			headers:headers,
 			body:editObject,
 		};
+		try{
 		const host = window.location.origin;
 		const link = host+"/categoryApi/editCategory";
 		console.log(link);
 		const response = await fetch(link,requestOption);
-		
+			console.log();
+			console.log(response.statusText);
+			if(response.status === 400){
+				return null;
+			}
 		if(!response.ok){
-			throw new Error("Network response was not ok");
+			throw new Errror("NetWork response was not ok");
 		}
 		const data = await response.json();
-		console.log(data);
-		return data;
-	}
-	catch(err){
-		console.error("there was an error when fetching data (exception)" , err);
-	}
-}
+		console.log(response.status);
+		return {data , status: response.status};
+		}catch(error){
+			throw error;
+		}
+		}
+		
 // End dialog for editing category btn  
+
+

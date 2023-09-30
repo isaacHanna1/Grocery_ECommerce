@@ -26,7 +26,7 @@
         <form method="post" action="/addCategory" accept-charset="UTF-8">
           <label for="categoryName">اسم القسم : </label>
           <input type="text" id="categoryName" name="categoryName" placeholder="ادخل اسم  القسم" required="required" th:field="*{categoryName}" />
-			 <div class="errMessage">
+			 <div class="errMessage" id="errMessage">
 				${param.errMessage}
 			</div>           
           <button class="btn">اضافة</button>
