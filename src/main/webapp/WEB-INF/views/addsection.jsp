@@ -23,13 +23,13 @@
     <div class="add-section">
       <h2>اضافة قسم</h2>
       <div class="container">
-        <form method="post" action="/addCategory" accept-charset="UTF-8">
+        <form method="post" action="/addCategory" accept-charset="UTF-8" id="categoryForm">
           <label for="categoryName">اسم القسم : </label>
           <input type="text" id="categoryName" name="categoryName" placeholder="ادخل اسم  القسم" required="required" th:field="*{categoryName}" />
 			 <div class="errMessage" id="errMessage">
 				${param.errMessage}
 			</div>           
-          <button class="btn">اضافة</button>
+          <button class="btn" id="sendBtn">اضافة</button>
         </form>
       </div>
       <div class="table-container section-table">

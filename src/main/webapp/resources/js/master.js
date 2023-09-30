@@ -16,13 +16,26 @@ let parent_tr  = "";
 let categoryId = "";
 let categoryName = "";
 
+
+const categoryForm = document.getElementById("categoryForm");
+const allInputs = categoryForm.querySelectorAll('input');
+categoryForm.addEventListener("submit",(event)=>{
+	allInputs.forEach(input=>{
+		if(!input.value.trim()){
+			event.preventDefault();	
+			input.style.borderColor = "red";	
+		}
+		input.value =input.value.trim();
+	})
+	
+})
+
+const sendBtn = document.getElementById("sendBtn");
+
+
 	/* when user click on delete <a> element
 	 make full screen grba transparent color to show confirmation
 	 div to delete category*/	
-
-
-
-
 deleteBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
 	e.preventDefault();
