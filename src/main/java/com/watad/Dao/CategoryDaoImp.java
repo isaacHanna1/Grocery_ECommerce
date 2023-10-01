@@ -49,7 +49,7 @@ public class CategoryDaoImp implements CategoryDao{
 	@Override
 	public List<Category> getListOfCategory() {
 		Session session = this.mySessionFactory.getCurrentSession();
-		 CriteriaBuilder cb = session.getCriteriaBuilder();
+		    CriteriaBuilder cb = session.getCriteriaBuilder();
 		    CriteriaQuery<Category> cq = cb.createQuery(Category.class);
 		    Root<Category> rootEntry = cq.from(Category.class);
 		    CriteriaQuery<Category> all = cq.select(rootEntry);

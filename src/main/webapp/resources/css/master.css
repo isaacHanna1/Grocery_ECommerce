@@ -457,21 +457,21 @@ body {
   background-color: #eee;
 }
 /* for table in receipt table  */
-.table-container.receipts-table table tr td {
+.table-container.col-4 table tr td {
   flex-basis: calc(90% / 4);
   text-align: center;
   padding: 10px 0;
 }
 /* for table in section table  */
-.table-container.section-table table tr td {
+.table-container.col-3 table tr td {
   flex-basis: calc(100% / 3);
   text-align: center;
   padding: 10px 0;
 }
-.table-container.section-table table tr td:nth-child(2) {
+.table-container.col-3 table tr td:nth-child(2) {
   flex-basis: 3;
   }
-.table-container.receipts-table table tr td:nth-child(3) {
+.table-container.col-4  table tr td:nth-child(3) {
   flex-basis: 3;
 }
 .table-container table tr .btn {
@@ -549,25 +549,29 @@ body {
   font-weight: bold;
   margin-left: 10px;
   color: var(--main-color);
-  width: 120px;
+  width: 150px;
 }
 @media (max-width: 600px) {
   .add-section label {
     display: block;
-    margin-bottom: 20px;
+    width:100%;
+    margin-bottom: 10px;
   }
 }
 .add-section form input,
 .add-section form select {
   padding: 10px;
-  width: 70%;
+  width: 60%;
   border: 1px solid #ccc;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
-  margin: auto;
+  margin: 10px auto ;
+}
+.add-section form select {
+	padding: 5px;
 }
 @media (max-width: 600px) {
   .add-section form input,

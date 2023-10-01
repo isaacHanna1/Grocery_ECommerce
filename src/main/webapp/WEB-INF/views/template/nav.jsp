@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -19,7 +21,11 @@
         </li>
         <li>
           <i class="fa-solid fa-leaf"></i
-          ><a href="../views/addsection.html">اضافة قسم</a>
+          ><a href="<c:url value="/categoryPage" />">اضافة قسم</a>
+        </li>
+          <li>
+          <i class="fa-solid fa-leaf"></i
+          ><a href="/subCategory">اضافة قسم فرعي</a>
         </li>
         <li>
           <i class="fa-solid fa-leaf"></i

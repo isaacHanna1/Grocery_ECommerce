@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<c:url value="resources/css/normalize.css" />" />
     <link rel="stylesheet" href="<c:url value="resources/css/master.css" />" />
 
-    <title>اضافة قسم</title>
+    <title>اضافة قسم فرعي</title>
   </head>
   <body>
     <!-- stat header -->
@@ -21,38 +21,47 @@
     <!-- End nav menu -->
 
     <div class="add-section">
-      <h2>اضافة قسم</h2>
+      <h2>اضافة قسم فرعي</h2>
       <div class="container">
-        <form method="post" action="/addCategory" accept-charset="UTF-8" id="categoryForm">
-          <label for="categoryName">اسم القسم : </label>
-          <input type="text" id="categoryName" name="categoryName" placeholder="ادخل اسم  القسم" required="required" th:field="*{categoryName}" />
+        <form  accept-charset="UTF-8" id="categoryForm">
+       
+          <label for="categoryName">اسم القسم الفرعي: </label>
+          <input type="text" id="subCategoryName" name="subCategoryName" placeholder="ادخل اسم  القسم" required="required" " />
 			 <div class="errMessage" id="errMessage">
 				${param.errMessage}
-			</div>           
+			</div>  
+			 <label for="categoriesOption">اسم القسم</label>
+        	<select id="categoriesOption" name="categoyId">
+        	 <c:forEach var="category" items="${allCategories}">
+        	 	<option value="${category.id }">${category.categoryName}</option>
+        	 </c:forEach>
+        	</select>         
           <button class="btn" id="sendBtn">اضافة</button>
         </form>
       </div>
-      <div class="table-container section-table">
-        <h2>الاقسام</h2>
+      <div class="table-container col-4 ">
+        <h2>الاقسام الفرعية</h2>
         <table>
           <thead>
             <tr>
               <td>م</td>
-              <td>اسم القسم</td>
+              <td>الفرعي</td>
+              <td>القسم</td>
               <td>Action</td>
             </tr>
           </thead>
           <tbody>
-          <c:forEach var="CategorySet" items="${allCategories}">
+          <c:forEach var="subCategory" items="${allSubCategories}">
             <tr>
-              <td>${CategorySet.id}</td>
-              <td id="categoryNameCol">${CategorySet.categoryName}</td>
+              <td>${subCategory.id}</td>
+              <td id="">${subCategory.subCategoryName}</td>
+              <td id="">${subCategory.categoryName}</td>
               <td>
                 <a class="btn edit-btn">تعديل</a>
-                <a href ="/deleteCategory/${CategorySet.id}" class="btn delete-btn">مسح</a>
+                <a href ="" class="btn delete-btn">مسح</a>
               </td>
             </tr>
-            </c:forEach>
+         </c:forEach>
           </tbody>
         </table>
       </div>
@@ -61,6 +70,6 @@
     <jsp:include page="template/footer.jsp"/>
     <!-- End footer -->
     <script src="<c:url value="resources/js/master.js"/>"></script>
-    <script src="<c:url value="resources/js/category.js"/>"></script>
+    <script src="<c:url value="resources/js/subCategory.js"/>"></script>
   </body>
 </html>

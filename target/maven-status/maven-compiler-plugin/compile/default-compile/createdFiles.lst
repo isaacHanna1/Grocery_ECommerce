@@ -1,7 +1,12 @@
+com\watad\Dao\SubCategoryDao.class
+com\watad\model\SubCategory.class
 com\watad\controllers\CategoryController.class
+com\watad\controllers\SubCategoryController.class
 com\watad\customFilter\CharacterEncodingFilter.class
 com\watad\model\Category.class
+com\watad\Dto\SubCategoryDto.class
 com\watad\Dao\CategoryDao.class
+com\watad\Dao\SubCategoryDaoImp.class
 com\watad\aspects\TransactionAspects.class
 com\watad\Dao\CategoryDaoImp.class
 com\watad\api\APiResponse.class
