@@ -24,7 +24,8 @@ categoryForm.addEventListener("submit",(event)=>{
 
 const sendBtn = document.getElementById("sendBtn");
 
-
+// important note im note use delegation event in parent 
+// because i reload page after adding new category 
 	/* when user click on delete <a> element
 	 make full screen grba transparent color to show confirmation
 	 div to delete category*/	

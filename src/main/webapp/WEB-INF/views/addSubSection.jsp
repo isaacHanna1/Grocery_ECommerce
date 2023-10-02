@@ -53,7 +53,7 @@
           <tbody>
           <c:forEach var="subCategory" items="${allSubCategories}">
             <tr>
-              <td>${subCategory.id}</td>
+              <td class="idOfSubCategory">${subCategory.id}</td>
               <td id="">${subCategory.subCategoryName}</td>
               <td id="">${subCategory.categoryName}</td>
               <td>

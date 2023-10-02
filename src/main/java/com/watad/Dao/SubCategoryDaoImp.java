@@ -2,12 +2,15 @@ package com.watad.Dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Root;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +56,31 @@ public class SubCategoryDaoImp implements SubCategoryDao {
         List<SubCategoryDto> results = session.createQuery(criteriaQuery).getResultList();
         return results;
 		}
+
+	@Override
+	public void deleteSubCategory(long id ) {
+		Session session = this.mySessionFactory.getCurrentSession();
+		SubCategory subCategory = session.get(SubCategory.class, id);
+		session.delete(subCategory);
+	}
+
+	@Override
+	public long newId() {
+		Session session = this.mySessionFactory.getCurrentSession();
+		CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Long> criteriaQuery = builder.createQuery(Long.class);
+        Root<SubCategory> subCategoryRoot = criteriaQuery.from(SubCategory.class);
+        criteriaQuery.select(builder.max(subCategoryRoot.get("id")));
+        TypedQuery<Long> query = session.createQuery(criteriaQuery);
+        Long maxValue = query.getSingleResult();
+        if(maxValue == null) {
+        	return 1;
+        }
+        else {
+        	return maxValue;
+        }
+	}
+	
+	
 }
 

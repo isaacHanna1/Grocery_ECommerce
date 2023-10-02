@@ -8,5 +8,6 @@ public interface SubCategoryDao {
 
 	public SubCategory insertNewCategory(SubCategory subCategory);
 	public List<SubCategoryDto> allSubCategories();
-	
+	public void deleteSubCategory(long id);
+	public long newId();
 }

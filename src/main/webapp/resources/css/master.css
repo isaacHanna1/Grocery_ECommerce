@@ -769,6 +769,9 @@ body {
   background-color: var(--second-background);
   padding-top: 15px;
   padding-bottom: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .footer .social-media a {
   margin-left: 10px;

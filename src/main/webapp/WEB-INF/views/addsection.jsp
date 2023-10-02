@@ -32,7 +32,7 @@
           <button class="btn" id="sendBtn">اضافة</button>
         </form>
       </div>
-      <div class="table-container section-table">
+      <div class="table-container col-3">
         <h2>الاقسام</h2>
         <table>
           <thead>

@@ -2,7 +2,9 @@ package com.watad.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,5 +44,18 @@ public class SubCategoryController {
 	@GetMapping(path = "/getAllSubCategory")
 	public List<SubCategoryDto> gettingAllsubCategory(){
 		return subCategoryDao.allSubCategories();
+	}
+	
+	@GetMapping(path = "/getNewId")
+	public String getId() {
+		String id = subCategoryDao.newId()+"";
+		return "{\"id\":"+id+"}";
+	}
+	@DeleteMapping(path = "/deleteSubCategory/{id}")
+	public String deleteSubCategory(@PathVariable long id) {
+		subCategoryDao.deleteSubCategory(id);
+		String deleted = ""+id;
+	
+		return "{\"deleted\":"+deleted+"}";
 	}
 }
