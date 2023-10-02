@@ -3,8 +3,8 @@ let parent_tr  = "";
 let subCategoryId = "";
 
 let tableContentOfSubCategory = document.querySelector(".table-container table tbody")
-let sendBtn = document.getElementById("sendBtn");
-
+let sendBtn    = document.getElementById("sendBtn");
+let errMessage = document.getElementById("errMessage"); 
 sendBtn.onclick = function (event){
 event.preventDefault();
 let  subCategoryName = document.getElementById("subCategoryName").value;
@@ -39,13 +39,14 @@ async function addSubCategory(subCategoryName,categoryId,categoryName){
 		const link = host+"/addSubCategory";
 		console.log(link);
 		const response = await fetch(link,requestOption);
-			console.log();
+			console.log(response.status,"status code");
 			console.log(response.statusText);
 			if(response.status === 400){
+				errMessage.textContent ="هناك قسم فرعي مسجل بنفس الاسم";
 				return null;
 			}
 		if(!response.ok){
-			throw new Errror("NetWork response was not ok");
+			throw new Error("NetWork response was not ok");
 		}
 		const data = await response.json();
 		console.log(response.status);

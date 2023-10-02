@@ -1,6 +1,9 @@
 package com.watad.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,20 +40,21 @@ public class SubCategoryController {
 	}
 	
 	@PostMapping(path = "/addSubCategory")
-	public SubCategory addNewSubCategory(@RequestBody SubCategory subCategory) {
-		return subCategoryDao.insertNewCategory(subCategory);
-	}
-	
+	public ResponseEntity<?> addNewSubCategory(@RequestBody SubCategory subCategory) {		
+		boolean result = subCategoryDao.findByName(subCategory.getSubCategoryName());
+			if(result) {
+				System.out.println("we not bad ");	
+				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Duplicate entry.");
+			}
+	     	return ResponseEntity.ok(subCategoryDao.insertNewSubCategory(subCategory));
+			
+        
+    }
 	@GetMapping(path = "/getAllSubCategory")
 	public List<SubCategoryDto> gettingAllsubCategory(){
 		return subCategoryDao.allSubCategories();
 	}
-	
-	@GetMapping(path = "/getNewId")
-	public String getId() {
-		String id = subCategoryDao.newId()+"";
-		return "{\"id\":"+id+"}";
-	}
+
 	@DeleteMapping(path = "/deleteSubCategory/{id}")
 	public String deleteSubCategory(@PathVariable long id) {
 		subCategoryDao.deleteSubCategory(id);

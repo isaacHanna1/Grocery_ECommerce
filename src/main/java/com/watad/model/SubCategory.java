@@ -18,7 +18,7 @@ public class SubCategory {
 	@Column(name ="id")
 	private Long id ;
 	
-	@Column(name ="subCategoryName")
+	@Column(name ="subCategoryName" , unique = true)
 	private String subCategoryName;
 	
 	@OneToOne
