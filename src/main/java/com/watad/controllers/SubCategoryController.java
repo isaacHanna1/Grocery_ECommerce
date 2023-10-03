@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -61,5 +62,15 @@ public class SubCategoryController {
 		String deleted = ""+id;
 	
 		return "{\"deleted\":"+deleted+"}";
+	}
+	
+
+	@PutMapping("/editSubCategory")
+	public ResponseEntity<?> updateCategory(@RequestBody SubCategory subCategory ) {
+		boolean result = subCategoryDao.findByName(subCategory.getSubCategoryName());
+		if(result) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("sub Category Name aready exists");
+		}
+			return ResponseEntity.ok(subCategoryDao.editSubCategory(subCategory));	
 	}
 }

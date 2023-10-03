@@ -1,4 +1,3 @@
-let editBtns = document.querySelectorAll  (".edit-btn");
 let parent_tr  = "";
 let subCategoryId = "";
 
@@ -141,6 +140,92 @@ tableContentOfSubCategory.addEventListener("click",e=>{
 	  parent_tr.remove();		
     };
   }
+	else if(e.target.classList.contains("edit-btn")){
+	 e.preventDefault();
+	 parent_tr  = e.target.closest('tr');
+	 subCategoryId = parent_tr.querySelector('td:first-child').textContent;
+	 subCategoryNameTable = parent_tr.querySelector('#subCategoryName').textContent;	
+     let overlay_div = document.createElement("div");
+     overlay_div.classList.add("overlay");
+     document.body.appendChild(overlay_div);
+     let dialogContainer = document.createElement("div");
+     dialogContainer.classList.add("dialogContainer");
+     document.body.appendChild(dialogContainer);
+
+	 dialogContainer.style.borderTopColor="var(--main-color)";
+     let textContainer = document.createElement("div");
+     textContainer.classList.add("textContainer");
+	 let labelForInput = document.createElement("label");
+	 let textForLable  =document.createTextNode("اسم القسم الفرعي");
+	 labelForInput.appendChild(textForLable);
+     let editInput = document.createElement("input");
+	 editInput.value = subCategoryNameTable;
+	 textContainer.appendChild(labelForInput);
+     textContainer.appendChild(editInput);
+     dialogContainer.appendChild(textContainer);
+	
+	 let labelForSelect = document.createElement("label");
+	 let textForSelect  =document.createTextNode("اسم القسم ");
+	 labelForSelect.appendChild(textForSelect);
+	 textContainer.appendChild(labelForSelect);
+	 let selectElement  = document.createElement("select");
+	 selectElement.setAttribute('name',"subCategoryId");
+		getAllCategory().then(data=>{
+			data.forEach(obj=>{
+				console.log("obj.categoryName",obj.categoryName);
+				let option   = document.createElement("option");
+				option.setAttribute("value",obj.id);
+				let textNode = document.createTextNode(obj.categoryName);
+				option.appendChild(textNode);
+				selectElement.appendChild(option);			
+			});
+		});
+		textContainer.appendChild(selectElement);
+	
+	
+     let btnContainer = document.createElement("div");
+     let okBtn = document.createElement("button");
+	 okBtn.classList.add("edit-btn")
+     let cancelBtn = document.createElement("button");
+     okBtn.appendChild(document.createTextNode("تعديل"));
+     cancelBtn.appendChild(document.createTextNode("الغاء"));
+
+    btnContainer.appendChild(okBtn);
+    btnContainer.appendChild(cancelBtn);
+    btnContainer.classList.add("btnContainer");
+    dialogContainer.appendChild(btnContainer);
+
+      cancelBtn.onclick = function () {
+      overlay_div.classList.remove("overlay");
+      dialogContainer.classList.remove("dialogContainer");
+	  dialogContainer.style.display="none";
+    };
+      okBtn.onclick =  function () {
+		  let subCategoryName = editInput.value
+	      overlay_div.classList.remove("overlay");
+	      dialogContainer.classList.remove("dialogContainer");
+		  dialogContainer.style.display="none";
+			let selectedOption = selectElement.options[selectElement.selectedIndex];
+			let selectedValue  = selectedOption.value;  
+			let SelectedTextValue = selectedOption.textContent;
+   		    const fetching = editSubCategory(subCategoryId,subCategoryName,selectedValue,SelectedTextValue);
+			fetching.then(value=>{
+				if(value === null){
+					alert("Sub Category Is already Exists");
+					return;
+				}
+				else{
+					let subCategoryNameTable = parent_tr.querySelector('#subCategoryName');
+					subCategoryNameTable.textContent = subCategoryName;
+					let CategoryNameTable = parent_tr.querySelector('#categoryName');
+					CategoryNameTable.textContent = SelectedTextValue ;
+				}
+			});
+				
+	    };
+		
+	}
+
 	
 });
 
@@ -168,8 +253,8 @@ async function deleteCategory(subCategoryId){
 	}
 }
 
-// i fetching new id from database ;
-async function newId (){
+// i fetching new categories from database ;
+async function getAllCategory (){
 	
 	try{
 		const headers={
@@ -180,7 +265,7 @@ async function newId (){
 			headers:headers,
 		};
 		const host = window.location.origin;
-		const link = host+"/getNewId";
+		const link = host+"/allMainCategoy";
 		console.log(link);
 		const response = await fetch(link,requestOption);
 		
@@ -194,6 +279,42 @@ async function newId (){
 	catch(err){
 		console.error("there was an error when fetching data (exception)" , err);
 	}
+}
+
+async function editSubCategory(subCategoryId ,subCategoryName,categoryId,categoryName){
+	
+	let subCategoryobj = {id:subCategoryId,subCategoryName:subCategoryName.trim(),
+							  category:{id:categoryId,
+							  			categoryName:categoryName}};
+	const subCategoryObject = JSON.stringify(subCategoryobj);	
+	console.log("created ",subCategoryObject);
+		const headers={
+			'Content-Type':'application/json',
+		};
+		const requestOption = {
+			method:'PUT',
+			headers:headers,
+			body:subCategoryObject,
+		};
+		try{
+		const host = window.location.origin;
+		const link = host+"/editSubCategory";
+		console.log(link);
+		const response = await fetch(link,requestOption);
+			console.log(response.status,"status code");
+			console.log(response.statusText);
+			if(response.status === 400){
+				return null;
+			}
+		if(!response.ok){
+			throw new Error("NetWork response was not ok");
+		}
+		const data = await response.json();
+		console.log(response.status);
+		console.log(data);
+} catch(error){
+	throw new Error("NetWork response was not ok");
+}
 }
 
 

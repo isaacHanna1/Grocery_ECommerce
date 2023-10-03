@@ -84,5 +84,8 @@ public class CategoryController {
 			    return false;
 		}
 	}
-	
+	@GetMapping(path = "/allMainCategoy")
+	public List<Category> gettAllCategory() {
+		return categoryDao.getListOfCategory();
+	}
 }

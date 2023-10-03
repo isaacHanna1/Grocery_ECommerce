@@ -112,31 +112,31 @@ editBtns.forEach((btn) => {
 	 parent_tr  = e.target.closest('tr');
 	 categoryId = parent_tr.querySelector('td:first-child').textContent;
 	 categoryName = parent_tr.querySelector('#categoryNameCol').textContent;	
-    let overlay_div = document.createElement("div");
-    overlay_div.classList.add("overlay");
-    document.body.appendChild(overlay_div);
-    let dialogContainer = document.createElement("div");
-    dialogContainer.classList.add("dialogContainer");
-    document.body.appendChild(dialogContainer);
+     let overlay_div = document.createElement("div");
+     overlay_div.classList.add("overlay");
+     document.body.appendChild(overlay_div);
+     let dialogContainer = document.createElement("div");
+     dialogContainer.classList.add("dialogContainer");
+     document.body.appendChild(dialogContainer);
 
-	dialogContainer.style.borderTopColor="var(--main-color)";
-    let textContainer = document.createElement("div");
-    textContainer.classList.add("textContainer");
-	let labelForInput = document.createElement("label");
-	let textForLable  =document.createTextNode("اسم القسم");
-	labelForInput.appendChild(textForLable);
-    let editInput = document.createElement("input");
-	editInput.value = categoryName;
-	textContainer.appendChild(labelForInput);
-    textContainer.appendChild(editInput);
-    dialogContainer.appendChild(textContainer);
+	 dialogContainer.style.borderTopColor="var(--main-color)";
+     let textContainer = document.createElement("div");
+     textContainer.classList.add("textContainer");
+	 let labelForInput = document.createElement("label");
+	 let textForLable  =document.createTextNode("اسم القسم");
+	 labelForInput.appendChild(textForLable);
+     let editInput = document.createElement("input");
+	 editInput.value = categoryName;
+	 textContainer.appendChild(labelForInput);
+     textContainer.appendChild(editInput);
+     dialogContainer.appendChild(textContainer);
 	
-    let btnContainer = document.createElement("div");
-    let okBtn = document.createElement("button");
-	okBtn.classList.add("edit-btn")
-    let cancelBtn = document.createElement("button");
-    okBtn.appendChild(document.createTextNode("تعديل"));
-    cancelBtn.appendChild(document.createTextNode("الغاء"));
+     let btnContainer = document.createElement("div");
+     let okBtn = document.createElement("button");
+	 okBtn.classList.add("edit-btn")
+     let cancelBtn = document.createElement("button");
+     okBtn.appendChild(document.createTextNode("تعديل"));
+     cancelBtn.appendChild(document.createTextNode("الغاء"));
 
     btnContainer.appendChild(okBtn);
     btnContainer.appendChild(cancelBtn);

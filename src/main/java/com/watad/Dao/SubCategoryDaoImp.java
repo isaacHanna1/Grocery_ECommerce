@@ -75,6 +75,13 @@ public class SubCategoryDaoImp implements SubCategoryDao {
 		}
 		return false;
 	}
+
+	@Override
+	public SubCategory editSubCategory(SubCategory subCategory) {
+		 Session session = this.mySessionFactory.getCurrentSession();
+		 session.merge(subCategory);
+		 return subCategory;
+	}
 	
 	
 }

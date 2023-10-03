@@ -54,8 +54,8 @@
           <c:forEach var="subCategory" items="${allSubCategories}">
             <tr>
               <td class="idOfSubCategory">${subCategory.id}</td>
-              <td id="">${subCategory.subCategoryName}</td>
-              <td id="">${subCategory.categoryName}</td>
+              <td id="subCategoryName">${subCategory.subCategoryName}</td>
+              <td id="categoryName">${subCategory.categoryName}</td>
               <td>
                 <a class="btn edit-btn">تعديل</a>
                 <a href ="" class="btn delete-btn">مسح</a>
