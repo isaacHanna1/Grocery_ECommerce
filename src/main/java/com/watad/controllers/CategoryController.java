@@ -41,7 +41,7 @@ public class CategoryController {
 	// function for saving new category  
 	@PostMapping("/addCategory")
 	public ModelAndView AddCategory(Category category ) {
-		ModelAndView modelAndView  = null;
+		ModelAndView modelAndView  ;
 		modelAndView = new ModelAndView("redirect:/categoryPage");
 		if(existsInDataBase(category)) {
 			String message = " category name is aready saved before *";

@@ -29,7 +29,7 @@
         </li>
         <li>
           <i class="fa-solid fa-leaf"></i
-          ><a href="../views/units.html">اضافة وحدة</a>
+          ><a href="/unitPage">اضافة وحدة</a>
         </li>
         <li>
           <i class="fa-solid fa-leaf"></i
