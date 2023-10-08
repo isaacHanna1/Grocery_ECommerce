@@ -8,9 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="subCategory")
+@Table(name="subCategory" , uniqueConstraints = {@UniqueConstraint(columnNames = {"categoryId","subCategoryName"})})
 public class SubCategory {
 	
 	@Id
@@ -18,7 +19,7 @@ public class SubCategory {
 	@Column(name ="id")
 	private Long id ;
 	
-	@Column(name ="subCategoryName" , unique = true)
+	@Column(name ="subCategoryName")
 	private String subCategoryName;
 	
 	@OneToOne

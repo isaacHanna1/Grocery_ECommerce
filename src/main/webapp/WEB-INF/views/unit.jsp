@@ -12,13 +12,8 @@
     <title>تعديل الوحدات</title>
   </head>
   <body>
-    <!-- stat header -->
-    <div class="header-area">
-      <div class="container">
-        <div class="logo">WATAD</div>
-        <div class="active-user">زائر</div>
-      </div>
-    </div>
+   <!-- stat header -->
+    <jsp:include page="template/header.jsp"/>
     <!-- End header -->
 
     <!-- Start section (nav menu) -->
@@ -71,7 +66,9 @@
       </div>
       </div>
     </div>
-
+<!-- stat footer -->
+    <jsp:include page="template/footer.jsp"/>
+    <!-- End footer -->
 	 <script src="<c:url value="resources/js/master.js"/>"></script>
 	 <script src="<c:url value="resources/js/unit.js"/>"></script>
   </body>

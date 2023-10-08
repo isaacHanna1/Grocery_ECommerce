@@ -42,7 +42,7 @@ public class SubCategoryController {
 	
 	@PostMapping(path = "/addSubCategory")
 	public ResponseEntity<?> addNewSubCategory(@RequestBody SubCategory subCategory) {		
-		boolean result = subCategoryDao.findByName(subCategory.getSubCategoryName());
+		boolean result = subCategoryDao.findByName(subCategory);
 			if(result) {
 				System.out.println("we not bad ");	
 				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Duplicate entry.");
@@ -55,6 +55,12 @@ public class SubCategoryController {
 	public List<SubCategoryDto> gettingAllsubCategory(){
 		return subCategoryDao.allSubCategories();
 	}
+	
+	@GetMapping(path = "/getSubCategoriesByCategoryID/{categoryId}")
+	public List<String> getSubCategoriesByCategoryID(@PathVariable long categoryId){
+		return subCategoryDao.getSubCategoryInSuchGategory(categoryId);
+	}
+
 
 	@DeleteMapping(path = "/deleteSubCategory/{id}")
 	public String deleteSubCategory(@PathVariable long id) {
@@ -67,7 +73,7 @@ public class SubCategoryController {
 
 	@PutMapping("/editSubCategory")
 	public ResponseEntity<?> updateCategory(@RequestBody SubCategory subCategory ) {
-		boolean result = subCategoryDao.findByName(subCategory.getSubCategoryName());
+		boolean result = subCategoryDao.findByName(subCategory);
 		if(result) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("sub Category Name aready exists");
 		}

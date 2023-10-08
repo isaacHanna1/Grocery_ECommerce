@@ -11,6 +11,7 @@ public interface SubCategoryDao {
 	public SubCategory insertNewSubCategory(SubCategory subCategory);
 	public List<SubCategoryDto> allSubCategories();
 	public void deleteSubCategory(long id);
-	public boolean findByName(String subCategoryName);
+	public boolean findByName(SubCategory subCategory);
 	public SubCategory editSubCategory(SubCategory subCategory);
+	public List<String> getSubCategoryInSuchGategory(long CategoryId);
 }

@@ -64,11 +64,12 @@ public class SubCategoryDaoImp implements SubCategoryDao {
 	}
 
 	@Override
-	public boolean findByName(String subCategoryName) {
+	public boolean findByName(SubCategory subCategory) {
 		Session session = this.mySessionFactory.getCurrentSession();
-		String hql  = "FROM SubCategory C WHERE C.subCategoryName = :subCategoryName";
+		String hql  = "FROM SubCategory C WHERE C.subCategoryName = :subCategoryName and C.category.id = :categoryId";
 		Query<SubCategory> query = session.createQuery(hql,SubCategory.class);
-		query.setParameter("subCategoryName", subCategoryName);
+		query.setParameter("subCategoryName", subCategory.getSubCategoryName());
+		query.setParameter("categoryId", subCategory.getCategory().getId());
 		List<SubCategory> results = query.list();
 		if(results.size()>0) {
 			return true;
@@ -81,6 +82,16 @@ public class SubCategoryDaoImp implements SubCategoryDao {
 		 Session session = this.mySessionFactory.getCurrentSession();
 		 session.merge(subCategory);
 		 return subCategory;
+	}
+
+	@Override
+	public List<String> getSubCategoryInSuchGategory(long CategoryId) {
+		Session session = this.mySessionFactory.getCurrentSession();
+		String hql  = "SELECT S.subCategoryName FROM SubCategory S WHERE S.category.id = :categoryId";
+		Query<String> query = session.createQuery(hql,String.class);
+		query.setParameter("categoryId", CategoryId);
+		List<String> results = query.list();
+		return results;
 	}
 	
 	

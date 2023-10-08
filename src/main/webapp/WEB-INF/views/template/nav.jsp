@@ -33,7 +33,7 @@
         </li>
         <li>
           <i class="fa-solid fa-leaf"></i
-          ><a href="../views/additem.html">اضافة صنف </a>
+          ><a href="/itemPage">اضافة صنف </a>
         </li>
         <li>
           <i class="fa-solid fa-leaf"></i
