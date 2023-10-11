@@ -43,6 +43,7 @@
             <prop key="hibernate.connection.characterEncoding">UTF-8</prop>
             <prop key="hibernate.connection.CharSet">UTF-8</prop>
             <prop key="hibernate.connection.useUnicode">true</prop>
+            <prop key="hibernate.show_sql">true</prop>
         	</props>
 		</property>
 	</bean>
@@ -85,5 +86,4 @@
            <mvc:resources mapping="/resources/**" location="/resources/"  
 	cache-period="31556926"/>
       
-  
 </beans>  

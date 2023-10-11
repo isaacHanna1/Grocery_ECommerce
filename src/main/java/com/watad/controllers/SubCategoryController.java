@@ -57,7 +57,7 @@ public class SubCategoryController {
 	}
 	
 	@GetMapping(path = "/getSubCategoriesByCategoryID/{categoryId}")
-	public List<String> getSubCategoriesByCategoryID(@PathVariable long categoryId){
+	public List<SubCategory> getSubCategoriesByCategoryID(@PathVariable long categoryId){
 		return subCategoryDao.getSubCategoryInSuchGategory(categoryId);
 	}
 

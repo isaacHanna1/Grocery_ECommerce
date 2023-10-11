@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<c:url value="resources/css/all.min.css"/>" />
     <link rel="stylesheet" href="<c:url value="resources/css/normalize.css" />" />
     <link rel="stylesheet" href="<c:url value="resources/css/master.css" />" />
+    
     <title>الاصناف</title>
     
   </head>
@@ -24,8 +25,8 @@
     <div class="add-item">
       <h2>اضافة صنف</h2>
       <div class="container">
-        <a href="">الاصناف</a>
-        <form action="/addItem" method="post" enctype="application/json" id="" >
+        <a href="/allItems/1">الاصناف</a>
+        <form action="/addItem" method="POST" enctype="multipart/form-data" id="" >
           <div class="data-row">
           <label>اسم صنف : </label>
           <input id= "itemName" name="itemName" type="text" placeholder="ادخل اسم  الصنف" required="required" />
@@ -61,35 +62,35 @@
         </div>
         <div class="data-row">
           <label>سعر الشراء : </label>
-          <input id ="purchasePrice" name="purchasePrice" type="number" placeholder="ادخل سعر الشراء" required="required" />
+          <input id ="purchasePrice" step="0.01" name="purchasePrice" type="number" placeholder="ادخل سعر الشراء" required="required" />
         </div>
         <div class="data-row">
           <label>نسبة الربح من العميل: </label>
-          <input id="profitMarginCustomer" name="profitMarginCustomer" type="number" placeholder="نسبة الربح العميل" required="required"  />
+          <input id="profitMarginCustomer" step="0.01" name="profitMarginCustomer" type="number" placeholder="نسبة الربح العميل" required="required"  />
         </div>
         <div class="data-row">
           <label>نسبة الربح من التاجر : </label>
-          <input id="profitMarginTrader" name="profitMarginTrader" type="number" placeholder="نسبة الربح تاجر" required="required"  />
+          <input id="profitMarginTrader" step="0.01" name="profitMarginTrader" type="number" placeholder="نسبة الربح تاجر" required="required"  />
         </div>
         <div class="data-row">
           <label>  خصم للعميل : </label>
-          <input id="discountPercentageCustomer" name="discountPercentageCustomer" type="number" placeholder="0%" required="required"  />
+          <input id="discountPercentageCustomer" step="0.01" name="discountPercentageCustomer" type="number" placeholder="0%" required="required"  />
         </div>
         <div class="data-row">
           <label> خصم للتاجر: </label>
-          <input id="discountPercentageTrader" name="discountPercentageTrader" type="number" placeholder="0%" required="required" />
+          <input id="discountPercentageTrader" step="0.01" name="discountPercentageTrader" type="number" placeholder="0%" required="required" />
         </div>
         <div class="data-row">
           <label> البيع للعميل : </label>
-          <input id="sellingPriceCustomer" name="sellingPriceCustomer" type="number" placeholder=" سعر البيع" required="required" />
+          <input id="sellingPriceCustomer" step="0.01" name="sellingPriceCustomer" type="number" placeholder=" سعر البيع" required="required" />
         </div>
         <div class="data-row">
           <label> البيع للتاجر: </label>
-          <input id="sellingPriceTrader" name="sellingPriceTrader" type="number" placeholder=" سعر للتاجر" required="required" />
+          <input id="sellingPriceTrader" step="0.01" name="sellingPriceTrader" type="number" placeholder=" سعر للتاجر" required="required" />
         </div>
         <div class="data-row ">
           <label>تاريخ الاضافة : </label>
-          <input id="addingDate" name="addingDate" type="date"  placeholder="تاريخ الاضافة" required="required" ></input>
+          <input id="addingDate"  name="addingDate" type="date"  placeholder="تاريخ الاضافة" required="required" ></input>
         </div>
         <div class="data-row ">
           <label>وصف المنتج : </label>

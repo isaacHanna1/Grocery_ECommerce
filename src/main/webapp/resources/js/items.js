@@ -163,7 +163,8 @@ selectCategory.addEventListener("change",event=>{
 	then(value=>{
 		value.forEach(item=>{
 		let option = document.createElement("option");
-		let textOptionNode = document.createTextNode(item);
+		let textOptionNode = document.createTextNode(item.subCategoryName);
+	    option.setAttribute("value",item.id);
 		option.append(textOptionNode);
 		selectSubCategory.appendChild(option);
 		})

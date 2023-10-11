@@ -13,5 +13,6 @@ public interface SubCategoryDao {
 	public void deleteSubCategory(long id);
 	public boolean findByName(SubCategory subCategory);
 	public SubCategory editSubCategory(SubCategory subCategory);
-	public List<String> getSubCategoryInSuchGategory(long CategoryId);
+	public List<SubCategory> getSubCategoryInSuchGategory(long CategoryId);
+	public List<SubCategory> getSubCategoryInSuchGategory(String CategoryName);
 }

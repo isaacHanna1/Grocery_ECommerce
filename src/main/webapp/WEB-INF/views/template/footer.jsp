@@ -25,7 +25,7 @@
         ></a>
       </div>
       <div class="logo">
-      	<img src="<c:url value="resources/imgs/logoCompany.png"/>" />	
+      	<img src="<c:url value="../resources/imgs/logoCompany.png"/>" />	
       </div>
       <h3>Wa<span>T</span>ad</h3>
     </div>

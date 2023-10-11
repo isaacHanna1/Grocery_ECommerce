@@ -85,12 +85,22 @@ public class SubCategoryDaoImp implements SubCategoryDao {
 	}
 
 	@Override
-	public List<String> getSubCategoryInSuchGategory(long CategoryId) {
+	public List<SubCategory> getSubCategoryInSuchGategory(long CategoryId) {
 		Session session = this.mySessionFactory.getCurrentSession();
-		String hql  = "SELECT S.subCategoryName FROM SubCategory S WHERE S.category.id = :categoryId";
-		Query<String> query = session.createQuery(hql,String.class);
+		String hql  = "FROM SubCategory S WHERE S.category.id = :categoryId";
+		Query<SubCategory> query = session.createQuery(hql,SubCategory.class);
 		query.setParameter("categoryId", CategoryId);
-		List<String> results = query.list();
+		List<SubCategory> results = query.list();
+		return results;
+	}
+
+	@Override
+	public List<SubCategory> getSubCategoryInSuchGategory(String CategoryName) {
+		Session session = this.mySessionFactory.getCurrentSession();
+		String hql = "SELECT s FROM SubCategory s JOIN s.category c WHERE c.categoryName = :categoryName";
+		Query<SubCategory> query = session.createQuery(hql,SubCategory.class);
+		query.setParameter("categoryName", CategoryName);
+		List<SubCategory> results = query.list();
 		return results;
 	}
 	
