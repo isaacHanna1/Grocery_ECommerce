@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -40,7 +42,6 @@ public class itemController {
 	private CategoryDao categoryDao;
 	@Autowired
 	private SubCategoryDao subCategoryDao;
-	
 	@Autowired
 	private itemDao itemDao;
 	
@@ -70,6 +71,12 @@ public class itemController {
 		 itemDao.addingNewItem(item);
 		 ModelAndView modelAndView = new ModelAndView("redirect:/allItems/1");
 		 return modelAndView;
+	}
+	@RequestMapping(path="/editItem/{itemId}")
+	public ModelAndView updateItem(@ModelAttribute Item item , @PathVariable Long itemId) {
+		itemDao.updateItem(itemId, item);
+		ModelAndView modelAndView = new ModelAndView("redirect:/allItems/1");
+		return modelAndView;
 	}
 	@DeleteMapping(path = "/delItem/{id}")
 	public Item deleteItem(@PathVariable Long id) {

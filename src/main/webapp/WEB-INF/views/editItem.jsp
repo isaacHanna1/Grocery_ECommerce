@@ -25,14 +25,14 @@
       <h2>تعديل صنف</h2>
       <div class="container">
         <a href="/allItems/1">الاصناف</a>
-        <form action="/addItem" method="post" enctype="application/json" id="" >
+        <form action="/editItem/${item.id}" method="POST" enctype="multipart/form-data">
           <div class="data-row">
           <label>اسم صنف : </label>
           <input id= "itemName" name="itemName" type="text" placeholder="ادخل اسم  الصنف" required="required" value="${item.itemName}" />
         </div>
         <div class="data-row">
           <label>صورة الصنف : </label>
-          <input id= "image" name ="image" type="file" placeholder="ادخل اسم  القسم" required="required"/>
+          <input id= "image" name ="image" type="file" placeholder="ادخل اسم  القسم" disabled/>
         </div>
         <div class="data-row">
           <label>اسم القسم : </label>
@@ -100,12 +100,21 @@
         <div class="data-row ">
           <label>متاح : </label>
           <select name="avability" id="avability" required="required" >
-            <option value="true">نعم</option>
-            <option value="false">لا</option>
+          	<c:set value="${item.avability}" var="avability"/>
+          	<c:choose>
+          	<c:when test="${avability==true}">
+            	<option value="true" selected="selected">نعم</option>
+            	<option value="false">لا</option>
+            </c:when>
+            <c:otherwise>
+            	<option value="true">نعم</option>
+            	<option value="false" selected="selected">لا</option>
+            </c:otherwise>
+            </c:choose>
           </select>
         </div>
         <div class="btn-container">
-          <button class="btn">اضافة</button>
+          <button class="btn">تعديل</button>
         </div>
         </form>
       </div>

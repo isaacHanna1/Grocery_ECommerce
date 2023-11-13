@@ -21,14 +21,14 @@
     <!-- End nav menu -->
     	
     	
-    	
-    	<div class="table-container col-5 show-items">
+    <div class ="container">	
+    	<div class="table-container col-6 show-items">
     	 	
         <h2>الاصناف</h2>
         <input id="searchInput" placeholder="ابحث بإسم الصنف">
         <a class="add" href ="/itemPage">اضافة</a>
        <div class="customContainer"> 
-        <table>
+        <table class="allItems">
           <thead>
             <tr>
               <td>م</td>
@@ -43,7 +43,7 @@
           <c:forEach var="all" items="${allItem}">
             <tr>
 	              <td>${all.id}</td>
-	              <td class="item-name textContainer">${all.itemName}
+	              <td class="item-name"><span class="textContainer">${all.itemName}</span>
 	              	<button class="see-more">المزيد</button>
 	              	</td>
 	              <td>${all.purchasePrice}</td>
@@ -61,13 +61,13 @@
         </div>
          <div class="page">
 	        <div>صفحة: </div>
-	    	<c:forEach  var="i" begin= "1" end="${recordCount/10}" >
+	    	<c:forEach  var="i" begin= "1" end="${recordCount/10+1}" >
 	    		<span><a href="/allItems/${i}">${i}</a></span>
 	    	</c:forEach>
     	</div>
       </div>
     	
-    	
+    </div>
     	
     <!-- stat footer -->
     <jsp:include page="template/footer.jsp"/>

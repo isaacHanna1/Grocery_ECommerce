@@ -81,13 +81,16 @@ async function deleteItem(itemId){
 let itemNames = document.querySelectorAll(".textContainer");
 
 itemNames.forEach(itemName =>{
-	let size = itemName.textContent.trim().split(' ');
-	if( size.length > 2){
-		const seeMoreButton = itemName.querySelector("button");
+	let size = itemName.textContent
+	console.log(size);
+	if( size.length >=10){
+		// first next sibling get be the the text node but i want element 
+		// so i used two siblings 
+		const seeMoreButton = itemName.nextSibling.nextSibling;
 		seeMoreButton.style.display = "block";
 		seeMoreButton.addEventListener('click',()=>{
 			if(itemName.style.whiteSpace === "normal"){
-				itemName.style.whiteSpace ="nowrap"
+				itemName.style.whiteSpace = "nowrap"
 			}else{
 			itemName.style.whiteSpace = "normal";
 			}

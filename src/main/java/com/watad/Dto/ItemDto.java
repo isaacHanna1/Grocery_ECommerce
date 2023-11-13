@@ -38,6 +38,20 @@ public class ItemDto {
 		this.sellingPriceTrader = sellingPriceTrader;
 	}
 
+	//constructor for getting item to show it to customers
+	public ItemDto(long id, String itemName, byte[] image, String unitName, float discountPercentageCustomer,
+			float sellingPriceCustomer, Date addingDate, String itemDescription, boolean avability) {
+		super();
+		this.id = id;
+		this.itemName = itemName;
+		this.image = image;
+		this.unitName = unitName;
+		this.discountPercentageCustomer = discountPercentageCustomer;
+		this.sellingPriceCustomer = sellingPriceCustomer;
+		this.addingDate = addingDate;
+		this.itemDescription = itemDescription;
+		this.avability = avability;
+	}
 	public ItemDto(long id, String itemName, byte[] image, 
 			String categoryName, String subCategoryName,
             String unitName, float purchasePrice,
@@ -65,6 +79,8 @@ public class ItemDto {
 			this.itemDescription = itemDescription;
 			this.avability = avability;
 	}
+
+	
 
 	public long getId() {
 		return id;

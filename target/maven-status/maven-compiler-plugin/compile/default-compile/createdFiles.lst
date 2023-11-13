@@ -1,3 +1,4 @@
+com\watad\controllers\MarketplaceController.class
 com\watad\Dao\itemDaoImp.class
 com\watad\controllers\CategoryController.class
 com\watad\model\Category.class

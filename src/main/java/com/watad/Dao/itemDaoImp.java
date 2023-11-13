@@ -62,13 +62,39 @@ public class itemDaoImp implements itemDao {
 
 	@Override
 	public List<ItemDto> getSpecificItems(int pageNumber) {
-
+		
 		int start = (pageNumber - 1) * 10;
 		Session session = this.mySessionFactory.getCurrentSession();
 		String hql = "SELECT NEW com.watad.Dto.ItemDto(I.id, I.itemName, I.purchasePrice, I.sellingPriceCustomer, I.sellingPriceTrader) FROM Item I";
 		Query<ItemDto> query = session.createQuery(hql, ItemDto.class);
 		query.setFirstResult(start);
 		query.setMaxResults(10);
+		List<ItemDto> results = query.list();
+		return results;
+		
+	}
+
+	@Override
+	public List<ItemDto> getSpecificItemsForCustomers(int pageNumber, long categoryID, long subCategoryId) {
+
+		int start = (pageNumber - 1) * 4;
+		Session session = this.mySessionFactory.getCurrentSession();
+		String hql = "SELECT NEW com.watad.Dto.ItemDto"
+				+ "(i.id , i.itemName , i.image ,"
+				+ "u.unitName, i.discountPercentageCustomer, "
+				+ "i.sellingPriceCustomer , i.addingDate ,"
+				+ " i.itemDescription , i.avability)"
+				+ " from Item i "
+				+ "join i.unit u "
+				+ "join i.category c "
+				+ "Join i.subCategory s "
+				+ "where c.id = :categoryId and s.id = :subcategoryId";
+		System.out.println(hql);
+		Query<ItemDto> query = session.createQuery(hql, ItemDto.class);
+		query.setParameter("categoryId",    categoryID);
+		query.setParameter("subcategoryId", subCategoryId);
+		query.setFirstResult(start);
+		query.setMaxResults(15);
 		List<ItemDto> results = query.list();
 		return results;
 		
@@ -81,12 +107,31 @@ public class itemDaoImp implements itemDao {
 		String HQl = "SELECT COUNT(*) FROM Item";
 		Query<Long> query = session.createQuery(HQl, Long.class);
 		long count = query.uniqueResult();
+		System.out.println("the count is "+count);
 		if(count%2 == 0) {
 		return count;
 		}
 		return count+1;
 	}
 
+
+	@Override
+	public long getCountOfRecOfItems(long categoryID , long subCategoryID) {
+		Session session = this.mySessionFactory.getCurrentSession();
+		String HQl = "SELECT COUNT(*) FROM Item i where "
+				+ "i.category.id     = :categoryId "+""
+				+ "and i.subCategory.id = :subCategoryId";
+		Query<Long> query = session.createQuery(HQl, Long.class);
+		query.setParameter("categoryId", categoryID);
+        query.setParameter("subCategoryId", subCategoryID);
+		long count = query.uniqueResult();
+		System.out.println("the count is "+count);
+		if(count%2 == 0) {
+		return count;
+		}
+		return count+1;
+		
+	}
 
 	@Override
 	public ItemDto getItemById(long id) {
@@ -151,7 +196,14 @@ public class itemDaoImp implements itemDao {
 	}
 
 
-		
-
+	@Override
+	public Item updateItem(long id , Item item) {
+		Item Olditem = getItem(id);
+		item.setImage(Olditem.getImage());
+		item.setId(Olditem.getId());
+		Session session = this.mySessionFactory.getCurrentSession();
+		session.merge(item);
+		return item;
+	}
 }
 

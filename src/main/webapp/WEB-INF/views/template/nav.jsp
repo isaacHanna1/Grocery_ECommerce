@@ -16,28 +16,28 @@
       </div>
       <ul>
         <li>
-          <i class="fa-solid fa-leaf"></i
-          ><a href="../views/receipts.html"> الفواتير المستلمة </a>
+          <i class="fa-solid fa-caret-down"></i>
+          <a href="../views/receipts.html"> الفواتير المستلمة </a>
         </li>
         <li>
-          <i class="fa-solid fa-leaf"></i
-          ><a href="<c:url value="/categoryPage" />">اضافة قسم</a>
+          <i class="fa-solid fa-caret-down"></i>
+          <a href="<c:url value="/categoryPage" />">اضافة قسم</a>
         </li>
           <li>
-          <i class="fa-solid fa-leaf"></i
-          ><a href="/subCategory">اضافة قسم فرعي</a>
+          <i class="fa-solid fa-caret-down"></i>
+          <a href="/subCategory">اضافة قسم فرعي</a>
         </li>
         <li>
-          <i class="fa-solid fa-leaf"></i
-          ><a href="/unitPage">اضافة وحدة</a>
+          <i class="fa-solid fa-caret-down"></i>
+          <a href="/unitPage">اضافة وحدة</a>
         </li>
         <li>
-          <i class="fa-solid fa-leaf"></i
-          ><a href="/itemPage">اضافة صنف </a>
+          <i class="fa-solid fa-caret-down"></i>
+          <a href="/itemPage">اضافة صنف </a>
         </li>
         <li>
-          <i class="fa-solid fa-leaf"></i
-          ><a href="../views/index.html"> وجة المستخدم </a>
+          <i class="fa-solid fa-caret-down"></i>
+          <a href="/marketPlace"> وجة المستخدم </a>
         </li>
       </ul>
     </div>
