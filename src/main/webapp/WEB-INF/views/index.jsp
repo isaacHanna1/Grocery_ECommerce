@@ -11,7 +11,8 @@
 	
     <title>WATAD|حاجتك اونلاين</title>
   </head>
-  <body><!-- stat header -->
+  <body>
+  	<!-- stat header -->
     <jsp:include page="template/header.jsp"/>
     <!-- End header -->
 

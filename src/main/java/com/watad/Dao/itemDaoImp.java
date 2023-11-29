@@ -77,7 +77,7 @@ public class itemDaoImp implements itemDao {
 	@Override
 	public List<ItemDto> getSpecificItemsForCustomers(int pageNumber, long categoryID, long subCategoryId) {
 
-		int start = (pageNumber - 1) * 4;
+		int start = (pageNumber - 1) * 15;
 		Session session = this.mySessionFactory.getCurrentSession();
 		String hql = "SELECT NEW com.watad.Dto.ItemDto"
 				+ "(i.id , i.itemName , i.image ,"
@@ -96,10 +96,8 @@ public class itemDaoImp implements itemDao {
 		query.setFirstResult(start);
 		query.setMaxResults(15);
 		List<ItemDto> results = query.list();
-		return results;
-		
+		return results;		
 	}
-
 
 	@Override
 	public long getCountOfRecordOfItems() {

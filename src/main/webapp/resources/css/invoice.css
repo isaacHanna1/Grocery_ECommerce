@@ -1,0 +1,136 @@
+.invoice {
+  background-color: #fff;
+  border-radius: 10px ;
+  margin-bottom:10px;
+  box-shadow: 1px 1px 1px #ddd;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
+}
+.content{
+	margin-top: 30px;
+	margin-bottom:80px;
+	width: 80%;
+	margin: auto;
+	height: 80vh;
+    overflow-y: scroll;
+}
+.content h2{
+	text-align: center;
+    padding: 10px;
+    color: #999;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.invoice .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.invoice .row .info {
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .invoice .row .info {
+    width: 50%;
+  }
+  .invoice .row .info h3{
+  font-size: 12px;
+  }
+}
+.invoice .row .info .img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+.invoice .row .info .img img {
+  width: 100%;
+  height: 100%;
+}
+
+.invoice .row .item-price {
+  width: 30%;
+}
+@media (max-width: 600px) {
+  .invoice .row .item-price {
+    width: 40%;
+  }
+}
+.invoice .row .item-price span:first-child {
+  width: 70px;
+  font-weight: bold;
+}
+.invoice .row .item-price span {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.invoice .row .item-price .total span:last-child{
+	color: var(--main-color);
+	font-weight:bold;
+}
+@media (max-width: 600px) {
+  .invoice .row .item-price span {
+    font-size: 11px;
+  }
+}
+.invoice .btns .icon {
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  border-radius:10px;
+  transition:.4s;
+}
+.invoice .btns .icon:hover {
+	background: red;
+	color:#fff;
+    box-shadow: 1px 1px 6px red;
+}
+.invoice .btns .quantitiy input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  padding: 5px;
+  margin: 0 5px;
+}
+.invoice .btns .quantitiy button {
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  cursor: pointer;
+}
+.finishReceipt{
+	margin: 10px;
+	border: 1px solid #fefefe;
+	padding: 10px;
+}
+.finishReceipt span:last-child{
+	font-weight: bold;
+	color:var(--main-color);
+	margin-right: 10px;
+}
+.finishReceipt button{
+	margin-right: 80%;
+	padding: 10px;
+	font-weight: bold;
+    border: none;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px var(--main-color);
+    cursor: pointer;
+}
+	

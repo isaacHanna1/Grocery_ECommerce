@@ -1,0 +1,147 @@
+.error{
+	    color: #d9534f; 
+        background-color: #f2dede;
+        border: 1px solid #d9534f;
+        padding: 10px;
+        margin-bottom: 15px; 
+        border-radius: 4px;
+        position: absolute;
+        top: 120px;
+        right: 20px;
+        display: none;
+}
+input + p {
+  font-family: arial;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 10px;
+  color: red;
+  opacity: 0;
+  height: 0;
+}
+input.vaild {
+  border:1px solid #36cc36;
+}
+input.invalid {
+  border:1px solid red;
+}
+input.invalid + p {
+  opacity: 1;
+  height: auto;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.login {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.login .login-title {
+  font-size: 30px;
+  color: var(--main-color);
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.wrap-input {
+  min-width: 300px;
+  margin-top: 15px;
+}
+@media (min-width: 650px) {
+  .wrap-input {
+    min-width: 600px;
+  }
+}
+.wrap-input input,
+.wrap-input textarea ,
+.wrap-input select{
+  line-height: 1.2;
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  background: #ddd;
+  height: 62px;
+  padding: 0 20px 0 38px;
+  font-weight: bold;
+  border: none;
+  outline-color: transparent;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.wrap-input textarea {
+  height: 90px;
+  padding: 15px 10px 0 0;
+}
+.wrap-input input:focus {
+  outline-color: var(--main-color);
+}
+.option {
+  display: flex;
+  justify-content: space-between;
+}
+.option .form-checkBox label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #999;
+  font-size: 12px;
+}
+.option .forget a {
+  color: var(--main-color);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 12px;
+}
+.send button {
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 62px;
+  background-color: var(--main-color);
+  transition: all 0.4s;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  margin-top: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.send button:hover {
+  box-shadow: 1px 1px 12px var(--main-color);
+}
+.create a {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--main-color);
+  text-decoration: none;
+  font-weight: 800;
+}

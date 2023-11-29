@@ -38,28 +38,27 @@ allCategory.forEach(li=>{
 
 function fetchItems(pageNumber , categoryID , subcategoryId ){
 		    let items = getItemsinSubCategory(pageNumber,categoryID,subcategoryId);
-			console.log(pageNumber,categoryID,subcategoryId);
 			items.then(data=>{
 			let section_items = document.querySelector(".section_items");
 			removeChildern(section_items);
 			data.forEach(item=>{ 
 				let createCardDiv = document.createElement('div');
+				createCardDiv.setAttribute("id",item.id);
 				createCardDiv.classList.add('card');
 			    section_items.appendChild(createCardDiv);
 				let createCard_top = document.createElement('div');
 				createCard_top.classList.add('card-top');
 				createCardDiv.appendChild(createCard_top);
-				
+				let createSpanDiscount = document.createElement('span');
 				if(item.discountPercentageCustomer  !=  '0'){
-					let createSpanDiscount = document.createElement('span');
 					createSpanDiscount.classList.add('discount');
 					let discountTextValue = document.createTextNode(item.discountPercentageCustomer+"%")
 					createSpanDiscount.appendChild(discountTextValue);
 					createCard_top.appendChild(createSpanDiscount);								
-				}				
-				
+				}								
 				let divImg = document.createElement('div');
 				divImg.classList.add('img');
+				divImg.setAttribute("title",item.itemDescription);
 				createCard_top.appendChild(divImg);
 				let img = document.createElement('img');
 				let base64ImageData = item.image ; 
@@ -67,12 +66,28 @@ function fetchItems(pageNumber , categoryID , subcategoryId ){
 				let srcOfImage = "data:image/"+imageType+";base64,"+base64ImageData; 
 				img.setAttribute('src',srcOfImage);
 				divImg.appendChild(img);
+				let divContainerBtn_a =document.createElement('div');
+				divContainerBtn_a.classList.add('dis-flex');
 				let buttonPlus = document.createElement('button');
+				buttonPlus.classList.add('description');
 				buttonPlus.setAttribute('id','addToCart');
-				createCard_top.appendChild(buttonPlus)
+				let descriptionLink = document.createElement('a');
+				descriptionLink.setAttribute("title",item.itemDescription);
+				descriptionLink.classList.add('descriptionLink');
+				descriptionLink.classList.add('description');
+				let textNode = document.createTextNode("المميزات");
+				descriptionLink.appendChild(textNode);
+				divContainerBtn_a.appendChild(buttonPlus);
+				divContainerBtn_a.appendChild(descriptionLink);
 				let icon = document.createElement('i');
 				icon.setAttribute('class','fa-solid fa-plus');
+				icon.classList.add('description');
+				icon.setAttribute("title",item.itemDescription);
+				buttonPlus.setAttribute("title",item.itemDescription);
 				buttonPlus.appendChild(icon);
+
+				createCard_top.appendChild(divContainerBtn_a);
+				
 				
 				
 				let card_bottomDiv = document.createElement('div');
@@ -91,7 +106,7 @@ function fetchItems(pageNumber , categoryID , subcategoryId ){
 										 	
 				let divAfterDiscountDiv = document.createElement('div');
 				divAfterDiscountDiv.setAttribute('id','after-discount');
-				let afterDiscountValue = document.createTextNode("LE "+price);
+				let afterDiscountValue = document.createTextNode(price);
 				divAfterDiscountDiv.appendChild(afterDiscountValue);
 				priceDiv.appendChild(divAfterDiscountDiv);
 								
@@ -119,6 +134,7 @@ function fetchItems(pageNumber , categoryID , subcategoryId ){
 				  let avability = item.avability;
 				  if(avability == false){
 				  createCardDiv.classList.add('sold-out');
+				  buttonPlus.style.visibility  = "hidden";	
 			}
 				});
 			});
@@ -231,7 +247,6 @@ let subcategory = document.querySelector('.subCategory');
 
 let categoryID = category.getAttribute('id');
 let subcategoryID = subcategory.getAttribute('id');
-console.log(categoryID,subcategoryID);
  getCountOfItemsINSubCategory(categoryID,subcategoryID)
 .then(data=>{
 	let countOfItem = data;

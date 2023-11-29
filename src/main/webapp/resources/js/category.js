@@ -61,7 +61,7 @@ deleteBtns.forEach((btn) => {
       cancelBtn.onclick = function () {
       overlay_div.classList.remove("overlay");
       dialogContainer.classList.remove("dialogContainer");
-	dialogContainer.style.display="none";
+	  dialogContainer.style.display="none";
     };
     okBtn.onclick = function () {
 	

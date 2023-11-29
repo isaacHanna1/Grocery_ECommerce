@@ -2,6 +2,7 @@ package com.watad.Dao;
 
 import com.watad.model.Category;
 import java.util.List;
+
 public interface CategoryDao {
 	
 	public void insertNewCategory(Category category);

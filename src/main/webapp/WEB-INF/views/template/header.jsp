@@ -11,7 +11,28 @@
     <div class="header-area">
       <div class="container">
         <div class="logo">WATAD</div>
+        <div class="search-box">
+          <form action="">
+            <input
+              type="text"
+              name="search_box"
+              placeholder="اكتب ما انت تبحث عنه ؟"
+            />
+          </form>
+        </div>
+        <div class="location">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>المنوفية، قويسنا</span>
+        </div>
+        <button class="btn">تسجيل الدخول</button>
+
         <div class="active-user">زائر</div>
+        <a href="/invoice">
+        <div class="cart-icon">
+          <i class="fa-solid fa-cart-arrow-down"></i>
+        		<div class="beforeCart">0</div>
+        </div>
+        </a>
       </div>
     </div>
     <!-- End header -->
