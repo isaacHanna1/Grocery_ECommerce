@@ -18,13 +18,16 @@
   
     <div class="container">
       <div class="login">
-        <form action="">
+        <form action="/login" method="POST">
+           <div class="message">
+      		 <p class="sucessful">${message}</p>
+      		</div>
           <span class="login-title">تسجبل الدخول</span>
           <div class="wrap-input">
-            <input type="number" placeholder="رقم التليفون" />
+            <input type="email" placeholder="ادخل البريد الالكتروني" name="username"/>
           </div>
           <div class="wrap-input">
-            <input type="password" placeholder="الرقم السري" />
+            <input type="password" placeholder="الرقم السري" name="password"/>
           </div>
           <div class="option">
             <div class="forget">
@@ -35,7 +38,7 @@
             <button>دخول</button>
           </div>
           <div class="create">
-            <a href="create"> هل تريد إنشاء حساب جديد ؟</a>
+            <a href="/signUp"> هل تريد إنشاء حساب جديد ؟</a>
           </div>
         </form>
       </div>

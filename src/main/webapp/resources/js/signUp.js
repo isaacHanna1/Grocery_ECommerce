@@ -1,12 +1,12 @@
-
-showError();
+showError();	
 let btn = document.querySelector(".login button");
 btn.addEventListener("mouseenter",goToServer);
-const inputs = document.querySelectorAll(".wrap-input");
+const inputs = document.querySelectorAll(".wrap-input input	");
 const pattern = {
   userName:  /^[\p{L}a-zA-Z\s]{7,100}$/u,
   phone:  /^(01|048)\d{7,9}$/,
   password: /^.{6,}$/,
+  conformPassword:/^.{6,}$/,
   email: /^([a-z\d-.]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,20})?$/,
 };
 function validate(field, regex) {
@@ -20,6 +20,10 @@ inputs.forEach((input) => {
   input.addEventListener("keyup", (event) => {
     validate(event.target, pattern[event.target.attributes.name.value]);
   });
+});
+let confirmedPassword = document.getElementById('confirmPassword');
+  confirmedPassword.addEventListener("keyup", () => {
+	validatePassword();
 });
 let governments = document.querySelector("#governments");
 let cities = document.querySelector("#cities");
@@ -38,7 +42,7 @@ readJsonFile("../resources/js/governorates.json").then(data =>{
 governments.addEventListener('change',event =>{
 	const selectedIndex = event.target.selectedIndex;
 	let govermentId = event.target.options[selectedIndex].id;
-	 setCities(govermentId);
+	setCities(govermentId);
 });
 
 
@@ -93,7 +97,8 @@ function removeOptionsFromSelecTag(select){
 function showError(){
 let error = document.querySelector(".error");
 
-if (error.children.length > 0) {
+if (error.firstElementChild.textContent.length > 1 || error.getElementsByClassName('row').length >1)
+  {
     error.style.display = "block";
     let rows = error.querySelectorAll(".row");
 
@@ -123,13 +128,14 @@ function goToServer(){
 	console.log("called");
 	const inputs = document.querySelectorAll(".wrap-input");
 	let emptyField = true; 
-	inputs.forEach(i=>{
-		if(i.firstElementChild.value.length > 2){
+		for(input of inputs){
+		if(input.firstElementChild.value.length > 2){
 			emptyField = false;
 		}else{
 			emptyField = true;
+			break;
 		}
-	});
+	}
 	if(emptyField){
 		disabledSubmit();
 	}else{
@@ -139,11 +145,40 @@ function goToServer(){
 }
 
 function disabledSubmit(){
-	
+		  alert("تاكد من انك ادخلت جميع البيانات");	
 	      btn.disabled = true;
 		  btn.style.cursor = 'not-allowed';
 }
 function abledSubmit(){
 	      btn.disabled = false;
 		  btn.style.cursor = 'pointer';
+}
+function showAlrertForEnteringData(message){
+	alert(message);
+}
+
+function makeEmptyInputBorderRed(){
+	console.log('called');
+	let wrapInput = document.querySelectorAll('.wrap-input');
+	wrapInput.forEach(one=>{
+		let inputValue = one.firstElementChild.value;
+		if(inputValue === '' || inputValue === 'اسم المحافظة'
+		|| inputValue === 'اسم المركز'){
+			one.firstElementChild.style.border="1px solid red";
+		}else{
+			one.firstElementChild.style.border="none";
+		}
+	});
+
+}
+
+function validatePassword(){	
+	let password = document.getElementById('password');
+	let confirmedPassword = document.getElementById('confirmPassword');
+	if(password.value !== confirmedPassword.value){
+		console.log('not equal');
+		confirmedPassword.nextElementSibling.textContent="كلمة السر غير متطابقة";
+		confirmedPassword.nextElementSibling.classList.toggle="invalid";
+	}
+	
 }

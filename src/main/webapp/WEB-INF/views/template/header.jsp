@@ -4,7 +4,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
   </head>
 <body>
 <!-- stat header -->
@@ -24,7 +23,7 @@
           <i class="fa-solid fa-location-dot"></i>
           <span>المنوفية، قويسنا</span>
         </div>
-        <button class="btn">تسجيل الدخول</button>
+        <a href="/login" class="btn">تسجيل الدخول</a>
 
         <div class="active-user">زائر</div>
         <a href="/invoice">

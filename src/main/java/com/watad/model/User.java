@@ -72,7 +72,7 @@ public class User {
 	private String userAddress;
 	
 	@Column(name="active")
-	private boolean active = true;
+	private boolean active = false;
 	
 	
 	@ManyToMany(fetch = FetchType.EAGER , 

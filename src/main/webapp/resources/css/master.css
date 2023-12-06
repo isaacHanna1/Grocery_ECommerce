@@ -275,7 +275,7 @@ ol.submenu li a:hover{
     flex: 0.9;
   }
 }
-.header-area .btn {
+.header-area a.btn {
   width: 140px;
   height: 45px;
   font-size: 14px;
@@ -289,6 +289,12 @@ ol.submenu li a:hover{
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.9;
+  text-decoration: none;
+  text-align: center;
+  line-heigh:3;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -ms-transition: all 0.3s ease 0s;

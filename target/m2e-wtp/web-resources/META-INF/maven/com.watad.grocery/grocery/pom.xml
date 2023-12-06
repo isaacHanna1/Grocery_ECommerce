@@ -6,7 +6,6 @@
   <packaging>war</packaging>  
   <version>0.0.1-SNAPSHOT</version>  
   
-  
    <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -23,6 +22,8 @@
         <org.aspectj-version>1.6.9</org.aspectj-version>
         <jersey2.version>2.19</jersey2.version>
     	<jaxrs.version>2.0.1</jaxrs.version>
+    	  <email.version>1.6.2</email.version>
+    	
     </properties>
     <dependencies>
         <!-- Spring MVC Dependency -->
@@ -31,6 +32,17 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+  			<groupId>org.springframework</groupId>
+  			<artifactId>spring-context-support</artifactId>
+  			<version>${spring.version}</version>
+		</dependency>
+        <!-- java mail -->
+        <dependency>
+  			<groupId>com.sun.mail</groupId>
+  			<artifactId>javax.mail</artifactId>
+  			<version>${email.version}</version>
+		</dependency>
         <!-- Spring ORM -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -162,9 +174,13 @@
     <version>5.0.3.RELEASE</version> <!-- Use the appropriate version -->
 </dependency>
 
-
-
-
+   <!-- Spring Security Taglibs -->
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-taglibs</artifactId>
+        <version>5.5.0</version> <!-- Use the specific version you need -->
+        <scope>provided</scope>
+    </dependency>
     </dependencies>
     <build>
         <plugins>

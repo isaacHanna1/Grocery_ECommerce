@@ -6,9 +6,13 @@
         margin-bottom: 15px; 
         border-radius: 4px;
         position: absolute;
-        top: 120px;
+        top: 80px;
         right: 20px;
         display: none;
+        font-size:12px;
+}
+.show{
+	display:block;
 }
 input + p {
   font-family: arial;
@@ -52,11 +56,19 @@ input.invalid + p {
   width: 100%;
   display: block;
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+  margin-top: 35px;
+  
 }
 .wrap-input {
   min-width: 300px;
   margin-top: 15px;
+}
+.login .message p{
+	width:250px;
+	margin: auto;
+	font-size: 12px;
+	color:var(--main-color);
 }
 @media (min-width: 650px) {
   .wrap-input {

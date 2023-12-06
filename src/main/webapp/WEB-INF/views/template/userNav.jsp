@@ -24,6 +24,9 @@
       	<c:forEach var="category" items="${allCategories}">
       	<li id="${category.id}"><i class="fa-solid fa-caret-down"></i><a href="#">${category.categoryName}</a></li>
       	</c:forEach>
+      	<li>
+      	<i class="fa-solid fa-caret-down"></i><a href="/logout">تسجيل الخروج</a>
+      	<li>
       </ul>
     </div>
 

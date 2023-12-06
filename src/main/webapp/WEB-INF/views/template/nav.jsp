@@ -5,7 +5,6 @@
 <html>
 <head>
 
-
 </head>
 <body>
 <div class="section-box">
@@ -39,6 +38,11 @@
           <i class="fa-solid fa-caret-down"></i>
           <a href="/marketPlace"> وجة المستخدم </a>
         </li>
+        <li>
+          <i class="fa-solid fa-caret-down"></i>
+          <a href="/logout"> تسجيل الخروج </a>
+        </li>
+        
       </ul>
     </div>
 

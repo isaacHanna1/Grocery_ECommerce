@@ -16,19 +16,19 @@
   <!-- start header -->
     <jsp:include page="template/header.jsp"/>
     <!-- End header -->
-  
-   <div class="container">
-   <div class="error">
+  <div class="error">
+   <div class="row">*${errorOf}</div>
       <c:forEach var="error" items="${fieldErrors}">
       	<div class="row">*${error.field}</div>
       </c:forEach>
       </div>
+   <div class="container">
       <div class="login">
         <form action="/add-user" method="POST">
           <span class="login-title">إنشاء حساب</span>
           <div class="wrap-input">
             <input type="text" placeholder="ادخل اسمك *" name="userName" value="${register.userName}"/>
-				 <p>مثال isaac hanna</p>            
+				 <p>اكتب اسمك بالكامل مثل : اسحق حنا</p>            
           </div>
           <div class="wrap-input">
           	<select id="governments"  name="government">
@@ -42,19 +42,20 @@
           </div>  
           <div class="wrap-input">
             <input type="number" placeholder="ادخل رقم التليفون *" name="phone" value="${register.phone}"/>
-			<p>مثال 01205214283</p>
+			<p>ادخل رقم تليفون مكو من 11 رقم </p>
           </div>
           <div class="wrap-input">
             <input type="email" placeholder="ادخل البريد الالكتروني " name="email" value="${register.email}"/>
-			<p>مثال seha.abdo@gmail.com</p>            
+			<p>اكتب بريد الالكتروني مثل :  seha.abdo@gmail.com</p>            
           </div>
 
           <div class="wrap-input">
-            <input type="password" placeholder="ادخل الرقم السري * " name="password" />
+            <input id="password" type="password" placeholder="ادخل الرقم السري * " name="password" />
             <p>لابد ان لا يقل عن 6 احرف</p>
           </div>
           <div class="wrap-input">
-            <input type="password" placeholder="تأكيد الرقم السري *" />
+            <input id="confirmPassword" type="password" placeholder="تأكيد الرقم السري *" name="conformPassword"/>
+			<p></p>            
           </div>
           <div class="wrap-input">
             <textarea  placeholder="ادخل عنوانك" name="address" >${register.address}</textarea>
@@ -63,6 +64,7 @@
           <div class="send">
             <button>إنشاء</button>
           </div>
+          
         </form>
       </div>
     </div>
