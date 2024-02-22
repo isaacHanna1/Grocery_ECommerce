@@ -20,7 +20,8 @@ public class RoleDaoImp implements RoleDao {
 	public Role findByName(String roleName) {
 	  Session session = this.mySessionFactory.getCurrentSession();
 	  String hql = "FROM roles WHERE roleName = :roleName";
-	    Query<Role> query = session.createQuery(hql);
+	    @SuppressWarnings("unchecked")
+		Query<Role> query = session.createQuery(hql);
 	    query.setParameter("roleName", roleName);
         return query.uniqueResult();
 	}

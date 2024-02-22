@@ -19,7 +19,6 @@ import com.watad.Dao.SubCategoryDao;
 import com.watad.Dao.UnitDao;
 import com.watad.Dao.itemDao;
 import com.watad.Dto.ItemDto;
-import com.watad.Dto.SubCategoryDto;
 import com.watad.model.Category;
 import com.watad.model.Item;
 import com.watad.model.SubCategory;

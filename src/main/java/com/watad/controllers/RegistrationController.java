@@ -1,14 +1,12 @@
 package com.watad.controllers;
 
-import java.time.LocalDateTime;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import javax.validation.Valid;
-
-import com.watad.services.EmailValidationService;
-import com.watad.services.VerificationTokenService;
-import com.watad.Dao.VerificationTokenDao;
 import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +27,7 @@ import javax.validation.ConstraintViolationException;
 import com.watad.Dao.UserDao;
 import com.watad.Dto.RegistrationDto;
 import com.watad.model.User;
-import com.watad.model.VerificationToken;
+import com.watad.services.UrlManipulator;
 
 
 @Controller
@@ -39,15 +37,9 @@ public class RegistrationController {
 	@Autowired
 	private UserDao userDao;
 	
+	@Autowired
+	private UrlManipulator urlManipulator ;
 
-	@Autowired
-	private VerificationTokenDao verificationTokenDao;
-	
-	@Autowired
-	private VerificationTokenService VerificationTokenService;  
-	
-	@Autowired
-	private EmailValidationService validationService;  
 	
 	@GetMapping("/signUp")
 	@Transactional
@@ -97,17 +89,21 @@ public class RegistrationController {
 	
 	@GetMapping("/active/{token}")
 	public String activeUser(@PathVariable String token , Model model) {
-		VerificationToken verificationToken  = verificationTokenDao.getVerificationTokenBytoken(token);
-		LocalDateTime expiredTime = verificationToken.getExpireDate();
-		boolean isExpired = VerificationTokenService.isExpired(expiredTime);
-		if(isExpired) {
+
+		System.out.println("the active token that arraived :"+token);
+		String url = urlManipulator.decrypt(token);
+		long milliSeconds = Long.parseLong(urlManipulator.extractExpireDate(url));
+		System.out.println("the mill:"+milliSeconds);
+		if(isNotExpired(milliSeconds)) {
 			String message = "لقد انتهت صلاحية التفعيل حاول مرة اخري";
 			model.addAttribute("errorMessage", message);
 			return "errorPage";
 		}else {
-		validationService.activateAccount(token);
-		model.addAttribute("message", "تم التفعيل بنجاح");
-		return "login";
+			long id = Long.parseLong(urlManipulator.extractId(url));
+			System.out.println("the id is :"+id);
+			userDao.activeUserAccount(id);
+		    model.addAttribute("message", "تم التفعيل بنجاح");
+		    return "login";
 		}
 	} 
 	
@@ -122,4 +118,29 @@ public class RegistrationController {
 	    }
 	    return fieldErrors;
 	}
+	
+
+
+    public static String decodeURL(String encodedUrl) {
+        try {
+            // Decode the URL using UTF-8 encoding
+            return URLDecoder.decode(encodedUrl, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            // Handle decoding exception
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public boolean isNotExpired(long dateInMilliSeconds) {
+    	
+    	Date date = new Date(dateInMilliSeconds);
+    	Date now = new Date();
+    	int compareDate = date.compareTo(now);
+    	if(compareDate < 0) {
+    		return true ;
+    	}else {
+    		return false;
+    	}
+    }
 }

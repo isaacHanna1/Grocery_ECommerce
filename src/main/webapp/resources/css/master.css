@@ -238,6 +238,9 @@ ol.submenu li a:hover{
   margin-right: 5px;
   font-weight: bold;
 }
+.header-area .location #userId{
+	display:none;
+}
 .header-area .which-page {
   color: #fff;
   font-size: 21px;

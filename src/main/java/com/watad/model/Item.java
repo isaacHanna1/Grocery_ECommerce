@@ -1,6 +1,5 @@
 	package com.watad.model;
 	
-	import java.sql.Blob;
 	import java.sql.Date;
 	
 	import javax.persistence.Column;

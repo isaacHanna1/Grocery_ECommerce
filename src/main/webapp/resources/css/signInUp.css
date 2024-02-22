@@ -11,6 +11,15 @@
         display: none;
         font-size:12px;
 }
+.messageSucessful{
+	color: green;
+	font-weight: bold;
+	padding: 10px;
+	border: 2px solid green;
+	background-color: #e8f4e8;
+	position: absolute;
+    top: 90px;
+}
 .show{
 	display:block;
 }
@@ -38,7 +47,6 @@ input.invalid + p {
 
 .login {
   width: 100%;
-  min-height: 90vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -68,7 +76,7 @@ input.invalid + p {
 	width:250px;
 	margin: auto;
 	font-size: 12px;
-	color:var(--main-color);
+	display: block;
 }
 @media (min-width: 650px) {
   .wrap-input {

@@ -4,8 +4,11 @@ D:\eclipsProjects\grocery\src\main\java\com\watad\controllers\SubCategoryControl
 D:\eclipsProjects\grocery\src\main\java\com\watad\Dao\CategoryDao.java
 D:\eclipsProjects\grocery\src\main\java\com\watad\controllers\MarketplaceController.java
 D:\eclipsProjects\grocery\src\main\java\com\watad\Dao\UserDaoImp.java
+D:\eclipsProjects\grocery\src\main\java\com\watad\services\CustomAuthenticationFailureHandler.java
 D:\eclipsProjects\grocery\src\main\java\com\watad\model\VerificationToken.java
 D:\eclipsProjects\grocery\src\main\java\com\watad\controllers\UnitController.java
+D:\eclipsProjects\grocery\src\main\java\com\watad\customException\EmailValidationException.java
+D:\eclipsProjects\grocery\src\main\java\com\watad\customException\InactiveUserException.java
 D:\eclipsProjects\grocery\src\main\java\com\watad\security\SecurityConfiguration.java
 D:\eclipsProjects\grocery\src\main\java\com\watad\model\SubCategory.java
 D:\eclipsProjects\grocery\src\main\java\com\watad\customFilter\CharacterEncodingFilter.java

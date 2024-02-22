@@ -22,7 +22,7 @@
         <org.aspectj-version>1.6.9</org.aspectj-version>
         <jersey2.version>2.19</jersey2.version>
     	<jaxrs.version>2.0.1</jaxrs.version>
-    	  <email.version>1.6.2</email.version>
+    	<email.version>1.6.2</email.version>
     	
     </properties>
     <dependencies>

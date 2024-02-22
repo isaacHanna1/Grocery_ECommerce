@@ -18,10 +18,24 @@
   
     <div class="container">
       <div class="login">
-        <form action="/login" method="POST">
-           <div class="message">
-      		 <p class="sucessful">${message}</p>
+       <div class="message">
+       <c:if test="${param.status eq 'checked'}">
+       	  <div class="messageSucessful">
+      		  <p class="sucessful">${message}</p>
       		</div>
+      	</c:if>
+      		  <c:if test="${param.errorType eq 'notfound'}">
+      		 	  <p class="error">
+      		 	 	البريد الالكتروني - الرقم السري خطأ 
+      		 	 </p>
+      		  </c:if>
+      		   <c:if test="${param.errorType eq 'inactive'}">
+      		 	  <p class="error">
+						قم بتفعيل الحساب من البريد الالكتروني
+      		 	 </p>
+      		  </c:if>
+      	  </div>
+        <form action="/login" method="POST">
           <span class="login-title">تسجبل الدخول</span>
           <div class="wrap-input">
             <input type="email" placeholder="ادخل البريد الالكتروني" name="username"/>

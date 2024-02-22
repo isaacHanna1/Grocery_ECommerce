@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Join;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Root;
 
@@ -15,11 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.watad.Dto.ItemDto;
-import com.watad.Dto.SubCategoryDto;
-import com.watad.model.Category;
 import com.watad.model.Item;
-import com.watad.model.SubCategory;
-import com.watad.model.Unit;
 
 
 @Component

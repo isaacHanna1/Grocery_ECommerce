@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.watad.Dao.CategoryDao;
 import com.watad.Dao.SubCategoryDao;
 import com.watad.Dao.itemDao;
@@ -31,6 +30,7 @@ public class MarketplaceController {
 	@Autowired
 	private itemDao itemDao;
 	
+
 	
 	@GetMapping("/marketPlace")
 	public ModelAndView getMarketPlace(ModelAndView modelAndView) {

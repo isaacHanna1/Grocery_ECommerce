@@ -1,63 +1,52 @@
 package com.watad.services;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.time.LocalDateTime;
+import java.net.URLEncoder;
 
 import javax.servlet.http.HttpServletRequest;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.watad.Dao.UserDao;
-import com.watad.Dao.VerificationTokenDao;
 import com.watad.model.User;
-import com.watad.model.VerificationToken;
+
 
 @Service
 public class EmailValidationServiceImp implements EmailValidationService {
 
-	 @Autowired
-	 private JavaMailSender mailSender;
+	
+	private final JavaMailSender mailSender;
+
+    public EmailValidationServiceImp(JavaMailSender mailSender) {
+        this.mailSender = mailSender;
+    }
 	 
 	
-	 @Autowired
-	 private VerificationTokenDao verificationTokenDao;
-
-	 @Autowired
-	 private SessionFactory mySessionFactory;
-		
-	
 	@Override
-	public void sendValidationEmail(User user , HttpServletRequest req) {
+	@Transactional(propagation = Propagation.SUPPORTS)
+	public boolean sendValidationEmail(User user ,String token  ,HttpServletRequest req) {
 		
-		String token = verificationTokenDao.
-						getVerificationToken(user.getId());
-		
-		String activationLink = getDomain(req) +"/active/"+token ;
-		
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setTo(user.getUserEmail());
-        mailMessage.setSubject("Activate Your Account");
-        mailMessage.setText("To activate your account, click here: " + activationLink);
-        mailSender.send(mailMessage);
-		
+		try {
+		String activationLink = getDomain(req) +"/active/"+token ;	   
+        SimpleMailMessage messages = new SimpleMailMessage();
+        messages.setFrom("learntest402@gmail.com");
+        messages.setTo(user.getUserEmail());
+        messages.setSubject("Activate Your Account");
+        messages.setText("To activate your account, click here: " + activationLink);
+        System.out.println("all things runs well till now");
+        
+        mailSender.send(messages);
+        return true;
+		} catch (Exception ex) {
+		    System.out.println("the exception happened because : "+ex.getMessage());
+		    System.out.println("the exception happened because : "+ex.getCause().toString());
+		    return false ; 
+		}
 	}
 
-	@Override
-	@Transactional
-	public void activateAccount(String token) {
-		Session session = this.mySessionFactory.getCurrentSession();
-		User user = verificationTokenDao.getUser(token);
-		user.setActive(true);
-		session.update(user);
-		
-	}
 
 	@Override
 	public String getDomain(HttpServletRequest request) {
@@ -70,6 +59,17 @@ public class EmailValidationServiceImp implements EmailValidationService {
 		    }
 	}
 	
+	
+	 public static String encodeURL(String url) {
+	        try {
+	            // Encode the URL using UTF-8 encoding
+	            return URLEncoder.encode(url, "UTF-8");
+	        } catch (UnsupportedEncodingException e) {
+	            // Handle encoding exception
+	            e.printStackTrace();
+	            return null;
+	        }
+	    }
 	
 	
 }

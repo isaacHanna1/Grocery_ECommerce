@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.watad.Dao.UserDao;
+import com.watad.customException.InactiveUserException;
 import com.watad.model.User;
 
 @Service
@@ -22,15 +23,20 @@ public class CustomUserDetailsService
 		User user = userDao.findByEmail(username);
 		
 		if(user == null) {
+			System.out.println("user not found exception from cutom user details");
             throw new UsernameNotFoundException("لا يوجد مستخدم: " + username);
 		}
+		if(!user.isActive()) {
+			System.out.println("not active");
+            throw new InactiveUserException("قم بتفعيل الحساب" + username);
+		}else {
 		UserDetails userDetails = org.springframework.security.core.userdetails.User
 				.withUsername(user.getUserEmail())
 				.password(user.getPassword())
 				.roles(user.getRoles().get(0).getRoleName())
 				.build();
 		return userDetails;
-		
+		}
 	}
 
 	

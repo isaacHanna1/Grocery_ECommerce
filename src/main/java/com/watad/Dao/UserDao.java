@@ -12,5 +12,7 @@ public interface UserDao {
 	void saveUser(RegistrationDto registrationDto , HttpServletRequest req);
 	User findByEmail(String email);
 	User findByPhone(String phone);
+	User findById(long id);
+	void activeUserAccount(long id );
 	
 }

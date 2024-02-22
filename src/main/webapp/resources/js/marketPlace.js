@@ -95,8 +95,10 @@ sectioItems.addEventListener('click',event=>{
 		divInfo.appendChild(divDescription);
 		
 		let divPrice = document.createElement('div');
-		let itemPrice = Number(price.textContent); 
-		let textPrice = document.createTextNode(" LE "+price.textContent);
+		let priceText = price.textContent; 
+		let numericalPart = priceText.match(/\d+(\.\d+)?/); // Matches one or more digits optionally followed by a decimal and more digits
+		let itemPrice = numericalPart ? Number(numericalPart[0]) : null; // Convert to number or null if no numerical part found 
+		let textPrice = document.createTextNode(price.textContent);
 		divPrice.appendChild(textPrice);
 		divPrice.classList.add("price");
 		divDescription.appendChild(divPrice);

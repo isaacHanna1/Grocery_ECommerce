@@ -12,9 +12,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import com.watad.model.Category;
-import com.watad.model.SubCategory;
 import com.watad.model.Unit;
 
 @Component

@@ -106,7 +106,7 @@ function fetchItems(pageNumber , categoryID , subcategoryId ){
 										 	
 				let divAfterDiscountDiv = document.createElement('div');
 				divAfterDiscountDiv.setAttribute('id','after-discount');
-				let afterDiscountValue = document.createTextNode(price);
+				let afterDiscountValue = document.createTextNode(price+"ج.م");
 				divAfterDiscountDiv.appendChild(afterDiscountValue);
 				priceDiv.appendChild(divAfterDiscountDiv);
 								
@@ -161,8 +161,6 @@ async function getSubCategories(categoryId){
 		console.error("there was an error when fetching data (exception)" , err);
 	}
 }
-
-
 
 
 async function getItemsinSubCategory(pageNumber ,categoryId,subCategoryId){

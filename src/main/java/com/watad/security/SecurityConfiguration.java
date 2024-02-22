@@ -10,13 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
-
+import com.watad.services.CustomAuthenticationFailureHandler;
 import com.watad.services.CustomUserDetailsService;
+
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration 
@@ -26,7 +23,8 @@ extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private CustomUserDetailsService userDetailsService;
 
-  
+	@Autowired
+	private CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
 	
 	
 	@Override
@@ -37,19 +35,24 @@ extends WebSecurityConfigurerAdapter{
          .antMatchers("https://fonts.googleapis.com/**").permitAll()
          .antMatchers("/resources/**").permitAll()
          .antMatchers("/marketPlace").permitAll()
-             .antMatchers("/signUp", "/add-user","/login", "/errorPage").permitAll()             
+         .antMatchers("/subCategory/**").permitAll()
+         .antMatchers("/items/**").permitAll()
+         .antMatchers("/itemsInSuchCategoryAndSubCategory/**").permitAll()
+         .antMatchers("/active/**").permitAll()
+             .antMatchers("/signUp", "/add-user","/login", "/errorPage").permitAll()
+             .antMatchers("/categoryPage","/itemPage","/allItems/**").hasRole("ADMIN")
              .anyRequest().authenticated()  // Require authentication for any other request
              .and()
          .formLogin()
              .loginPage("/login")
              .defaultSuccessUrl("/marketPlace")
+             .failureHandler(customAuthenticationFailureHandler)
              .permitAll()
              .and()
          .logout()
              .permitAll();
 	} 
 	
-
 		@Bean
 	    public PasswordEncoder passwordEncoder() {
 	        return new BCryptPasswordEncoder();
@@ -61,6 +64,10 @@ extends WebSecurityConfigurerAdapter{
 			= new DaoAuthenticationProvider();
 			authenticationProvider.setPasswordEncoder(passwordEncoder());
 			authenticationProvider.setUserDetailsService(userDetailsService);
+			// Add logging
+		    authenticationProvider.setPostAuthenticationChecks(userDetails -> {
+		        System.out.println("Authentication success for: " + userDetails.getUsername());
+		    });
 			return authenticationProvider;
 		}
 		

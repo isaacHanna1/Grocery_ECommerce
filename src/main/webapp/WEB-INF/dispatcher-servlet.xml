@@ -16,10 +16,7 @@
     	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
     	http://www.springframework.org/schema/tx
 		https://www.springframework.org/schema/tx/spring-tx.xsd" >  
-  
-  
-  
-  
+
   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
   	<property name="driverClassName"  value="com.mysql.cj.jdbc.Driver" />
   	<property name="url" value="jdbc:mysql://localhost:3306/grocery?useUnicode=true&amp;characterEncoding=utf-8"/>
@@ -57,16 +54,15 @@
     <property name="host" value="smtp.gmail.com" />
     <property name="port" value="587" />
     <property name="username" value="learntest402@gmail.com" />
-    <property name="password" value="qdmh zify maxd yzso" />
+    <property name="password" value="ivvm wxgw lsmx qukv" />
 
     <!-- Set additional JavaMail properties -->
     <property name="javaMailProperties">
         <props>
-             <prop key="mail.transport.protocol">smtp</prop>
+            <prop key="mail.transport.protocol">smtp</prop>
             <prop key="mail.smtp.auth">true</prop>
             <prop key="mail.smtp.starttls.enable">true</prop>
             <prop key="mail.debug">true</prop>
-            
         </props>
     </property>
 </bean>
@@ -95,8 +91,8 @@
   	<!-- enable Aop  -->
   	<aop:aspectj-autoproxy />
   	
-  	<!-- enable transaction  -->
-  	<tx:annotation-driven/>
+  	<!-- enable transaction "transactionManager" -->
+  	<tx:annotation-driven transaction-manager="transactionManager"/>
   	
   <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
         <property name="prefix" value="/WEB-INF/views/"></property>  

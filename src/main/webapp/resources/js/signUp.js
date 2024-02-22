@@ -122,30 +122,16 @@ if (error.firstElementChild.textContent.length > 1 || error.getElementsByClassNa
 }
 }
 
-
-
 function goToServer(){
-	console.log("called");
-	const inputs = document.querySelectorAll(".wrap-input");
-	let emptyField = true; 
-		for(input of inputs){
-		if(input.firstElementChild.value.length > 2){
-			emptyField = false;
-		}else{
-			emptyField = true;
-			break;
-		}
-	}
-	if(emptyField){
+	if(thereIsAnyErrorMessageShown()){
 		disabledSubmit();
 	}else{
 		abledSubmit();
 	}
-	console.log(emptyField);
 }
 
 function disabledSubmit(){
-		  alert("تاكد من انك ادخلت جميع البيانات");	
+		  alert("تاكد من انك ادخلت البيانات بطريقة صحيحة");	
 	      btn.disabled = true;
 		  btn.style.cursor = 'not-allowed';
 }
@@ -176,9 +162,33 @@ function validatePassword(){
 	let password = document.getElementById('password');
 	let confirmedPassword = document.getElementById('confirmPassword');
 	if(password.value !== confirmedPassword.value){
-		console.log('not equal');
+		confirmedPassword.nextElementSibling.style.setProperty('opacity',1);
+		confirmedPassword.nextElementSibling.style.setProperty('font-size',"12px");
+		confirmedPassword.nextElementSibling.style.setProperty('margin',"8px");
 		confirmedPassword.nextElementSibling.textContent="كلمة السر غير متطابقة";
 		confirmedPassword.nextElementSibling.classList.toggle="invalid";
+	}else{
+		confirmedPassword.nextElementSibling.style.setProperty('opacity',0);
 	}
 	
+	
+	
+}
+
+function thereIsAnyErrorMessageShown(){
+	
+	console.log("called");
+	let errorMessage  = document.querySelectorAll(".shown");
+	let founded = false ;
+	for(let shown of errorMessage){
+		if (window.getComputedStyle(shown).opacity == 1) {
+			founded = true;
+			break;			
+		}	
+	}
+	return founded;
+	
+	
+
+	return false;
 }

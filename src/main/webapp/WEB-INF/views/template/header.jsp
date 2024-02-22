@@ -21,11 +21,12 @@
         </div>
         <div class="location">
           <i class="fa-solid fa-location-dot"></i>
-          <span>المنوفية، قويسنا</span>
+          <span>${userData.getGovernment()},${userData.getCity()}</span>
+          <span id="userId">${userData.getId()}</span>
         </div>
         <a href="/login" class="btn">تسجيل الدخول</a>
 
-        <div class="active-user">زائر</div>
+        <div class="active-user">${userData.getUserName()}</div>
         <a href="/invoice">
         <div class="cart-icon">
           <i class="fa-solid fa-cart-arrow-down"></i>

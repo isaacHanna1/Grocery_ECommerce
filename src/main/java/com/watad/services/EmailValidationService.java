@@ -6,10 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.watad.model.User;
 public interface EmailValidationService {
 
-	void sendValidationEmail(User user, HttpServletRequest req);
-	
-	void activateAccount(String token);
-	
+	boolean sendValidationEmail(User user,String token , HttpServletRequest req);
 	String getDomain(HttpServletRequest request);
 	
 }
