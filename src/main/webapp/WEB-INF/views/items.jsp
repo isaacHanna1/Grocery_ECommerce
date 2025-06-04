@@ -13,6 +13,9 @@
     
   </head>
   <body>
+   <!-- start simple ad -->
+  		<jsp:include page="template/headerAds.jsp"/>
+  <!-- end simple ad -->
   <!-- stat header -->
     <jsp:include page="template/header.jsp"/>
     <!-- End header -->
@@ -74,11 +77,11 @@
         </div>
         <div class="data-row">
           <label>  خصم للعميل : </label>
-          <input id="discountPercentageCustomer" step="0.01" name="discountPercentageCustomer" type="number" placeholder="0%" required="required"  />
+          <input id="discountPercentageCustomer" step="0.01" name="discountPercentageCustomer" type="number" placeholder="0%" value="0" required="required"  />
         </div>
         <div class="data-row">
           <label> خصم للتاجر: </label>
-          <input id="discountPercentageTrader" step="0.01" name="discountPercentageTrader" type="number" placeholder="0%" required="required" />
+          <input id="discountPercentageTrader" step="0.01" name="discountPercentageTrader" type="number" placeholder="0%" value="0" required="required" />
         </div>
         <div class="data-row">
           <label> البيع للعميل : </label>

@@ -9,13 +9,14 @@
 <!-- stat header -->
     <div class="header-area">
       <div class="container">
-        <div class="logo">WATAD</div>
+       <a href="/marketPlace"><div class="logo"></div></a>
         <div class="search-box">
           <form action="">
             <input
               type="text"
               name="search_box"
-              placeholder="اكتب ما انت تبحث عنه ؟"
+              placeholder="ابحث؟"
+              autocomplete="off"
             />
           </form>
         </div>
@@ -24,9 +25,11 @@
           <span>${userData.getGovernment()},${userData.getCity()}</span>
           <span id="userId">${userData.getId()}</span>
         </div>
+        <!-- 
         <a href="/login" class="btn">تسجيل الدخول</a>
+         -->
 
-        <div class="active-user">${userData.getUserName()}</div>
+        <div id="${userData.id}" class="active-user">${userData.getUserName()}</div>
         <a href="/invoice">
         <div class="cart-icon">
           <i class="fa-solid fa-cart-arrow-down"></i>

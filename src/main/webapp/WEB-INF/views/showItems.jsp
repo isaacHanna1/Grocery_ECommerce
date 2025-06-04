@@ -12,6 +12,10 @@
 <title>كل الاصناف</title>
 </head>
 <body>
+   <!-- start simple ad -->
+  		<jsp:include page="template/headerAds.jsp"/>
+  <!-- end simple ad -->
+  	<!-- stat header -->
  <!-- stat header -->
     <jsp:include page="template/header.jsp"/>
     <!-- End header -->
@@ -25,7 +29,7 @@
     	<div class="table-container col-6 show-items">
     	 	
         <h2>الاصناف</h2>
-        <input id="searchInput" placeholder="ابحث بإسم الصنف">
+        <input id="searchInput_admin" placeholder="ابحث بإسم الصنف">
         <a class="add" href ="/itemPage">اضافة</a>
        <div class="customContainer"> 
         <table class="allItems">
@@ -50,9 +54,9 @@
 	              <td>${all.sellingPriceCustomer}</td>
 	              <td>${all.sellingPriceTrader}</td>
 	              <td>
-	                <a href="/editItem/${all.id}" class="btn edit-btn">تعديل</a>
+	                <a href="/showItem/${all.getId()}" class="btn edit-btn">تعديل</a>
 	                <a href ="#" class="btn delete-btn">مسح</a>
-	                <a href ="/image/${all.id }" class="btn update-img">الصورة</a>
+	                <a href ="/image/${all.getId()}" class="btn update-img">الصورة</a>
 	              </td>
             </tr>
             </c:forEach>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import com.watad.Dao.CategoryDao;
@@ -55,10 +56,21 @@ public class CategoryController {
 	 * i will use  by javascript to delete the record 
 	*/
 	@DeleteMapping("/categoryApi/deleteCategory/{id}")
-	public Category deleteCategory(@PathVariable Long id) {
-		Category deletedCategory = categoryDao.getCategory(id);
+	public ResponseEntity<?> deleteCategory(@PathVariable Long id) {
+	   Category category = categoryDao.getCategory(id);
+	    
+	    if (category == null) {
+	        return ResponseEntity.notFound().build();
+	    }
+	    
+	    // Check if there are associated subcategories
+	    if (!category.getSubCategory().isEmpty()) {
+	        return ResponseEntity.badRequest().body("لا يمكنك مسح القسم لانه مرتبط باقسام فرعية ");
+	    }
+	    
 	    categoryDao.deleteCategory(id);
-	    return deletedCategory;
+	    
+	    return ResponseEntity.ok().body(category);
 	}
 	
 	@PutMapping("/categoryApi/editCategory")

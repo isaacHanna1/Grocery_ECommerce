@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -46,6 +47,16 @@ public class RegistrationController {
 	public ModelAndView getRegisteration() {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("signUp");
+		return modelAndView;
+	}
+	
+	@GetMapping("/userData/{userId}")
+	@Transactional
+	public ModelAndView getRegisteration(@PathVariable long userId) {
+		ModelAndView modelAndView = new ModelAndView();
+		User user = userDao.findById(userId);
+		modelAndView.addObject("userData",user);
+		modelAndView.setViewName("userData");
 		return modelAndView;
 	}
 	
@@ -85,8 +96,7 @@ public class RegistrationController {
 
 		}
 	}
-	}
-	
+	}	
 	@GetMapping("/active/{token}")
 	public String activeUser(@PathVariable String token , Model model) {
 

@@ -1,15 +1,27 @@
-.error{
-	    color: #d9534f; 
-        background-color: #f2dede;
-        border: 1px solid #d9534f;
+
+.display-none{
+	display:none;
+}
+
+
+
+.error , .success{
         padding: 10px;
         margin-bottom: 15px; 
         border-radius: 4px;
-        position: absolute;
-        top: 80px;
-        right: 20px;
+        text-align:center;
         display: none;
         font-size:12px;
+}
+.error{
+color: #d9534f; 
+border: 1px solid #d9534f;
+background-color: #f2dede;
+}
+.success{
+	color:#FFF;
+	border: 1px solid #36BA98;
+	background-color: #36BA98;
 }
 .messageSucessful{
 	color: green;
@@ -55,6 +67,10 @@ input.invalid + p {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  height:70vh;
+}
+.login form{
+	padding-bottom:60px;
 }
 .login .login-title {
   font-size: 30px;
@@ -71,6 +87,9 @@ input.invalid + p {
 .wrap-input {
   min-width: 300px;
   margin-top: 15px;
+}
+.login .message{
+	padding:5px;
 }
 .login .message p{
 	width:250px;
@@ -130,6 +149,9 @@ input.invalid + p {
   text-decoration: none;
   font-size: 12px;
 }
+.login .send{
+	margin-top: 15px;
+}
 .send button {
   font-size: 20px;
   color: #fff;
@@ -164,4 +186,27 @@ input.invalid + p {
   color: var(--main-color);
   text-decoration: none;
   font-weight: 800;
+}
+.changePassword{
+	padding: 20px;
+}
+
+/*Start forget password and create account*/
+.acc-container {
+    margin: 10px 0; 
+    text-align: center; 
+}
+
+.acc-container a {
+    color: #007BFF; 
+    text-decoration: none; 
+    font-weight: bold; 
+    color : var(--main-color);
+    transition: color 0.3s ease;
+    font-size:16px; 
+}
+
+.acc-container a:hover {
+    color: #0056b3; 
+    text-decoration: underline;
 }

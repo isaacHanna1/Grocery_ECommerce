@@ -1,3 +1,4 @@
+
 let parent_tr  = "";
 let itemId = "";
 let tableContent = document.querySelector(".table-container table tbody");
@@ -98,3 +99,78 @@ itemNames.forEach(itemName =>{
 	}
 });
 
+
+
+// this coming code for handling search in text box = search 
+
+let allItems = [];  
+fetchAllItems().then(items=>{
+	allItems = items;
+});
+
+let itemInCurrentTable = document.querySelector(".allItems tbody");
+let allTR              = itemInCurrentTable.querySelectorAll("tr");
+
+let searchInput_admin        = document.querySelector("#searchInput_admin");
+searchInput_admin.addEventListener('keyup',()=>{
+	let searchValueInpt = searchInput_admin.value;
+	if(searchValueInpt === ''){
+		allTR.forEach(row=>{
+				itemInCurrentTable.appendChild(row);
+		});
+	}else{
+		itemInCurrentTable.innerHTML = '';
+		let matchItem = filterItems(searchValueInpt);
+		matchItem.forEach(item=>{
+			let row = document.createElement('tr');
+		    row.innerHTML = `
+                    <td>${item.id}</td>
+                    <td>${item.itemName}</td>
+                    <td>${item.purchasePrice}</td>
+                    <td>${item.sellingPriceCustomer}</td>
+                    <td>${item.sellingPriceTrader}</td>
+                    <td>
+                        <a href="/showItem/${item.id}" class="btn edit-btn">تعديل</a>
+                        <a href ="#" class="btn delete-btn">مسح</a>
+                        <a href="/image/${item.id}" class="btn update-img">الصورة</a>
+                    </td>
+                `;
+		     itemInCurrentTable.appendChild(row);
+		});
+	}
+	
+});
+
+function filterItems(searchValue){
+    searchValue = searchValue.trim().toLowerCase(); 
+    let matchingItems = allItems.filter(item => {
+        return item.itemName && item.itemName.toLowerCase().includes(searchValue);
+    });
+    return matchingItems;
+}
+async function fetchAllItems(){
+	
+
+	try{
+		const headers={
+			'Content-Type':'application/json',
+		};
+		const requestOption = {
+			method:'GET',
+			headers:headers,
+		};
+		const host = window.location.origin;
+		const link = host+"/allItems";
+		const response = await fetch(link,requestOption);
+		
+		if(!response.ok){
+			throw new Error("Network response was not ok");
+		}
+		const data = await response.json();
+		return data;
+	}
+	catch(err){
+		console.error("there was an error when fetching data (exception)" , err);
+	}
+	
+}

@@ -6,39 +6,40 @@ import java.net.URISyntaxException;
 import java.net.URLEncoder;
 
 import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import com.watad.model.User;
+import com.watad.notification.strategy.NotificationStrategy;
+import com.watad.resetPassword.EmailNotifcationStrategy;
+import com.watad.notification.strategy.EmailNotifications;
 
 
 @Service
 public class EmailValidationServiceImp implements EmailValidationService {
 
 	
-	private final JavaMailSender mailSender;
-
-    public EmailValidationServiceImp(JavaMailSender mailSender) {
-        this.mailSender = mailSender;
-    }
-	 
+	private final NotificationStrategy notify ;
 	
+	public EmailValidationServiceImp (NotificationStrategy notify) {
+        this.notify = notify;
+
+	}
+	
+
 	@Override
 	@Transactional(propagation = Propagation.SUPPORTS)
 	public boolean sendValidationEmail(User user ,String token  ,HttpServletRequest req) {
 		
 		try {
 		String activationLink = getDomain(req) +"/active/"+token ;	   
-        SimpleMailMessage messages = new SimpleMailMessage();
-        messages.setFrom("learntest402@gmail.com");
-        messages.setTo(user.getUserEmail());
-        messages.setSubject("Activate Your Account");
-        messages.setText("To activate your account, click here: " + activationLink);
-        System.out.println("all things runs well till now");
-        
-        mailSender.send(messages);
+        String subject 		  = "Activate Your Account";
+        String message   	  = "To activate your account "+user.getUserName()+" , click here: " + activationLink;
+        notify.sendNotification(subject, user, message);
         return true;
 		} catch (Exception ex) {
 		    System.out.println("the exception happened because : "+ex.getMessage());

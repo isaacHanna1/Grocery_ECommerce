@@ -1,0 +1,242 @@
+2025-03-12 10:57:29 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-12 10:57:49 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-12 10:57:49 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-12 10:57:51 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-12 10:58:05 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-12 10:58:06 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-12 10:58:14 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a146a43, org.springframework.security.web.context.SecurityContextPersistenceFilter@74903808, org.springframework.security.web.header.HeaderWriterFilter@7437eba0, org.springframework.security.web.authentication.logout.LogoutFilter@76feb72b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1b0493d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@167b7b61, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17b29146, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a08cc9b, org.springframework.security.web.session.SessionManagementFilter@148e794b, org.springframework.security.web.access.ExceptionTranslationFilter@3a820e3e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@d7100db]
+2025-03-12 10:58:14 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 44996 ms
+2025-03-12 10:58:14 [http-bio-8080-exec-1] INFO  MarketplaceController - Just Started The Home Page
+2025-03-12 10:58:14 [http-bio-8080-exec-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-03-12 10:58:20 [http-bio-8080-exec-3] WARN  ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException] to ModelAndView [view="errorPage"; model={errorMessage=null}]
+2025-03-12 11:00:45 [http-bio-8080-exec-10] INFO  MarketplaceController - Just Started The Home Page
+2025-03-12 11:00:45 [http-bio-8080-exec-9] WARN  ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException] to ModelAndView [view="errorPage"; model={errorMessage=null}]
+2025-03-12 11:30:51 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-12 11:31:00 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-12 11:31:00 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-12 11:31:00 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-12 11:31:02 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-12 11:31:02 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-12 11:31:08 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@311de0e8, org.springframework.security.web.context.SecurityContextPersistenceFilter@1b579b6d, org.springframework.security.web.header.HeaderWriterFilter@6106a950, org.springframework.security.web.authentication.logout.LogoutFilter@63b6cb61, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@8a9f563, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@591d1a79, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a9cd206, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30d0c384, org.springframework.security.web.session.SessionManagementFilter@6e27d08d, org.springframework.security.web.access.ExceptionTranslationFilter@78f19a6c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@34470f2]
+2025-03-12 11:31:08 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 17422 ms
+2025-03-12 11:39:35 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-12 11:39:58 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-12 11:39:58 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-12 11:39:59 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-12 11:40:02 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-12 11:40:05 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-12 11:40:20 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@acb6395, org.springframework.security.web.context.SecurityContextPersistenceFilter@1be83246, org.springframework.security.web.header.HeaderWriterFilter@49df704c, org.springframework.security.web.authentication.logout.LogoutFilter@6e9c04a0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3e04891e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64f1d19, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6590a3bd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b92cc87, org.springframework.security.web.session.SessionManagementFilter@514b819f, org.springframework.security.web.access.ExceptionTranslationFilter@71a9ba3e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a41f0ed]
+2025-03-12 11:40:20 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 45646 ms
+2025-03-12 11:40:24 [http-bio-8080-exec-4] INFO  MarketplaceController - Just Started The Home Page
+2025-03-12 11:40:24 [http-bio-8080-exec-1] INFO  MarketplaceController - Just Started The Home Page
+2025-03-12 11:40:25 [http-bio-8080-exec-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-03-12 11:40:30 [http-bio-8080-exec-7] WARN  ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException] to ModelAndView [view="errorPage"; model={errorMessage=null}]
+2025-03-12 11:40:54 [http-bio-8080-exec-8] WARN  ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException] to ModelAndView [view="errorPage"; model={errorMessage=null}]
+2025-03-12 11:42:17 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-12 11:42:18 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-12 11:42:18 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-12 11:42:18 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-12 11:42:19 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-12 11:42:19 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-12 11:42:25 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@20127444, org.springframework.security.web.context.SecurityContextPersistenceFilter@7c9ba781, org.springframework.security.web.header.HeaderWriterFilter@53771074, org.springframework.security.web.authentication.logout.LogoutFilter@3195b201, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@747ec48b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5978cce5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@120d847, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@758626b7, org.springframework.security.web.session.SessionManagementFilter@b4edbb3, org.springframework.security.web.access.ExceptionTranslationFilter@448c8397, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2590494b]
+2025-03-12 11:42:25 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Completed initialization in 8524 ms
+2025-03-12 11:43:06 [http-bio-8080-exec-5] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-03-12 11:43:10 [http-bio-8080-exec-5] INFO  UserDaoImp - Email Sent sucessfully
+2025-03-12 11:45:06 [http-bio-8080-exec-9] WARN  PageNotFound - No mapping for GET /active/resources/js/login.js
+2025-03-12 11:45:12 [http-bio-8080-exec-9] WARN  PageNotFound - No mapping for GET /active/resources/js/login.js
+2025-03-12 11:45:28 [http-bio-8080-exec-8] INFO  MarketplaceController - Just Started The Home Page
+2025-03-12 11:45:30 [http-bio-8080-exec-5] WARN  PageNotFound - No mapping for GET /favicon.ico
+2025-03-12 12:33:42 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-12 12:33:47 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-12 12:33:47 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-12 12:33:47 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-12 12:33:50 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-12 12:33:51 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-12 12:33:57 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2940c120, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f63961a, org.springframework.security.web.header.HeaderWriterFilter@501101bf, org.springframework.security.web.authentication.logout.LogoutFilter@4da10444, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2856ee6c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a5ecdbe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6dbbf096, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33b855ef, org.springframework.security.web.session.SessionManagementFilter@c3eadb2, org.springframework.security.web.access.ExceptionTranslationFilter@5e8141ff, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f46d99b]
+2025-03-12 12:33:57 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 14021 ms
+2025-03-12 12:45:38 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-12 12:45:51 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-12 12:45:51 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-12 12:45:51 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-12 12:45:52 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-12 12:45:53 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-12 12:46:00 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56fda3ca, org.springframework.security.web.context.SecurityContextPersistenceFilter@45d3c228, org.springframework.security.web.header.HeaderWriterFilter@ca84598, org.springframework.security.web.authentication.logout.LogoutFilter@acc7ebc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@50eb7bc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e6ee9f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2452255d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b0f1a79, org.springframework.security.web.session.SessionManagementFilter@8a9ac84, org.springframework.security.web.access.ExceptionTranslationFilter@2a39e1a1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@63b61814]
+2025-03-12 12:46:00 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Completed initialization in 21605 ms
+2025-03-12 12:46:01 [http-bio-8080-exec-4] WARN  PageNotFound - No mapping for GET /grocery/login
+2025-03-12 12:46:16 [http-bio-8080-exec-4] WARN  PageNotFound - No mapping for GET /grocery/login
+2025-03-12 12:46:58 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-12 12:47:00 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-12 12:47:00 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-12 12:47:00 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-12 12:47:01 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-12 12:47:02 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-12 12:47:10 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e99bf6e, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a82faf3, org.springframework.security.web.header.HeaderWriterFilter@2314b89f, org.springframework.security.web.authentication.logout.LogoutFilter@da29b00, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@741efd15, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1420692c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@29cc5f17, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a1a95fe, org.springframework.security.web.session.SessionManagementFilter@3ef8f0ce, org.springframework.security.web.access.ExceptionTranslationFilter@4898262f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7791b9a6]
+2025-03-12 12:47:10 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Completed initialization in 11495 ms
+2025-03-12 12:47:59 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-12 12:48:01 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-12 12:48:01 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-12 12:48:01 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-12 12:48:01 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-12 12:48:02 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-12 12:48:06 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1f9b6344, org.springframework.security.web.context.SecurityContextPersistenceFilter@49ad7b2e, org.springframework.security.web.header.HeaderWriterFilter@d0a8a39, org.springframework.security.web.authentication.logout.LogoutFilter@4be69213, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2501e89e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7676355a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@282df9cd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53431e02, org.springframework.security.web.session.SessionManagementFilter@3ff082ec, org.springframework.security.web.access.ExceptionTranslationFilter@a40ef71, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@375a23db]
+2025-03-12 12:48:06 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Completed initialization in 6133 ms
+2025-03-12 12:48:20 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-12 12:48:21 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-12 12:48:21 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-12 12:48:21 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-12 12:48:21 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-12 12:48:22 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-12 12:48:26 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@365fe23a, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a3c2b7f, org.springframework.security.web.header.HeaderWriterFilter@4d409d48, org.springframework.security.web.authentication.logout.LogoutFilter@2728f7ba, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@660b9a48, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79050010, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c531c6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ce8d2af, org.springframework.security.web.session.SessionManagementFilter@30051877, org.springframework.security.web.access.ExceptionTranslationFilter@2ed5a7cb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5ee78684]
+2025-03-12 12:48:26 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Completed initialization in 6837 ms
+2025-03-12 12:48:44 [http-bio-8080-exec-3] INFO  MarketplaceController - Just Started The Home Page
+2025-03-12 12:48:44 [http-bio-8080-exec-3] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-03-12 12:48:46 [http-bio-8080-exec-1] WARN  PageNotFound - No mapping for GET /grocery/login
+2025-03-12 12:48:46 [http-bio-8080-exec-3] WARN  PageNotFound - No mapping for GET /grocery/login
+2025-03-12 12:49:12 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-12 12:49:14 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-12 12:49:14 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-12 12:49:14 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-12 12:49:14 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-12 12:49:15 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-12 12:49:19 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51ccdb6a, org.springframework.security.web.context.SecurityContextPersistenceFilter@798be904, org.springframework.security.web.header.HeaderWriterFilter@160c4987, org.springframework.security.web.authentication.logout.LogoutFilter@f826a9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3ce95ae7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3936cf1e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@bde22cb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f06654a, org.springframework.security.web.session.SessionManagementFilter@7a73aeeb, org.springframework.security.web.access.ExceptionTranslationFilter@483139, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1f962e3b]
+2025-03-12 12:49:19 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Completed initialization in 7075 ms
+2025-03-13 13:37:02 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-13 13:37:05 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-13 13:37:05 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-13 13:37:05 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-13 13:37:06 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-13 13:37:07 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-13 13:37:11 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@430590cb, org.springframework.security.web.context.SecurityContextPersistenceFilter@28999f6d, org.springframework.security.web.header.HeaderWriterFilter@26367bbb, org.springframework.security.web.authentication.logout.LogoutFilter@4b227e1a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6dafcb64, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14934ebf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@691d268f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41270c9f, org.springframework.security.web.session.SessionManagementFilter@513135b5, org.springframework.security.web.access.ExceptionTranslationFilter@6320051e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c88b50f]
+2025-03-13 13:37:11 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 9333 ms
+2025-03-13 13:37:12 [http-bio-8080-exec-4] WARN  PageNotFound - No mapping for GET /login
+2025-03-13 13:37:21 [http-bio-8080-exec-8] WARN  PageNotFound - No mapping for GET /login
+2025-03-13 13:37:52 [http-bio-8080-exec-10] WARN  PageNotFound - No mapping for GET /login
+2025-03-13 13:37:54 [http-bio-8080-exec-10] WARN  PageNotFound - No mapping for GET /login
+2025-03-13 13:38:20 [http-bio-8080-exec-6] WARN  PageNotFound - No mapping for GET /login
+2025-03-13 13:38:27 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-13 13:38:28 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-13 13:38:28 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-13 13:38:28 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-13 13:38:29 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-13 13:38:29 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-13 13:38:32 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@47965cea, org.springframework.security.web.context.SecurityContextPersistenceFilter@29ae6045, org.springframework.security.web.header.HeaderWriterFilter@20535d94, org.springframework.security.web.authentication.logout.LogoutFilter@57c464bf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2b777af, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5db36364, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6688fd9a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ca793c3, org.springframework.security.web.session.SessionManagementFilter@39737c7, org.springframework.security.web.access.ExceptionTranslationFilter@21dbd2bd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@13810c8a]
+2025-03-13 13:38:32 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Completed initialization in 5870 ms
+2025-03-13 13:38:37 [http-bio-8080-exec-9] WARN  PageNotFound - No mapping for GET /login
+2025-03-13 13:38:42 [http-bio-8080-exec-4] WARN  PageNotFound - No mapping for GET /login
+2025-03-13 13:38:55 [http-bio-8080-exec-10] WARN  PageNotFound - No mapping for GET /login
+2025-03-13 13:39:11 [http-bio-8080-exec-6] WARN  PageNotFound - No mapping for GET /grocery/marketPlace
+2025-03-13 13:39:30 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-13 13:39:31 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-13 13:39:31 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-13 13:39:31 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-13 13:39:32 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-13 13:39:32 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-13 13:39:36 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] WARN  XmlWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: 'grocery/login?error' is not a valid redirect URL
+2025-03-13 13:39:36 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] ERROR DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: 'grocery/login?error' is not a valid redirect URL
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:625) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1287) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1126) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:848) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:865) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:548) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:696) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:662) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:710) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:587) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:526) [spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:169) [spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1088) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5176) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5460) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3954) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:426) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1345) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1530) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1540) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1540) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1519) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_201]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: 'grocery/login?error' is not a valid redirect URL
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 35 more
+Caused by: java.lang.IllegalArgumentException: 'grocery/login?error' is not a valid redirect URL
+	at org.springframework.util.Assert.isTrue(Assert.java:118) ~[spring-core-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler.setDefaultFailureUrl(SimpleUrlAuthenticationFailureHandler.java:126) ~[spring-security-web-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler.<init>(SimpleUrlAuthenticationFailureHandler.java:61) ~[spring-security-web-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer.failureUrl(AbstractAuthenticationFilterConfigurer.java:212) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer.updateAuthenticationDefaults(AbstractAuthenticationFilterConfigurer.java:383) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer.loginPage(AbstractAuthenticationFilterConfigurer.java:314) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer.loginPage(FormLoginConfigurer.java:183) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at com.watad.security.SecurityConfiguration.configure(SecurityConfiguration.java:57) ~[classes/:?]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.getHttp(WebSecurityConfigurerAdapter.java:230) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:321) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:92) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at com.watad.security.SecurityConfiguration$$EnhancerBySpringCGLIB$$2f19c04d.init(<generated>) ~[classes/:?]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.init(AbstractConfiguredSecurityBuilder.java:371) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:325) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:41) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration.springSecurityFilterChain(WebSecurityConfiguration.java:104) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$$EnhancerBySpringCGLIB$$ebdab205.CGLIB$springSecurityFilterChain$0(<generated>) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$$EnhancerBySpringCGLIB$$ebdab205$$FastClassBySpringCGLIB$$bac9ff1a.invoke(<generated>) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$$EnhancerBySpringCGLIB$$ebdab205.springSecurityFilterChain(<generated>) ~[spring-security-config-5.0.3.RELEASE.jar:5.0.3.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_201]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 35 more
+2025-03-13 13:39:51 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-13 13:39:52 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-13 13:39:52 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-13 13:39:52 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-13 13:39:53 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-13 13:39:53 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-13 13:39:57 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d5416cb, org.springframework.security.web.context.SecurityContextPersistenceFilter@7010be8d, org.springframework.security.web.header.HeaderWriterFilter@493c7827, org.springframework.security.web.authentication.logout.LogoutFilter@44a528bc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5594b0b7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@42c8b312, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c3ebbfd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38dbff1a, org.springframework.security.web.session.SessionManagementFilter@2533f3f5, org.springframework.security.web.access.ExceptionTranslationFilter@3a6c6d00, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c58badd]
+2025-03-13 13:39:57 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Completed initialization in 6649 ms
+2025-03-13 13:39:58 [http-bio-8080-exec-9] WARN  PageNotFound - No mapping for GET /grocery/marketPlace
+2025-03-13 13:40:10 [http-bio-8080-exec-4] WARN  PageNotFound - No mapping for GET /grocery/marketPlace
+2025-03-13 13:40:32 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-13 13:40:33 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-13 13:40:33 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-13 13:40:33 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-13 13:40:34 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-13 13:40:34 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-13 13:40:37 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68d62e8b, org.springframework.security.web.context.SecurityContextPersistenceFilter@73a49bf5, org.springframework.security.web.header.HeaderWriterFilter@283ee45d, org.springframework.security.web.authentication.logout.LogoutFilter@74cdf8bf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@236e2628, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5dbd7acb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@bf063b0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5898b28f, org.springframework.security.web.session.SessionManagementFilter@374adc1b, org.springframework.security.web.access.ExceptionTranslationFilter@d2f7a51, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3ed545bb]
+2025-03-13 13:40:37 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Completed initialization in 5439 ms
+2025-03-13 13:42:56 [http-bio-8080-exec-2] WARN  PageNotFound - No mapping for GET /login
+2025-03-15 17:47:59 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-15 17:48:05 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-03-15 17:48:05 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-03-15 17:48:05 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-03-15 17:48:06 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-03-15 17:48:07 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-03-15 17:48:12 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@76f8c92f, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a863fee, org.springframework.security.web.header.HeaderWriterFilter@629a1ade, org.springframework.security.web.authentication.logout.LogoutFilter@64bff830, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7ee50bb7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ec01114, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ee01837, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b7d79bf, org.springframework.security.web.session.SessionManagementFilter@353f5827, org.springframework.security.web.access.ExceptionTranslationFilter@5d195413, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6d03e5f8]
+2025-03-15 17:48:12 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 12939 ms
+2025-03-15 17:48:57 [http-bio-8080-exec-5] INFO  MarketplaceController - Just Started The Home Page
+2025-03-15 17:48:57 [http-bio-8080-exec-5] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-03-15 17:48:58 [http-bio-8080-exec-6] WARN  ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException] to ModelAndView [view="errorPage"; model={errorMessage=null}]
+2025-03-15 17:49:04 [http-bio-8080-exec-7] INFO  MarketplaceController - the cart is :-> 1
+2025-03-15 17:49:07 [http-bio-8080-exec-10] INFO  MarketplaceController - Fetching cart items... 
+2025-03-15 17:49:07 [http-bio-8080-exec-10] INFO  MarketplaceController - Fetching cart items.... E96F6FD0EDF74E57899F0094D6A63D9D
+2025-03-15 17:49:07 [http-bio-8080-exec-10] INFO  MarketplaceController - Cart contains: 1 items.
+2025-03-15 17:49:07 [http-bio-8080-exec-3] WARN  PageNotFound - No mapping for GET /favicon.ico
+2025-03-15 18:43:28 [http-bio-8080-exec-7] INFO  MarketplaceController - Just Started The Home Page
+2025-03-15 18:43:33 [http-bio-8080-exec-6] WARN  ExceptionHandlerExceptionResolver - Resolved [java.lang.NullPointerException] to ModelAndView [view="errorPage"; model={errorMessage=null}]

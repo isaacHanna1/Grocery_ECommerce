@@ -1,14 +1,17 @@
-showError();	
+showError();
+	
 let btn = document.querySelector(".login button");
 btn.addEventListener("mouseenter",goToServer);
 const inputs = document.querySelectorAll(".wrap-input input	");
 const pattern = {
-  userName:  /^[\p{L}a-zA-Z\s]{7,100}$/u,
-  phone:  /^(01|048)\d{7,9}$/,
+  userName: /^[\p{L}a-zA-Z\s]{7,100}$/u,
+  phone: /^(01)\d{9}$/,
   password: /^.{6,}$/,
-  conformPassword:/^.{6,}$/,
-  email: /^([a-z\d-.]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,20})?$/,
+  conformPassword: /^.{6,}$/,
+  email: /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,8})(\.[a-zA-Z]{2,20})?$/
 };
+
+
 function validate(field, regex) {
   if (regex.test(field.value)) {
     field.className = "vaild";
@@ -16,15 +19,19 @@ function validate(field, regex) {
     field.className = "invalid";
   }
 }
+
 inputs.forEach((input) => {
   input.addEventListener("keyup", (event) => {
     validate(event.target, pattern[event.target.attributes.name.value]);
   });
 });
-let confirmedPassword = document.getElementById('confirmPassword');
+
+/*let confirmedPassword = document.getElementById('confirmPassword');
   confirmedPassword.addEventListener("keyup", () => {
 	validatePassword();
 });
+ */
+
 let governments = document.querySelector("#governments");
 let cities = document.querySelector("#cities");
 
@@ -45,7 +52,6 @@ governments.addEventListener('change',event =>{
 	setCities(govermentId);
 });
 
-
 function setCities(govermentId){
 readJsonFile("../resources/js/cities.json").then(data=>{
 	const founded = findCitiesInGovernment(data,govermentId);
@@ -60,6 +66,8 @@ readJsonFile("../resources/js/cities.json").then(data=>{
 	});
 });
 }
+
+
 function findCitiesInGovernment(data,governmentID){
 	const cities = new Set();
 	data.forEach(city=>{
@@ -70,8 +78,6 @@ function findCitiesInGovernment(data,governmentID){
 
 return cities;
 }
-
-
 async  function readJsonFile(jsonFilePath){
 	try {
     const response = await fetch(jsonFilePath);
@@ -88,7 +94,6 @@ async  function readJsonFile(jsonFilePath){
   }
 }
 function removeOptionsFromSelecTag(select){
-	
 	for(let i= select.options.length - 1; i > 0; i--) {
 		select.remove(i);
 }
@@ -96,12 +101,10 @@ function removeOptionsFromSelecTag(select){
 
 function showError(){
 let error = document.querySelector(".error");
-
 if (error.firstElementChild.textContent.length > 1 || error.getElementsByClassName('row').length >1)
   {
     error.style.display = "block";
     let rows = error.querySelectorAll(".row");
-
     for (let row of rows) {
         if (row.textContent.includes('user') ){
             row.textContent = "*تأكد من اسم المستخدم";
@@ -142,7 +145,6 @@ function abledSubmit(){
 function showAlrertForEnteringData(message){
 	alert(message);
 }
-
 function makeEmptyInputBorderRed(){
 	console.log('called');
 	let wrapInput = document.querySelectorAll('.wrap-input');
@@ -155,9 +157,7 @@ function makeEmptyInputBorderRed(){
 			one.firstElementChild.style.border="none";
 		}
 	});
-
 }
-
 function validatePassword(){	
 	let password = document.getElementById('password');
 	let confirmedPassword = document.getElementById('confirmPassword');
@@ -170,14 +170,8 @@ function validatePassword(){
 	}else{
 		confirmedPassword.nextElementSibling.style.setProperty('opacity',0);
 	}
-	
-	
-	
 }
-
-function thereIsAnyErrorMessageShown(){
-	
-	console.log("called");
+function thereIsAnyErrorMessageShown(){	
 	let errorMessage  = document.querySelectorAll(".shown");
 	let founded = false ;
 	for(let shown of errorMessage){
@@ -187,8 +181,4 @@ function thereIsAnyErrorMessageShown(){
 		}	
 	}
 	return founded;
-	
-	
-
-	return false;
 }

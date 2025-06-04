@@ -8,6 +8,10 @@
 </head>
 <body>
 <div class="section-box">
+	<div class="logo">
+      		<img alt="logo watad" src="<c:url value="/resources/imgs/logo.png"/>">
+      </div>
+
       <div class="menu-icon" id="memu">
         <span></span>
         <span></span>
@@ -16,7 +20,7 @@
       <ul>
         <li>
           <i class="fa-solid fa-caret-down"></i>
-          <a href="../views/receipts.html"> الفواتير المستلمة </a>
+          <a href="<c:url value="/allOrders" />"> الفواتير المستلمة </a>
         </li>
         <li>
           <i class="fa-solid fa-caret-down"></i>
@@ -36,8 +40,9 @@
         </li>
         <li>
           <i class="fa-solid fa-caret-down"></i>
-          <a href="/marketPlace"> وجة المستخدم </a>
+          <a href="/marketPlace/user"> وجة المستخدم </a>
         </li>
+        
         <li>
           <i class="fa-solid fa-caret-down"></i>
           <a href="/logout"> تسجيل الخروج </a>

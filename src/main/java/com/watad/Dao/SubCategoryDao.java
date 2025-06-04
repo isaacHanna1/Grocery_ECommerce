@@ -14,5 +14,5 @@ public interface SubCategoryDao {
 	public boolean findByName(SubCategory subCategory);
 	public SubCategory editSubCategory(SubCategory subCategory);
 	public List<SubCategory> getSubCategoryInSuchGategory(long CategoryId);
-	public List<SubCategory> getSubCategoryInSuchGategory(String CategoryName);
+	public List<SubCategory> getSubCategoryInGategory(String CategoryName);
 }

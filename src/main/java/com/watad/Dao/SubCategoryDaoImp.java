@@ -26,6 +26,9 @@ public class SubCategoryDaoImp implements SubCategoryDao {
 	@Autowired
 	private SessionFactory mySessionFactory;
 	
+	@Autowired
+	private CategoryDao categoryDao ; 
+	
 	public void setMySessionFactory(SessionFactory mySessionFactory) {
 		this.mySessionFactory = mySessionFactory;
 	}
@@ -52,6 +55,7 @@ public class SubCategoryDaoImp implements SubCategoryDao {
                 subCategoryRoot.get("subCategoryName"),
                 categoryJoin.get("categoryName")
         ));
+        criteriaQuery.orderBy(builder.asc(categoryJoin.get("categoryName")));
         List<SubCategoryDto> results = session.createQuery(criteriaQuery).getResultList();
         return results;
 		}
@@ -86,16 +90,13 @@ public class SubCategoryDaoImp implements SubCategoryDao {
 
 	@Override
 	public List<SubCategory> getSubCategoryInSuchGategory(long CategoryId) {
-		Session session = this.mySessionFactory.getCurrentSession();
-		String hql  = "FROM SubCategory S WHERE S.category.id = :categoryId";
-		Query<SubCategory> query = session.createQuery(hql,SubCategory.class);
-		query.setParameter("categoryId", CategoryId);
-		List<SubCategory> results = query.list();
-		return results;
+		Category category  = categoryDao.getCategory(CategoryId);
+		category.getSubCategory().size();
+		return category.getSubCategory();
 	}
 
 	@Override
-	public List<SubCategory> getSubCategoryInSuchGategory(String CategoryName) {
+	public List<SubCategory> getSubCategoryInGategory(String CategoryName) {
 		Session session = this.mySessionFactory.getCurrentSession();
 		String hql = "SELECT s FROM SubCategory s JOIN s.category c WHERE c.categoryName = :categoryName";
 		Query<SubCategory> query = session.createQuery(hql,SubCategory.class);

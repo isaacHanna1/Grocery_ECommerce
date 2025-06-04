@@ -12,6 +12,9 @@
     <title>اضافة قسم</title>
   </head>
   <body>
+  <!-- start simple ad -->
+  		<jsp:include page="template/headerAds.jsp"/>
+  <!-- end simple ad -->
     <!-- stat header -->
     <jsp:include page="template/header.jsp"/>
     <!-- End header -->

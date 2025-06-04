@@ -4,6 +4,8 @@
 // btn as a href ok 
 let deleteBtns = document.querySelectorAll(".delete-btn");
 let editBtns = document.querySelectorAll  (".edit-btn");
+let tableContentCategory = document.querySelector(".table-container table tbody")
+
 let parent_tr  = "";
 let categoryId = "";
 let categoryName = "";
@@ -20,7 +22,7 @@ categoryForm.addEventListener("submit",(event)=>{
 		input.value =input.value.trim();
 	})
 	
-})
+});
 
 const sendBtn = document.getElementById("sendBtn");
 
@@ -29,10 +31,20 @@ const sendBtn = document.getElementById("sendBtn");
 	/* when user click on delete <a> element
 	 make full screen grba transparent color to show confirmation
 	 div to delete category*/	
-deleteBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-	e.preventDefault();
+
+
+tableContentCategory.addEventListener("click",e=>{
+	if(e.target.classList.contains("delete-btn")){
+			delete_Category(e);	
+	}else if (e.target.classList.contains("edit-btn")){
+			edit_Category(e);
+	}
 	
+});
+function delete_Category(e){
+	
+	
+	 e.preventDefault();	
 	 parent_tr  = e.target.closest('tr');
 	 categoryId = parent_tr.querySelector('td:first-child').textContent;	
      overlay_div = document.createElement("div");
@@ -64,18 +76,19 @@ deleteBtns.forEach((btn) => {
 	  dialogContainer.style.display="none";
     };
     okBtn.onclick = function () {
-	
-	  deleteCategory(categoryId);
-      overlay_div.classList.remove("overlay");
-	
-      dialogContainer.classList.remove("dialogContainer");
-	  dialogContainer.style.display="none";
-	  //reomve tr after deleted from database
-	  parent_tr.remove();		
-    };
+	  		deleteCategory(categoryId).then(()=>{
+      		overlay_div.classList.remove("overlay");
+      		dialogContainer.classList.remove("dialogContainer");
+	  		dialogContainer.style.display="none";
+	  		//reomve tr after deleted from databas
+	  		parent_tr.remove();
+	})
+	.catch(error=>{
+		console.error("An error occurred while deleting category:", error);
+		alert("لا يمكن الحذف : هذا الصنف مرتبط باقسام فرعية ");
+    });
+}
 
-  });
-  });
 
 async function deleteCategory(categoryId){
 	try{
@@ -92,23 +105,55 @@ async function deleteCategory(categoryId){
 		const response = await fetch(link,requestOption);
 		
 		if(!response.ok){
-			throw new Error("Network response was not ok");
+			const errorMessage = await response.text();
+            throw new Error("Failed to delete category: " + errorMessage); 
 		}
 		const data = await response.json();
-		console.log(data)
-		return data;
-	}
-	catch(err){
-		console.error("there was an error when fetching data (exception)" , err);
-	}
+        console.log("Category deleted successfully:", data);
+        return data;
+	}catch (error) {
+        console.log("An error occurred while deleting category:", error);
+        throw error;
+    }
 }
-// End confirmation dialog for deleting btn
 
-// start dialog for editing category btn
-editBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-	e.preventDefault();
+}
+async function editCategory(categoryId,updatedCategoryName){
 	
+	let categoryobj = {id:categoryId , categoryName:updatedCategoryName.trim()};
+	const editObject = JSON.stringify(categoryobj);	
+	console.log("created ",editCategory);
+		const headers={
+			'Content-Type':'application/json',
+		};
+		const requestOption = {
+			method:'PUT',
+			headers:headers,
+			body:editObject,
+		};
+		try{
+		const host = window.location.origin;
+		const link = host+"/categoryApi/editCategory";
+		console.log(link);
+		const response = await fetch(link,requestOption);
+			console.log(response.statusText);
+			if(response.status === 400){
+				return null;
+			}
+		if(!response.ok){
+			throw new Errror("NetWork response was not ok");
+		}
+		const data = await response.json();
+		console.log(response.status);
+		return {data , status: response.status};
+		}catch (error) {
+        throw error;
+    }
+}
+
+function edit_Category(e){
+	
+	 e.preventDefault();	
 	 parent_tr  = e.target.closest('tr');
 	 categoryId = parent_tr.querySelector('td:first-child').textContent;
 	 categoryName = parent_tr.querySelector('#categoryNameCol').textContent;	
@@ -131,17 +176,17 @@ editBtns.forEach((btn) => {
      textContainer.appendChild(editInput);
      dialogContainer.appendChild(textContainer);
 	
-     let btnContainer = document.createElement("div");
-     let okBtn = document.createElement("button");
-	 okBtn.classList.add("edit-btn")
-     let cancelBtn = document.createElement("button");
-     okBtn.appendChild(document.createTextNode("تعديل"));
-     cancelBtn.appendChild(document.createTextNode("الغاء"));
+      let btnContainer = document.createElement("div");
+      let okBtn = document.createElement("button");
+	  okBtn.classList.add("edit-btn")
+      let cancelBtn = document.createElement("button");
+      okBtn.appendChild(document.createTextNode("تعديل"));
+      cancelBtn.appendChild(document.createTextNode("الغاء"));
 
-    btnContainer.appendChild(okBtn);
-    btnContainer.appendChild(cancelBtn);
-    btnContainer.classList.add("btnContainer");
-    dialogContainer.appendChild(btnContainer);
+      btnContainer.appendChild(okBtn);
+      btnContainer.appendChild(cancelBtn);
+      btnContainer.classList.add("btnContainer");
+      dialogContainer.appendChild(btnContainer);
 
       cancelBtn.onclick = function () {
       overlay_div.classList.remove("overlay");
@@ -163,44 +208,9 @@ editBtns.forEach((btn) => {
 					parent_tr.querySelector('#categoryNameCol').textContent = editInput.value;
 				}
 			});
-				
-	    };
-  });
-  });
-async function editCategory(categoryId,updatedCategoryName){
-	
-	let categoryobj = {id:categoryId , categoryName:updatedCategoryName.trim()};
-	const editObject = JSON.stringify(categoryobj);	
-	console.log("created ",editCategory);
-		const headers={
-			'Content-Type':'application/json',
-		};
-		const requestOption = {
-			method:'PUT',
-			headers:headers,
-			body:editObject,
-		};
-		try{
-		const host = window.location.origin;
-		const link = host+"/categoryApi/editCategory";
-		console.log(link);
-		const response = await fetch(link,requestOption);
-			console.log();
-			console.log(response.statusText);
-			if(response.status === 400){
-				return null;
 			}
-		if(!response.ok){
-			throw new Errror("NetWork response was not ok");
-		}
-		const data = await response.json();
-		console.log(response.status);
-		return {data , status: response.status};
-		}catch(error){
-			throw error;
-		}
-		}
-		
+			}
+
 // End dialog for editing category btn  
 
 

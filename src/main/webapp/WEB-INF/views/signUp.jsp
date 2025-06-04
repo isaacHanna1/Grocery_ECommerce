@@ -12,11 +12,15 @@
     <title>WATAD|إنشاء حساب</title>
   </head>
   <body>
-  
+    <!-- start simple ad -->
+  		<jsp:include page="template/headerAds.jsp"/>
+  <!-- end simple ad -->
   <!-- start header -->
     <jsp:include page="template/header.jsp"/>
     <!-- End header -->
-  
+      <!-- Start section (nav menu) -->
+    <jsp:include page="template/userNav.jsp"/>
+    <!-- End nav menu -->
    <div class="container">
       <div class="login">
          <div class="error">

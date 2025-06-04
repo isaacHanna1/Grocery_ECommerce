@@ -31,11 +31,11 @@ public class ItemDto {
 	public ItemDto(long id, String itemName, float purchasePrice, float sellingPriceCustomer,
 			float sellingPriceTrader) {
 		super();
-		this.id = id;
-		this.itemName = itemName;
-		this.purchasePrice = purchasePrice;
+		this.id                   = id;
+		this.itemName             = itemName;
+		this.purchasePrice        = purchasePrice;
 		this.sellingPriceCustomer = sellingPriceCustomer;
-		this.sellingPriceTrader = sellingPriceTrader;
+		this.sellingPriceTrader   = sellingPriceTrader;
 	}
 
 	//constructor for getting item to show it to customers
@@ -81,7 +81,12 @@ public class ItemDto {
 	}
 
 	
-
+	public ItemDto(Long id , String itemName , boolean avability) {
+		this.id = id ; 
+		this.itemName = itemName ;
+		this.avability = avability;
+	}
+	
 	public long getId() {
 		return id;
 	}

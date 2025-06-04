@@ -1,120 +1,119 @@
-.invoice {
-  background-color: #fff;
-  border-radius: 10px ;
-  margin-bottom:10px;
-  box-shadow: 1px 1px 1px #ddd;
-  -webkit-border-radius: 4px 4px 0 0;
-  -moz-border-radius: 4px 4px 0 0;
-  -ms-border-radius: 4px 4px 0 0;
-  -o-border-radius: 4px 4px 0 0;
-}
-.content{
-	margin-top: 30px;
-	margin-bottom:80px;
-	width: 80%;
-	margin: auto;
-	height: 80vh;
-    overflow-y: scroll;
+.content {
+	padding: 20px;
 }
 .content h2{
-	text-align: center;
-    padding: 10px;
-    color: #999;
-    border-radius: 10px;
-    margin-bottom: 10px;
+	margin-top: 25px;
+}
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.invoice .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-.invoice .row .info {
-  width: 70%;
-  display: flex;
-  align-items: center;
-}
-@media (max-width: 600px) {
-  .invoice .row .info {
-    width: 50%;
-  }
-  .invoice .row .info h3{
-  font-size: 12px;
-  }
-}
-.invoice .row .info .img {
-  width: 40px;
-  height: 40px;
-  margin-left: 10px;
-}
-.invoice .row .info .img img {
-  width: 100%;
-  height: 100%;
+.invoice-table th, .invoice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
 }
 
-.invoice .row .item-price {
-  width: 30%;
-}
-@media (max-width: 600px) {
-  .invoice .row .item-price {
-    width: 40%;
-  }
-}
-.invoice .row .item-price span:first-child {
-  width: 70px;
-  font-weight: bold;
-}
-.invoice .row .item-price span {
-  display: inline-block;
-  margin-bottom: 10px;
-}
-.invoice .row .item-price .total span:last-child{
-	color: var(--main-color);
-	font-weight:bold;
-}
-@media (max-width: 600px) {
-  .invoice .row .item-price span {
+.invoice-table th {
+    background-color: #f2f2f2;
     font-size: 11px;
-  }
 }
-.invoice .btns .icon {
-  color: red;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 10px;
-  border-radius:10px;
-  transition:.4s;
+
+.invoice-table td {
+    font-size: 12px;
 }
-.invoice .btns .icon:hover {
-	background: red;
-	color:#fff;
+
+.invoice-table .item-img {
+    width: 18px;
+    height: 18px;
+    display: block;
+    margin: auto;
+}
+
+.invoice-table .item-name {
+    vertical-align: middle;
+}
+
+.invoice-table .icon {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+.invoice-table .icon:hover {
+    background: red;
+    color: #fff;
     box-shadow: 1px 1px 6px red;
 }
-.invoice .btns .quantitiy input {
-  width: 50px;
-  text-align: center;
-  border: none;
-  padding: 5px;
-  margin: 0 5px;
+
+.invoice-table  input {
+    width: 50px;
+    text-align: center;
+    padding: 2px;
+    margin: 0 3px;
+    text-align:center;
 }
-.invoice .btns .quantitiy button {
-  background-color: var(--main-color);
-  color: #fff;
-  font-weight: bold;
-  padding: 5px;
-  font-size: 14px;
-  border: none;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  cursor: pointer;
+
+.invoice-table .quantity-wrapper button {
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: bold;
+    padding: 4px 4px;
+    font-size: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.orderInfo h3{
+	
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    color: var(--btn-background);
+}
+.orderInfo label {
+	margin-bottom: 5px;
+	display:inline-block;
+	margin-right:5px;
+	color: rgb(200,0,0);
+	font-weight: bold;
+}
+.orderInfo .address{
+	padding: 10px;
+}
+.orderInfo .address h4{
+	padding: 5px 0;
+}
+.orderInfo .address input{
+	display: block;
+	padding: 8px;
+	width: 90%;
+	margin: 5px 0;
+	border:1px solid #DDD;
+	border-radius: 6px;
+	
+}
+.orderInfo .changeAddress{
+	margin-right: 15px;
+}
+.orderInfo textarea{
+	width: 90%;
+	padding: 10px;
+	font-size: 14px;
+	resize:none;
+	border:1px solid #ddd;
+	border-radius: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	
 }
 .finishReceipt{
 	margin: 10px;
-	border: 1px solid #fefefe;
 	padding: 10px;
 }
 .finishReceipt span:last-child{
@@ -134,3 +133,47 @@
     cursor: pointer;
 }
 	
+/*popup for confirmation address*/ 
+
+.popup {
+    background-color: #fff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
+}
+.popup h3{
+	text-align: center;
+	margin-bottom: 10px;
+}
+.popup select,
+.popup textarea,
+.popup button,
+.popup input 
+{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.popup button {
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+.popup button.close {
+	background-color: #f31559;
+}
+/* to style the */
+.logoMessage {
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: 11px;
+    margin: 20px 0;
+    display: block;
+}

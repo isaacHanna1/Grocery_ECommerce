@@ -25,9 +25,9 @@
         ></a>
       </div>
       <div class="logo">
-      	<img src="<c:url value="../resources/imgs/logoCompany.png"/>" />	
+      	<img src="<c:url value="../resources/imgs/logo.png"/>" />	
       </div>
-      <h3>Wa<span>T</span>ad</h3>
+      <h3>Watad</h3>
     </div>
     <!-- End footer  -->
 </body>

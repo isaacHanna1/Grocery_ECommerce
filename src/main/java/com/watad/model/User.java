@@ -13,9 +13,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.watad.notification.strategy.NotificationStrategy;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,26 +31,23 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "users")
-public class User {
+public class User implements Observer{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id ;
 	
 	@Column(name="name")
-	@NotNull
-	@NotBlank(message = "حقل الاسم لا يمكن ان يكون فارغ")
-	private String userName;
+
+	private String userName ="مستخدم";
 	
 
 	@Column(name ="government")
-	@NotBlank(message = "حقل المحافظة لا يمكن ان يكون فارغ")
-	private String government ;
+	private String government ="ادخل المحافظة" ;
 	
 	
 	@Column(name ="city")
-	@NotBlank(message = "حقل المدينة لا يمكن ان يكون فارغ")
-	private String city;
+	private String city ="ادخل المدينة";
 	
 	
 	@Column(name="phone", unique = true)
@@ -55,9 +56,7 @@ public class User {
 	private String userPhone;
 	
 	@Column(name="email" , unique = true)
-    @NotNull
-	@NotBlank(message = "حقل البريد الالكتروني لا يمكن ان يكون فارغ")
-	private String userEmail;
+	private String userEmail ="غير معروف";
 	
 	@Column(name="password")
 	@NotNull
@@ -65,14 +64,12 @@ public class User {
 	private String password ;
 	
 	@Column(name = "address" , length = 500)
-	@NotNull
-	@NotBlank(message = "حقل العنوان لا يمكن ان يكون فارغ")
-	private String userAddress;
+	private String userAddress ="داخل عنوانك";
 	
-	@Column(name="active")
-	private boolean active = false;
+	@Column(columnDefinition="tinyint(1) default 1")
+	private boolean active = false ;
 	
-	
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER , 
 			    cascade = CascadeType.ALL)
 	@JoinTable(
@@ -81,5 +78,12 @@ public class User {
 	inverseJoinColumns = @JoinColumn (name="role_id"))
 	private List<Role> roles   = new ArrayList();
 	
+	@OneToMany(mappedBy = "user")
+	private List<Order> order;
+
+	@Override
+	public void notify(NotificationStrategy notifaction, String messageSubject,String message) {
+		notifaction.sendNotification(messageSubject,this,message);
+	}
 	
 }

@@ -40,7 +40,7 @@
             <prop key="hibernate.connection.characterEncoding">UTF-8</prop>
             <prop key="hibernate.connection.CharSet">UTF-8</prop>
             <prop key="hibernate.connection.useUnicode">true</prop>
-            <prop key="hibernate.show_sql">true</prop>
+            <prop key="hibernate.show_sql">false</prop>
         	</props>
 		</property>
 	</bean>
@@ -48,6 +48,8 @@
 	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="mySessionFactory"></property>	
 	</bean>
+	
+	
 	 
 	 <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
     <!-- Set mail server properties -->
@@ -66,9 +68,7 @@
         </props>
     </property>
 </bean>
-	 
-	 
-	
+
     <!-- Provide support for component scanning -->  
     <context:component-scan base-package="com.watad" />  
   
@@ -91,9 +91,9 @@
   	<!-- enable Aop  -->
   	<aop:aspectj-autoproxy />
   	
-  	<!-- enable transaction "transactionManager" -->
-  	<tx:annotation-driven transaction-manager="transactionManager"/>
-  	
+  <!-- Enable transaction "transactionManager" -->
+  <tx:annotation-driven transaction-manager="transactionManager"/>
+  
   <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
         <property name="prefix" value="/WEB-INF/views/"></property>  
         <property name="suffix" value=".jsp"></property>
@@ -101,5 +101,5 @@
      </bean>
            <mvc:resources mapping="/resources/**" location="/resources/"  
 	cache-period="31556926"/>
-      
+	      
 </beans>  

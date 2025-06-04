@@ -1,0 +1,46 @@
+
+.search-filter{
+border:1px solid #ddd;
+padding: 10px;
+margin:25px 20px 10px;	
+}
+.search-filter #filter{
+	padding:10px;
+	font-weight:bold;
+	font-size:15px;
+}
+.search-filter form{
+	display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+.search-filter .item{
+	margin: 10px;
+	width:45%;
+}
+.search-filter .item label{
+	width:30px;
+	display: inline-block;
+	margin: 5px;
+}
+.item input , .item select{
+	padding: 10px;
+    font-size: 14px;
+    margin-right: 10px;
+    width: 140px;
+}
+
+.item #search{
+    width: 125px;
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    margin-left: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: #fff;
+    margin-right: 20%;
+} 
