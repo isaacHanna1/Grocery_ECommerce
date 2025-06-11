@@ -1,0 +1,132 @@
+
+.container h1{
+	margin: 30px;
+	text-align: center;
+}
+.item-data{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items:center;
+    margin: 30px auto;
+    overflow-y: auto;
+}
+.item-data div:first-child{
+	    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-data >div{
+	width: 50%;
+}
+.item-data .img >img{
+	width: 300px;
+    height: 300px;
+    margin: auto;
+}
+.subImage{
+	display: flex;
+	flex-wrap: wrap;
+}
+@media (max-width:600px) {
+.subImage{
+	justify-content: center;
+	align-items: center;
+}	
+}
+.subImage img{
+	width :64px;
+	height: 64px;
+	margin: 5px;
+}
+.subImage .imageContainer {
+    position: relative;
+    margin: 5px; /* Add some spacing between images */
+}
+
+.deleteIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(255,0,0);
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1; /* Ensure the icon is above the image */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.deleteIcon i{
+	font-size:12px;
+}
+
+.item-data .data {
+	width: 40%;
+	margin-right: 15px;
+}
+@media (max-width:600px) {
+.item-data .data , .item-data .img{
+	width: 100%;
+	text-align: center;
+	margin: 0;
+}
+}
+.item-data  .data .row{
+	margin-bottom: 3px;
+	border-bottom: 1px solid var(--main-color);
+	padding: 5px;
+	display: flex;
+	align-items: center;
+}
+.item-data  .data .row span:first-child{
+	font-weight: bold;
+	font-size: 14px;
+}
+.item-data .data .row span{
+	display: inline-block;
+	width:48%;
+	font-size:14px;
+}
+@media (max-width:600px) {
+.item-data .data .row span {
+    width: 50%;
+    font-size: 14px;
+}
+}
+.item-data  .data .row .col-2{
+	width:50%;
+}
+.forms{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 30px auto ;
+}
+.forms label{
+	font-size: 14px;
+	font-weight: bold;
+	margin:4px auto;
+}
+.forms form{
+display: flex;
+width: 100%;
+padding: 10px;
+}
+.btn.update-img{
+	border: none;
+    width: 100px;
+    padding: 5px;
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius:4px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px var(--main-color);
+    margin: 10px auto;  	
+}
