@@ -36,7 +36,7 @@
         </div>
         <div class="data-row">
           <label>صورة الصنف : </label>
-          <input id= "image" name ="image" type="file" placeholder="ادخل اسم  القسم" required="required" />
+          <input id= "image" name ="imageFile" type="file" placeholder="ادخل اسم  القسم" required="required" />
         </div>
         <div class="data-row">
           <label>اسم القسم : </label>

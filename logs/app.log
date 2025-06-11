@@ -7525,3 +7525,14 @@ Field error in object 'item' on field 'image': rejected value [org.springframewo
 2025-06-11 19:58:33 [http-bio-9090-exec-8] INFO  MarketplaceController - Just Started The Home Page
 2025-06-11 19:58:53 [http-bio-9090-exec-10] WARN  ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.multipart.support.MissingServletRequestPartException: Required request part 'image' is not present] to ModelAndView [view="errorPage"; model={errorMessage=Required request part 'image' is not present}]
 2025-06-11 19:58:53 [http-bio-9090-exec-6] WARN  PageNotFound - No mapping for GET /style.css
+2025-06-11 19:59:40 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 19:59:42 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-06-11 19:59:42 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-06-11 19:59:42 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-06-11 19:59:48 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 19:59:49 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-06-11 20:00:01 [localhost-startStop-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 20:00:03 [localhost-startStop-1] INFO  MarketplaceController - the user email is seha.abdo@gmail.com
+2025-06-11 20:00:04 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14062b1b, org.springframework.security.web.context.SecurityContextPersistenceFilter@4027db0e, org.springframework.security.web.header.HeaderWriterFilter@2bda9d4c, org.springframework.security.web.authentication.logout.LogoutFilter@70b905df, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@32c42fbc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76a5f53c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3bda93b3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2e8471ee, org.springframework.security.web.session.SessionManagementFilter@16e9b6d8, org.springframework.security.web.access.ExceptionTranslationFilter@49e643d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@496bf604]
+2025-06-11 20:00:04 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 23401 ms
+2025-06-11 20:00:06 [http-bio-9090-exec-1] INFO  MarketplaceController - Just Started The Home Page
