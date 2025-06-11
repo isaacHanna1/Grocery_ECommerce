@@ -84,13 +84,13 @@ public class itemController {
 		modelAndView.addObject("recordCount", record);
 		return modelAndView;
 	}
-	@PostMapping(path = "/addItem")
-	public ModelAndView addingItem(@ModelAttribute Item item ,@RequestParam("image") MultipartFile image) throws IOException {
-		 byte[] imageBytes = image.getBytes();
-         item.setImage(imageBytes);
-		 itemDao.addingNewItem(item);
-		 ModelAndView modelAndView = new ModelAndView("redirect:/image/"+item.getId());
-		 return modelAndView;
+	@PostMapping("/addItem")
+	public ModelAndView addItem(@ModelAttribute Item item, @RequestParam("imageFile") MultipartFile image) throws IOException {
+		if (image != null && !image.isEmpty()) {
+			item.setImage(image.getBytes());
+		}
+		itemDao.addingNewItem(item);
+		return new ModelAndView("redirect:/image/" + item.getId());
 	}
 	
 	@PostMapping(path = "/addItemImages/{itemId}")

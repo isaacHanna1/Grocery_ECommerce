@@ -12,16 +12,9 @@ id="WebApp_ID" version="4.0">
 	    <init-param>
 	    	<param-name>contextCongigLocation</param-name>
 	    	<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
-	    </init-param>    
-	    <multipart-config>
-        <!-- Max file size in bytes (10MB) -->
-		<max-file-size>10485760</max-file-size>
-		<!-- Max request size in bytes (10MB) -->
-		<max-request-size>10485760</max-request-size>
-        <!-- File size threshold in bytes (0 bytes in this example) -->
-        <file-size-threshold>0</file-size-threshold>
-    </multipart-config>
-	    <load-on-startup>1</load-on-startup>      
+	    </init-param>
+
+	    <load-on-startup>1</load-on-startup>
 	</servlet>    
 	
 	<servlet-mapping>    

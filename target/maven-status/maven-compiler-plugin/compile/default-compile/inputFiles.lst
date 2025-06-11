@@ -4,6 +4,7 @@ C:\myOwnProject\grocery\src\main\java\com\watad\Dao\SubCategoryDao.java
 C:\myOwnProject\grocery\src\main\java\com\watad\model\Category.java
 C:\myOwnProject\grocery\src\main\java\com\watad\resetPassword\EmailPasswordReset.java
 C:\myOwnProject\grocery\src\main\java\com\watad\services\UserService.java
+C:\myOwnProject\grocery\src\main\java\com\watad\config\WebConfig.java
 C:\myOwnProject\grocery\src\main\java\com\watad\services\PasswordResetTokenService.java
 C:\myOwnProject\grocery\src\main\java\com\watad\Dto\RegistrationDto.java
 C:\myOwnProject\grocery\src\main\java\com\watad\Dao\OrdersImp.java

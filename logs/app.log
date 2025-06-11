@@ -7101,3 +7101,427 @@ Caused by: java.sql.SQLSyntaxErrorException: Access denied for user 'root'@'%' t
 2025-06-11 16:28:10 [localhost-startStop-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
 2025-06-11 16:28:12 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54a2bd99, org.springframework.security.web.context.SecurityContextPersistenceFilter@393f8079, org.springframework.security.web.header.HeaderWriterFilter@23b26704, org.springframework.security.web.authentication.logout.LogoutFilter@26145d6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@59ba566e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24b2a767, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42ed4ea6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6121e02f, org.springframework.security.web.session.SessionManagementFilter@2a6e6bba, org.springframework.security.web.access.ExceptionTranslationFilter@2a0fbe23, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@65ff4319]
 2025-06-11 16:28:12 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 37155 ms
+2025-06-11 16:47:50 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 16:47:51 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-06-11 16:47:51 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-06-11 16:47:51 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-06-11 16:47:58 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 16:47:58 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-06-11 16:48:11 [localhost-startStop-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 16:48:13 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3619bd5c, org.springframework.security.web.context.SecurityContextPersistenceFilter@1aa4619d, org.springframework.security.web.header.HeaderWriterFilter@323743e9, org.springframework.security.web.authentication.logout.LogoutFilter@22308704, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@b1fe163, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27b26dc1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@233dc166, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@139e348a, org.springframework.security.web.session.SessionManagementFilter@11c3fb0e, org.springframework.security.web.access.ExceptionTranslationFilter@5f1b9ff6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c5662c]
+2025-06-11 16:48:13 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 23805 ms
+2025-06-11 19:04:09 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 19:04:13 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-06-11 19:04:13 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-06-11 19:04:13 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-06-11 19:04:20 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 19:04:21 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-06-11 19:04:34 [localhost-startStop-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 19:04:36 [localhost-startStop-1] INFO  MarketplaceController - the user email is seha.abdo@gmail.com
+2025-06-11 19:04:37 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@266ba1e3, org.springframework.security.web.context.SecurityContextPersistenceFilter@243902d7, org.springframework.security.web.header.HeaderWriterFilter@b670e8e, org.springframework.security.web.authentication.logout.LogoutFilter@542ed11f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4edc012d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49257a3b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@221dd40d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59ea5500, org.springframework.security.web.session.SessionManagementFilter@b848c64, org.springframework.security.web.access.ExceptionTranslationFilter@56bfd5ed, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@e9fe1a3]
+2025-06-11 19:04:37 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 27952 ms
+2025-06-11 19:04:41 [http-bio-9090-exec-1] INFO  MarketplaceController - Just Started The Home Page
+2025-06-11 19:04:49 [http-bio-9090-exec-4] INFO  MarketplaceController - we starting to get user :0
+2025-06-11 19:04:50 [http-bio-9090-exec-4] INFO  MarketplaceController - the user role is USER
+2025-06-11 19:05:02 [http-bio-9090-exec-8] INFO  MarketplaceController - Just Started The Home Page
+2025-06-11 19:05:03 [http-bio-9090-exec-10] INFO  MarketplaceController - we starting to get user :0
+2025-06-11 19:05:05 [http-bio-9090-exec-10] INFO  MarketplaceController - the user role is USER
+2025-06-11 19:05:14 [http-bio-9090-exec-8] INFO  MarketplaceController - Just Started The Home Page
+2025-06-11 19:05:16 [http-bio-9090-exec-4] WARN  PageNotFound - No mapping for GET /favicon.ico
+2025-06-11 19:05:52 [http-bio-9090-exec-4] WARN  ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.multipart.support.MissingServletRequestPartException: Required request part 'image' is not present] to ModelAndView [view="errorPage"; model={errorMessage=Required request part 'image' is not present}]
+2025-06-11 19:05:52 [http-bio-9090-exec-1] WARN  PageNotFound - No mapping for GET /style.css
+2025-06-11 19:08:22 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 19:08:26 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-06-11 19:08:26 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-06-11 19:08:26 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-06-11 19:08:32 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 19:08:33 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-06-11 19:08:45 [localhost-startStop-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 19:08:46 [localhost-startStop-1] INFO  MarketplaceController - the user email is seha.abdo@gmail.com
+2025-06-11 19:08:47 [localhost-startStop-1] WARN  XmlWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'multipartResolver' defined in com.watad.config.WebConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+2025-06-11 19:08:47 [localhost-startStop-1] ERROR DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'multipartResolver' defined in com.watad.config.WebConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:625) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1287) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1126) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:848) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:865) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:548) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:696) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:662) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:710) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:587) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:526) [spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:169) [spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1088) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5176) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5460) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_452]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_452]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_452]
+	at java.lang.Thread.run(Thread.java:750) [?:1.8.0_452]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 31 more
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at com.watad.config.WebConfig.multipartResolver(WebConfig.java:12) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$47ba0e61.CGLIB$multipartResolver$0(<generated>) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$47ba0e61$$FastClassBySpringCGLIB$$3882edb3.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$47ba0e61.multipartResolver(<generated>) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_452]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_452]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_452]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_452]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 31 more
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.fileupload.FileItemFactory
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1702) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1547) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at com.watad.config.WebConfig.multipartResolver(WebConfig.java:12) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$47ba0e61.CGLIB$multipartResolver$0(<generated>) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$47ba0e61$$FastClassBySpringCGLIB$$3882edb3.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$47ba0e61.multipartResolver(<generated>) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_452]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_452]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_452]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_452]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 31 more
+2025-06-11 19:21:51 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 19:21:54 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-06-11 19:21:54 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-06-11 19:21:54 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-06-11 19:21:55 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 19:21:56 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-06-11 19:21:56 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Environment - HHH000206: hibernate.properties not found
+2025-06-11 19:21:56 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-06-11 19:22:00 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 19:22:01 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-06-11 19:22:02 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 19:22:02 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-06-11 19:22:12 [localhost-startStop-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 19:22:14 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 19:22:14 [localhost-startStop-1] INFO  MarketplaceController - the user email is seha.abdo@gmail.com
+2025-06-11 19:22:15 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ca3d176, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b892b69, org.springframework.security.web.header.HeaderWriterFilter@401e1c09, org.springframework.security.web.authentication.logout.LogoutFilter@5b969c79, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@54ed6208, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73750615, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b2af87b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@138a15b, org.springframework.security.web.session.SessionManagementFilter@293c0aad, org.springframework.security.web.access.ExceptionTranslationFilter@372a960c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1ffd9f11]
+2025-06-11 19:22:15 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 23225 ms
+2025-06-11 19:22:15 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] INFO  MarketplaceController - the user email is seha.abdo@gmail.com
+2025-06-11 19:22:16 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] WARN  XmlWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'multipartResolver' defined in com.watad.config.WebConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+2025-06-11 19:22:16 [ContainerBackgroundProcessor[StandardEngine[Tomcat]]] ERROR DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'multipartResolver' defined in com.watad.config.WebConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:625) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1287) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1126) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:848) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:865) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:548) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:696) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:662) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:710) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:587) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:526) [spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:169) [spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1088) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5176) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5460) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3954) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:426) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1345) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1530) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1540) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1540) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1519) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.lang.Thread.run(Thread.java:750) [?:1.8.0_452]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 33 more
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at com.watad.config.WebConfig.multipartResolver(WebConfig.java:12) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.CGLIB$multipartResolver$0(<generated>) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c$$FastClassBySpringCGLIB$$ae8b6440.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.multipartResolver(<generated>) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_452]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_452]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_452]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_452]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 33 more
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.fileupload.FileItemFactory
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1702) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1547) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at com.watad.config.WebConfig.multipartResolver(WebConfig.java:12) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.CGLIB$multipartResolver$0(<generated>) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c$$FastClassBySpringCGLIB$$ae8b6440.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.multipartResolver(<generated>) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_452]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_452]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_452]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_452]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 33 more
+2025-06-11 19:22:17 [http-bio-9090-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 19:22:23 [http-bio-9090-exec-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 19:22:34 [http-bio-9090-exec-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 19:22:36 [http-bio-9090-exec-1] INFO  MarketplaceController - the user email is seha.abdo@gmail.com
+2025-06-11 19:22:36 [http-bio-9090-exec-1] WARN  XmlWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'multipartResolver' defined in com.watad.config.WebConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+2025-06-11 19:22:36 [http-bio-9090-exec-1] ERROR DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'multipartResolver' defined in com.watad.config.WebConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:625) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1287) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1126) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:848) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:865) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:548) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:696) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:662) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:710) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:587) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:526) [spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:169) [spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:865) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:136) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_452]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_452]
+	at java.lang.Thread.run(Thread.java:750) [?:1.8.0_452]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 36 more
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at com.watad.config.WebConfig.multipartResolver(WebConfig.java:12) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.CGLIB$multipartResolver$0(<generated>) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c$$FastClassBySpringCGLIB$$ae8b6440.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.multipartResolver(<generated>) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_452]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_452]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_452]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_452]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 36 more
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.fileupload.FileItemFactory
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1702) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1547) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at com.watad.config.WebConfig.multipartResolver(WebConfig.java:12) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.CGLIB$multipartResolver$0(<generated>) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c$$FastClassBySpringCGLIB$$ae8b6440.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.multipartResolver(<generated>) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_452]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_452]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_452]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_452]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 36 more
+2025-06-11 19:22:54 [http-bio-9090-exec-2] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 19:23:01 [http-bio-9090-exec-2] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 19:23:12 [http-bio-9090-exec-2] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 19:23:14 [http-bio-9090-exec-2] INFO  MarketplaceController - the user email is seha.abdo@gmail.com
+2025-06-11 19:23:14 [http-bio-9090-exec-2] WARN  XmlWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'multipartResolver' defined in com.watad.config.WebConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+2025-06-11 19:23:14 [http-bio-9090-exec-2] ERROR DispatcherServlet - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'multipartResolver' defined in com.watad.config.WebConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:625) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1287) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1126) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:848) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:865) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:548) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:696) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:662) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:710) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:587) ~[spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:526) [spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:169) [spring-webmvc-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:865) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:136) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_452]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_452]
+	at java.lang.Thread.run(Thread.java:750) [?:1.8.0_452]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.multipart.commons.CommonsMultipartResolver]: Factory method 'multipartResolver' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 36 more
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/fileupload/FileItemFactory
+	at com.watad.config.WebConfig.multipartResolver(WebConfig.java:12) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.CGLIB$multipartResolver$0(<generated>) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c$$FastClassBySpringCGLIB$$ae8b6440.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.multipartResolver(<generated>) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_452]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_452]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_452]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_452]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 36 more
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.fileupload.FileItemFactory
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1702) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1547) ~[tomcat-embed-core-7.0.47.jar:7.0.47]
+	at com.watad.config.WebConfig.multipartResolver(WebConfig.java:12) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.CGLIB$multipartResolver$0(<generated>) ~[classes/:?]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c$$FastClassBySpringCGLIB$$ae8b6440.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) ~[spring-context-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at com.watad.config.WebConfig$$EnhancerBySpringCGLIB$$7053803c.multipartResolver(<generated>) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_452]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_452]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_452]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_452]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620) ~[spring-beans-5.1.0.RELEASE.jar:5.1.0.RELEASE]
+	... 36 more
+2025-06-11 19:25:22 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 19:25:26 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-06-11 19:25:26 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-06-11 19:25:26 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-06-11 19:25:33 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 19:25:34 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-06-11 19:25:45 [localhost-startStop-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 19:25:47 [localhost-startStop-1] INFO  MarketplaceController - the user email is seha.abdo@gmail.com
+2025-06-11 19:25:48 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e13fa8a, org.springframework.security.web.context.SecurityContextPersistenceFilter@268045d1, org.springframework.security.web.header.HeaderWriterFilter@7e715afd, org.springframework.security.web.authentication.logout.LogoutFilter@2fcb010a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@76228b87, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7eab1c55, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@406e116f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e38a26f, org.springframework.security.web.session.SessionManagementFilter@e0eaf1a, org.springframework.security.web.access.ExceptionTranslationFilter@71806ef9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@66358d29]
+2025-06-11 19:25:48 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 25796 ms
+2025-06-11 19:25:58 [http-bio-9090-exec-4] INFO  MarketplaceController - Just Started The Home Page
+2025-06-11 19:26:31 [http-bio-9090-exec-7] WARN  ExceptionHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'item' on field 'image': rejected value [org.springframework.web.multipart.commons.CommonsMultipartFile@10a4d390]; codes [typeMismatch.item.image,typeMismatch.image,typeMismatch.[B,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte[]' for property 'image'; nested exception is java.lang.IllegalArgumentException: Cannot convert value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte' for property 'image[0]': PropertyEditor [org.springframework.beans.propertyeditors.CustomNumberEditor] returned inappropriate value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile']] to ModelAndView [view="errorPage"; model={errorMessage=org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'item' on field 'image': rejected value [org.springframework.web.multipart.commons.CommonsMultipartFile@10a4d390]; codes [typeMismatch.item.image,typeMismatch.image,typeMismatch.[B,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte[]' for property 'image'; nested exception is java.lang.IllegalArgumentException: Cannot convert value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte' for property 'image[0]': PropertyEditor [org.springframework.beans.propertyeditors.CustomNumberEditor] returned inappropriate value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile']}]
+2025-06-11 19:26:32 [http-bio-9090-exec-6] WARN  PageNotFound - No mapping for GET /style.css
+2025-06-11 19:36:02 [http-bio-9090-exec-9] WARN  SqlExceptionHelper - SQL Error: 0, SQLState: null
+2025-06-11 19:36:02 [http-bio-9090-exec-9] ERROR SqlExceptionHelper - Already closed.
+2025-06-11 19:36:02 [http-bio-9090-exec-9] WARN  ExceptionHandlerExceptionResolver - Resolved [org.springframework.transaction.CannotCreateTransactionException: Could not open Hibernate Session for transaction; nested exception is org.hibernate.TransactionException: JDBC begin transaction failed: ] to ModelAndView [view="errorPage"; model={errorMessage=Could not open Hibernate Session for transaction; nested exception is org.hibernate.TransactionException: JDBC begin transaction failed: }]
+2025-06-11 19:36:02 [http-bio-9090-exec-10] WARN  PageNotFound - No mapping for GET /style.css
+2025-06-11 19:36:05 [http-bio-9090-exec-10] WARN  SqlExceptionHelper - SQL Error: 0, SQLState: null
+2025-06-11 19:36:05 [http-bio-9090-exec-10] ERROR SqlExceptionHelper - Already closed.
+2025-06-11 19:36:05 [http-bio-9090-exec-10] WARN  ExceptionHandlerExceptionResolver - Resolved [org.springframework.transaction.CannotCreateTransactionException: Could not open Hibernate Session for transaction; nested exception is org.hibernate.TransactionException: JDBC begin transaction failed: ] to ModelAndView [view="errorPage"; model={errorMessage=Could not open Hibernate Session for transaction; nested exception is org.hibernate.TransactionException: JDBC begin transaction failed: }]
+2025-06-11 19:36:05 [http-bio-9090-exec-3] WARN  PageNotFound - No mapping for GET /style.css
+2025-06-11 19:36:28 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 19:36:29 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-06-11 19:36:29 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-06-11 19:36:30 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-06-11 19:36:36 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 19:36:36 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-06-11 19:36:48 [localhost-startStop-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 19:36:50 [localhost-startStop-1] INFO  MarketplaceController - the user email is seha.abdo@gmail.com
+2025-06-11 19:36:51 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29b6f798, org.springframework.security.web.context.SecurityContextPersistenceFilter@e905070, org.springframework.security.web.header.HeaderWriterFilter@2fe8012d, org.springframework.security.web.authentication.logout.LogoutFilter@1a832bc5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@968f542, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@343db9b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@793dd7ef, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@49593132, org.springframework.security.web.session.SessionManagementFilter@6b5f038b, org.springframework.security.web.access.ExceptionTranslationFilter@1f9b6ed5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4df75cdf]
+2025-06-11 19:36:51 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 22864 ms
+2025-06-11 19:37:42 [http-bio-9090-exec-4] INFO  MarketplaceController - Just Started The Home Page
+2025-06-11 19:38:21 [http-bio-9090-exec-6] WARN  ExceptionHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'item' on field 'image': rejected value [org.springframework.web.multipart.commons.CommonsMultipartFile@39920f9d]; codes [typeMismatch.item.image,typeMismatch.image,typeMismatch.[B,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte[]' for property 'image'; nested exception is java.lang.IllegalArgumentException: Cannot convert value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte' for property 'image[0]': PropertyEditor [org.springframework.beans.propertyeditors.CustomNumberEditor] returned inappropriate value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile']] to ModelAndView [view="errorPage"; model={errorMessage=org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'item' on field 'image': rejected value [org.springframework.web.multipart.commons.CommonsMultipartFile@39920f9d]; codes [typeMismatch.item.image,typeMismatch.image,typeMismatch.[B,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte[]' for property 'image'; nested exception is java.lang.IllegalArgumentException: Cannot convert value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte' for property 'image[0]': PropertyEditor [org.springframework.beans.propertyeditors.CustomNumberEditor] returned inappropriate value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile']}]
+2025-06-11 19:38:21 [http-bio-9090-exec-7] WARN  PageNotFound - No mapping for GET /style.css
+2025-06-11 19:44:31 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 19:44:33 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-06-11 19:44:33 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-06-11 19:44:33 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-06-11 19:44:40 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 19:44:40 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-06-11 19:44:52 [localhost-startStop-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 19:44:54 [localhost-startStop-1] INFO  MarketplaceController - the user email is seha.abdo@gmail.com
+2025-06-11 19:44:55 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7179e103, org.springframework.security.web.context.SecurityContextPersistenceFilter@37844da0, org.springframework.security.web.header.HeaderWriterFilter@7dbfcf5a, org.springframework.security.web.authentication.logout.LogoutFilter@122e8463, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@38b67f80, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e203d19, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@692578a9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ee59b11, org.springframework.security.web.session.SessionManagementFilter@1cf2558e, org.springframework.security.web.access.ExceptionTranslationFilter@45cb0248, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12846299]
+2025-06-11 19:44:55 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 24088 ms
+2025-06-11 19:45:17 [http-bio-9090-exec-1] WARN  ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported] to ModelAndView [view="errorPage"; model={errorMessage=Request method 'GET' not supported}]
+2025-06-11 19:45:17 [http-bio-9090-exec-2] WARN  PageNotFound - No mapping for GET /style.css
+2025-06-11 19:45:21 [http-bio-9090-exec-3] INFO  MarketplaceController - Just Started The Home Page
+2025-06-11 19:45:45 [http-bio-9090-exec-7] WARN  ExceptionHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'item' on field 'image': rejected value [org.springframework.web.multipart.commons.CommonsMultipartFile@6296610c]; codes [typeMismatch.item.image,typeMismatch.image,typeMismatch.[B,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte[]' for property 'image'; nested exception is java.lang.IllegalArgumentException: Cannot convert value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte' for property 'image[0]': PropertyEditor [org.springframework.beans.propertyeditors.CustomNumberEditor] returned inappropriate value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile']] to ModelAndView [view="errorPage"; model={errorMessage=org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'item' on field 'image': rejected value [org.springframework.web.multipart.commons.CommonsMultipartFile@6296610c]; codes [typeMismatch.item.image,typeMismatch.image,typeMismatch.[B,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.image,image]; arguments []; default message [image]]; default message [Failed to convert property value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte[]' for property 'image'; nested exception is java.lang.IllegalArgumentException: Cannot convert value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile' to required type 'byte' for property 'image[0]': PropertyEditor [org.springframework.beans.propertyeditors.CustomNumberEditor] returned inappropriate value of type 'org.springframework.web.multipart.commons.CommonsMultipartFile']}]
+2025-06-11 19:45:45 [http-bio-9090-exec-6] WARN  PageNotFound - No mapping for GET /style.css
+2025-06-11 19:56:20 [localhost-startStop-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-06-11 19:56:22 [localhost-startStop-1] INFO  Version - HHH000412: Hibernate Core {5.2.17.Final}
+2025-06-11 19:56:22 [localhost-startStop-1] INFO  Environment - HHH000206: hibernate.properties not found
+2025-06-11 19:56:22 [localhost-startStop-1] INFO  Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2025-06-11 19:56:29 [localhost-startStop-1] INFO  Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2025-06-11 19:56:30 [localhost-startStop-1] INFO  Version - HV000001: Hibernate Validator 5.4.1.Final
+2025-06-11 19:56:42 [localhost-startStop-1] INFO  QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2025-06-11 19:56:43 [localhost-startStop-1] INFO  MarketplaceController - the user email is seha.abdo@gmail.com
+2025-06-11 19:56:44 [localhost-startStop-1] INFO  DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65d8a418, org.springframework.security.web.context.SecurityContextPersistenceFilter@3106c5b2, org.springframework.security.web.header.HeaderWriterFilter@2627c42d, org.springframework.security.web.authentication.logout.LogoutFilter@3eeb2317, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@53688780, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f161236, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@750d4165, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@428bc488, org.springframework.security.web.session.SessionManagementFilter@54d841c0, org.springframework.security.web.access.ExceptionTranslationFilter@28ce406, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@151bd2ce]
+2025-06-11 19:56:44 [localhost-startStop-1] INFO  DispatcherServlet - Completed initialization in 24796 ms
+2025-06-11 19:56:47 [http-bio-9090-exec-1] INFO  MarketplaceController - Just Started The Home Page
+2025-06-11 19:57:29 [http-bio-9090-exec-4] WARN  ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.multipart.support.MissingServletRequestPartException: Required request part 'image' is not present] to ModelAndView [view="errorPage"; model={errorMessage=Required request part 'image' is not present}]
+2025-06-11 19:57:29 [http-bio-9090-exec-2] WARN  PageNotFound - No mapping for GET /style.css
+2025-06-11 19:58:01 [http-bio-9090-exec-5] INFO  MarketplaceController - Just Started The Home Page
+2025-06-11 19:58:05 [http-bio-9090-exec-7] WARN  PageNotFound - No mapping for GET /.well-known/appspecific/com.chrome.devtools.json
+2025-06-11 19:58:33 [http-bio-9090-exec-8] INFO  MarketplaceController - Just Started The Home Page
+2025-06-11 19:58:53 [http-bio-9090-exec-10] WARN  ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.multipart.support.MissingServletRequestPartException: Required request part 'image' is not present] to ModelAndView [view="errorPage"; model={errorMessage=Required request part 'image' is not present}]
+2025-06-11 19:58:53 [http-bio-9090-exec-6] WARN  PageNotFound - No mapping for GET /style.css

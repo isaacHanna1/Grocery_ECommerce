@@ -1,23 +1,14 @@
 package com.watad.model;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.util.Base64;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "item")
@@ -33,7 +24,8 @@ public class Item {
 	@Lob
 	@Column(name = "image", columnDefinition = "LONGBLOB")
 	private byte[] image;
-	
+	@Transient // This field won't be persisted in DB
+	private MultipartFile imageFile;
     @JsonIgnore
 	@OneToMany(mappedBy = "item" , fetch = FetchType.LAZY , cascade = CascadeType.ALL)
 	private List<itemImages> itemImage;
@@ -84,7 +76,12 @@ public class Item {
 	@OneToMany(mappedBy = "item", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<OrderItems> orderItemsList;
 
-
+	public void setImageFile(MultipartFile imageFile) throws IOException {
+		this.imageFile = imageFile;
+		if (imageFile != null && !imageFile.isEmpty()) {
+			this.image = imageFile.getBytes();
+		}
+	}
 	public long getId() {
 		return id;
 	}
@@ -237,6 +234,10 @@ public class Item {
 		this.orderItemsList = orderItemsList;
 	}
 
+	public MultipartFile getImageFile() {
+		return imageFile;
+	}
+
 	public  float calcPrice() {
 		float purchasePrice = this.purchasePrice;
 		float marginProfit  = profitMarginCustomer;
@@ -271,4 +272,6 @@ public class Item {
 		float finalPrice = currentPrice - (currentPrice * discountPercentage);
 		return finalPrice;
 }
+
+
 }
