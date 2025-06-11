@@ -17,45 +17,45 @@ public class CustomUserDetailsService
 	@Autowired
 	private UserDao userDao;
 	
-//	@Override
-//	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//
-//		User user = userDao.findByEmail(username);
-//		
-//		if(user == null) {
-//			System.out.println("user not found exception from cutom user details");
-//            throw new UsernameNotFoundException("لا يوجد مستخدم: " + username);
-//		}
-//		if(!user.isActive()) {
-//			System.out.println("not active");
-//            throw new InactiveUserException("قم بتفعيل الحساب" + username);
-//		}else {
-//		UserDetails userDetails = org.springframework.security.core.userdetails.User
-//				.withUsername(user.getUserEmail())
-//				.password(user.getPassword())
-//				.roles(user.getRoles().get(0).getRoleName())
-//				.build();
-//		return userDetails;
-//		}
-//	}
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-	
-	public UserDetails loadUserByUsername (String phoneNumber) throws UsernameNotFoundException{
-		
-			User user = userDao.findByPhone(phoneNumber);
-			if(user == null) {
-				System.out.println("user not found exception from cutom user details");
-	            throw new UsernameNotFoundException("لا يوجد مستخدم: " + phoneNumber);
+		User user = userDao.findByPhone(username);
 
-			}
-			else{UserDetails userDetails = org.springframework.security.core.userdetails.User
+		if(user == null) {
+			System.out.println("user not found exception from cutom user details");
+            throw new UsernameNotFoundException("لا يوجد مستخدم: " + username);
+		}
+		if(!user.isActive()) {
+			System.out.println("not active");
+            throw new InactiveUserException("قم بتفعيل الحساب" + username);
+		}else {
+			UserDetails userDetails = org.springframework.security.core.userdetails.User
 					.withUsername(user.getUserPhone())
 					.password(user.getPassword())
 					.roles(user.getRoles().get(0).getRoleName())
 					.build();
 			return userDetails;
-			}
+		}
 	}
+
+	
+//	public UserDetails loadUserByUsername (String phoneNumber) throws UsernameNotFoundException{
+//
+//			User user = userDao.findByPhone(phoneNumber);
+//			if(user == null) {
+//				System.out.println("user not found exception from cutom user details");
+//	            throw new UsernameNotFoundException("لا يوجد مستخدم: " + phoneNumber);
+//
+//			}
+//			else{UserDetails userDetails = org.springframework.security.core.userdetails.User
+//					.withUsername(user.getUserPhone())
+//					.password(user.getPassword())
+//					.roles(user.getRoles().get(0).getRoleName())
+//					.build();
+//			return userDetails;
+//			}
+//	}
 
 	}
 	

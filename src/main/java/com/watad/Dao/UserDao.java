@@ -11,7 +11,7 @@ import com.watad.Dto.RegistrationDto;
 public interface UserDao {
 	
 	void saveUser(User user);
-	void saveUser(RegistrationDto registrationDto , HttpServletRequest req);
+	User saveUser(RegistrationDto registrationDto , HttpServletRequest req);
 	User findByEmail(String email);
 	User findByPhone(String phone);
 	String findEmailByPhone(String phone);

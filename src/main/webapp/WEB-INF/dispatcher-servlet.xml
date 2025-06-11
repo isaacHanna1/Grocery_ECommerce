@@ -35,7 +35,7 @@
             <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
             
             <!-- Add hbm2ddl.auto property here -->
-            <prop key="hibernate.hbm2ddl.auto">update</prop>    
+            <prop key="hibernate.hbm2ddl.auto">update</prop>
             <!-- Set character encoding and collation for UTF-8 (supports Arabic) -->
             <prop key="hibernate.connection.characterEncoding">UTF-8</prop>
             <prop key="hibernate.connection.CharSet">UTF-8</prop>

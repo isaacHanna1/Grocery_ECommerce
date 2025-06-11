@@ -84,6 +84,7 @@ public class Item {
 	@OneToMany(mappedBy = "item", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<OrderItems> orderItemsList;
 
+
 	public long getId() {
 		return id;
 	}

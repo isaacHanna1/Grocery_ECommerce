@@ -9,14 +9,13 @@ import java.security.Key;
 import java.util.Base64;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.security.SecureRandom;
 
 @Service
-public class UrlManipulator {
+public class UrlManipulatorServiceImp implements UrlManipulatorService {
 
     private final String secretKey;
 
-    public UrlManipulator() {
+    public UrlManipulatorServiceImp() {
         this.secretKey = "M1sMNN8kmpGyI5JyoTnaRwVN1I9kuKQ4tVWN0KFctZs=";
     }
 
@@ -26,7 +25,7 @@ public class UrlManipulator {
             Cipher cipher = Cipher.getInstance("AES");
             cipher.init(Cipher.ENCRYPT_MODE, key);
             byte[] encryptedBytes = cipher.doFinal(input.getBytes(StandardCharsets.UTF_8));
-            return Base64.getUrlEncoder().encodeToString(encryptedBytes);
+            return Base64.getUrlEncoder().withoutPadding().encodeToString(encryptedBytes);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -35,26 +34,36 @@ public class UrlManipulator {
 
     public String decrypt(String encryptedInput) {
         try {
+            // Add debugging logs
+            System.out.println("=== DECRYPT DEBUG ===");
+            System.out.println("Input received: [" + encryptedInput + "]");
+            System.out.println("Input length: " + encryptedInput.length());
+            System.out.println("Input ends with: " + encryptedInput.substring(Math.max(0, encryptedInput.length() - 5)));
+
+            // Check for any non-Base64 characters
+            if (!encryptedInput.matches("[A-Za-z0-9_-]*")) {
+                System.out.println("WARNING: Input contains non-URL-safe-Base64 characters!");
+            }
+
             // Decode the encrypted token from Base64
             byte[] encryptedBytes = Base64.getUrlDecoder().decode(encryptedInput);
+            System.out.println("Successfully decoded Base64, byte array length: " + encryptedBytes.length);
+
             Key key = new SecretKeySpec(Base64.getDecoder().decode(secretKey), "AES");
             Cipher cipher = Cipher.getInstance("AES");
             cipher.init(Cipher.DECRYPT_MODE, key);
             byte[] decryptedBytes = cipher.doFinal(encryptedBytes);
-            return new String(decryptedBytes, StandardCharsets.UTF_8);
+            String result = new String(decryptedBytes, StandardCharsets.UTF_8);
+
+            System.out.println("Decryption successful!");
+            return result;
         } catch (Exception e) {
+            System.out.println("Decryption failed with error: " + e.getMessage());
             e.printStackTrace();
             return null;
         }
     }
 
-//    private static String generateSecretKey() {
-//        byte[] randomBytes = new byte[32]; // 32 bytes = 256 bits
-//        SecureRandom secureRandom = new SecureRandom();
-//        secureRandom.nextBytes(randomBytes);
-//        return Base64.getEncoder().encodeToString(randomBytes);
-//    }
-    
 
     public  String extractExpireDate(String url) {
         Pattern pattern = Pattern.compile("expireIn-(\\d+)");

@@ -10,6 +10,7 @@ public interface UnitDao {
 	public List<Unit> getAllUnit();
 	public Unit DeleteUnit(long id);
 	public Unit EditUnit(Unit unit);
-	public boolean findByName(String unitName);
+	public Unit findByName(String unitName);
+	public  Unit findById(long id );
 	
 }

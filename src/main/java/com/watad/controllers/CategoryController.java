@@ -1,6 +1,7 @@
 package com.watad.controllers;
 
 
+import com.watad.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,24 +17,25 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import com.watad.Dao.CategoryDao;
 import com.watad.model.Category;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Transactional
 @RestController
 public class CategoryController {
 
-	// this instance,initalized by spring container
-	// to use db function in categoryDaoImp
-	@Autowired
-	private CategoryDao categoryDao; 
-	
+	private final CategoryService categoryService;
+
+	public CategoryController(CategoryService categoryService) {
+		this.categoryService = categoryService;
+	}
+
 	// this function for geting jsp page for category page
 	@GetMapping(path = "/categoryPage")
 	public ModelAndView retrivingCategoryPage(ModelAndView modelAndView) {
-		List<Category>allCategories = categoryDao.getListOfCategory();
+		List<Category>allCategories = categoryService.getListOfCategory();
 		modelAndView.setViewName("addsection");
 		modelAndView.addObject("allCategories",allCategories);
 		return modelAndView;
@@ -41,23 +43,21 @@ public class CategoryController {
 
 	// function for saving new category  
 	@PostMapping("/addCategory")
-	public ModelAndView AddCategory(Category category ) {
-		ModelAndView modelAndView  ;
-		modelAndView = new ModelAndView("redirect:/categoryPage");
+	public ModelAndView AddCategory(Category category , RedirectAttributes redirectAttributes) {
 		if(existsInDataBase(category)) {
-			String message = " category name is aready saved before *";
-			modelAndView.addObject("errMessage", message);
-			return modelAndView;		
+			String message = "هناك بالفعل قسم بهذا الاسم ";
+			redirectAttributes.addFlashAttribute("errMessage",message);
+			return new ModelAndView("redirect:/categoryPage");
 		}
-		categoryDao.insertNewCategory(category);
-		return modelAndView;		
+		categoryService.insertNewCategory(category);
+		return new ModelAndView("redirect:/categoryPage");
 	}
 	/* this api function to delete category from database
 	 * i will use  by javascript to delete the record 
 	*/
 	@DeleteMapping("/categoryApi/deleteCategory/{id}")
 	public ResponseEntity<?> deleteCategory(@PathVariable Long id) {
-	   Category category = categoryDao.getCategory(id);
+	   Category category = categoryService.getCategory(id);
 	    
 	    if (category == null) {
 	        return ResponseEntity.notFound().build();
@@ -68,7 +68,7 @@ public class CategoryController {
 	        return ResponseEntity.badRequest().body("لا يمكنك مسح القسم لانه مرتبط باقسام فرعية ");
 	    }
 	    
-	    categoryDao.deleteCategory(id);
+	    categoryService.deleteCategory(id);
 	    
 	    return ResponseEntity.ok().body(category);
 	}
@@ -77,15 +77,15 @@ public class CategoryController {
 	public ResponseEntity<?> updateCategory(@RequestBody Category category  ) {
 		
 		if(existsInDataBase(category)) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Category Name aready exists");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("هناك بالفعل قسم بهذا الاسم ");
 		}
-			return ResponseEntity.ok(categoryDao.editCategory(category));	
+			return ResponseEntity.ok(categoryService.editCategory(category));
 	}
 
 	// i check if category that i want insert/update in database exists or not 
 	public boolean existsInDataBase(Category category) {
 
-		List<Category> allCategories = categoryDao.getListOfCategory();
+		List<Category> allCategories = categoryService.getListOfCategory();
 		Set <String> categoryNames = new HashSet<>();
 		for(Category c : allCategories) {
 			categoryNames.add(c.getCategoryName());
@@ -98,6 +98,6 @@ public class CategoryController {
 	}
 	@GetMapping(path = "/allMainCategoy")
 	public List<Category> gettAllCategory() {
-		return categoryDao.getListOfCategory();
+		return categoryService.getListOfCategory();
 	}
 }

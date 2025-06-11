@@ -129,22 +129,22 @@ tableContentOfSubCategory.addEventListener("click",e=>{
       dialogContainer.classList.remove("dialogContainer");
 	  dialogContainer.style.display="none";
     };
-    okBtn.onclick = function () {
-	  console.log(subCategoryId);
-	  deleteCategory(subCategoryId);
-      overlay_div.classList.remove("overlay");
-	
+    okBtn.onclick = async function () {
+		let deleted = await handleDeleteSubCategory(subCategoryId);
+	  if(deleted == true){
+	  //reomve tr after deleted from database
+	  parent_tr.remove();
+	  }
+	  overlay_div.classList.remove("overlay");
       dialogContainer.classList.remove("dialogContainer");
 	  dialogContainer.style.display="none";
-	  //reomve tr after deleted from database
-	  parent_tr.remove();		
     };
   }
 	else if(e.target.classList.contains("edit-btn")){
 	 e.preventDefault();
 	 parent_tr  = e.target.closest('tr');
 	 subCategoryId = parent_tr.querySelector('td:first-child').textContent;
-	 subCategoryNameTable = parent_tr.querySelector('#subCategoryName').textContent;	
+	 subCategoryNameTable = parent_tr.querySelector('#subCategoryName').textContent;
      let overlay_div = document.createElement("div");
      overlay_div.classList.add("overlay");
      document.body.appendChild(overlay_div);
@@ -163,7 +163,7 @@ tableContentOfSubCategory.addEventListener("click",e=>{
 	 textContainer.appendChild(labelForInput);
      textContainer.appendChild(editInput);
      dialogContainer.appendChild(textContainer);
-	
+
 	 let labelForSelect = document.createElement("label");
 	 let textForSelect  =document.createTextNode("اسم القسم ");
 	 labelForSelect.appendChild(textForSelect);
@@ -177,12 +177,12 @@ tableContentOfSubCategory.addEventListener("click",e=>{
 				option.setAttribute("value",obj.id);
 				let textNode = document.createTextNode(obj.categoryName);
 				option.appendChild(textNode);
-				selectElement.appendChild(option);			
+				selectElement.appendChild(option);
 			});
 		});
 		textContainer.appendChild(selectElement);
-	
-	
+
+
      let btnContainer = document.createElement("div");
      let okBtn = document.createElement("button");
 	 okBtn.classList.add("edit-btn")
@@ -206,7 +206,7 @@ tableContentOfSubCategory.addEventListener("click",e=>{
 	      dialogContainer.classList.remove("dialogContainer");
 		  dialogContainer.style.display="none";
 			let selectedOption = selectElement.options[selectElement.selectedIndex];
-			let selectedValue  = selectedOption.value;  
+			let selectedValue  = selectedOption.value;
 			let SelectedTextValue = selectedOption.textContent;
    		    const fetching = editSubCategory(subCategoryId,subCategoryName,selectedValue,SelectedTextValue);
 			fetching.then(value=>{
@@ -221,12 +221,12 @@ tableContentOfSubCategory.addEventListener("click",e=>{
 					CategoryNameTable.textContent = SelectedTextValue ;
 				}
 			});
-				
+
 	    };
-		
+
 	}
 
-	
+
 });
 
 async function deleteCategory(subCategoryId){
@@ -241,7 +241,7 @@ async function deleteCategory(subCategoryId){
 		const host = window.location.origin;
 		const link = host+"/deleteSubCategory/"+subCategoryId;
 		const response = await fetch(link,requestOption);
-		
+
 		if(!response.ok){
 			throw new Error("Network response was not ok");
 		}
@@ -252,7 +252,17 @@ async function deleteCategory(subCategoryId){
 		console.error("there was an error when fetching data (exception)" , err);
 	}
 }
-
+async function handleDeleteSubCategory(subCategoryId){
+        const data = await deleteCategory(subCategoryId);
+        if(data){
+                if(data.status != "success"){
+                 alert("لا نستطيع مسح القسم الفرعي لانه مرتبط بعناصر اخري !");
+                }else{
+				return true;
+				}
+        }
+		return false
+}
 // i fetching new categories from database ;
 async function getAllCategory (){
 	

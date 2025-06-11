@@ -36,14 +36,22 @@ tableContent.addEventListener("click",e=>{
       dialogContainer.classList.remove("dialogContainer");
 	  dialogContainer.style.display="none";
     };
-    okBtn.onclick = function () {
-	  deleteUnit(unitId);
-      overlay_div.classList.remove("overlay");
-	
-      dialogContainer.classList.remove("dialogContainer");
-	  dialogContainer.style.display="none";
+    okBtn.onclick = async function () {
+	  const data = await deleteUnit(unitId);
+	  console.log(data);
+	  if(data.status === "failed"){
+		overlay_div.classList.remove("overlay");
+		dialogContainer.classList.remove("dialogContainer");
+		dialogContainer.style.display="none";
+		alert(data.message);
+	  }else{
+		overlay_div.classList.remove("overlay");
+		dialogContainer.classList.remove("dialogContainer");
+		dialogContainer.style.display="none";
 	  //reomve tr after deleted from database
 	  parent_tr.remove();		
+	  }
+     
     };
   }
 else if(e.target.classList.contains("edit-btn")){
@@ -140,11 +148,7 @@ async function deleteUnit(unitID){
 		const host = window.location.origin;
 		const link = host+"/deleteUnit/"+unitID;
 		const response = await fetch(link,requestOption);
-		
-		if(!response.ok){
-			throw new Error("Network response was not ok");
-		}
-		const data = await response.json();
+		const data = await response.json();		
 		return data;
 	}
 	catch(err){

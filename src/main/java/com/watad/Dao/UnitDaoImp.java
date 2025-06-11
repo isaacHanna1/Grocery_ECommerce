@@ -13,18 +13,18 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.watad.model.Unit;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class UnitDaoImp implements UnitDao{
 
-	@Autowired
-	private SessionFactory mySessionFactory;
-	
-	public void setMySessionFactory(SessionFactory mySessionFactory) {
+
+	private final  SessionFactory mySessionFactory;
+
+	public UnitDaoImp(SessionFactory mySessionFactory) {
 		this.mySessionFactory = mySessionFactory;
 	}
-	
-	
+
 	@Override
 	public Unit addUnit(Unit unit) {	
 		Session session = this.mySessionFactory.getCurrentSession();
@@ -36,12 +36,7 @@ public class UnitDaoImp implements UnitDao{
 	@Override
 	public List<Unit> getAllUnit() {
 		Session session = this.mySessionFactory.getCurrentSession();
-	    CriteriaBuilder cb = session.getCriteriaBuilder();
-	    CriteriaQuery<Unit> cq = cb.createQuery(Unit.class);
-	    Root<Unit> rootEntry = cq.from(Unit.class);
-	    CriteriaQuery<Unit> all = cq.select(rootEntry);
-	    TypedQuery<Unit> allQuery = session.createQuery(all);
-	    return allQuery.getResultList();
+		return session.createQuery("From Unit ",Unit.class).getResultList();
 	}
 
 
@@ -63,15 +58,17 @@ public class UnitDaoImp implements UnitDao{
 		 return unit;
 	}
 	@Override
-	public boolean findByName(String unitName) {
-		Session session = this.mySessionFactory.getCurrentSession();
-		String hql  = "FROM Unit U WHERE U.unitName = :unitName";
-		Query<Unit> query = session.createQuery(hql,Unit.class);
+	public Unit findByName(String unitName) {
+		Session session 		= this.mySessionFactory.getCurrentSession();
+		String hql 				= "FROM Unit U WHERE U.unitName = :unitName";
+		Query<Unit> query 		= session.createQuery(hql, Unit.class);
 		query.setParameter("unitName", unitName);
-		List<Unit> results = query.list();
-		if(results.size()>0) {
-			return true;
-		}
-		return false;
+		return  query.getSingleResult();
+	}
+
+	@Override
+	public Unit findById(long id) {
+		Session session 		= mySessionFactory.getCurrentSession();
+		return  session.find(Unit.class,id);
 	}
 }

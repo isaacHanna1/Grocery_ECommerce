@@ -1,8 +1,12 @@
 package com.watad.controllers;
 
 
+import com.watad.services.CategoryService;
+import com.watad.services.SubCategoryService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -29,10 +33,10 @@ public class MarketplaceController {
 
 	
 	@Autowired
-	private CategoryDao categoryDao;
+	private CategoryService categoryService;
 	
 	@Autowired
-	private SubCategoryDao subCategoryDao;
+	private SubCategoryService subCategoryService;
 	
 	@Autowired
 	private itemDao itemDao;
@@ -57,7 +61,7 @@ public class MarketplaceController {
         else if(role.equals("ROLE_ADMIN")) {
         	return item_controller.retrivingItemPage(modelAndView);
         }
-		List<Category> allCategories = categoryDao.getListOfCategory();
+		List<Category> allCategories = categoryService.getListOfCategory();
 		List<Item>     NewArrival    = itemDao.getNewArrival();
 		List<Item>     highDiscount    = itemDao.getHighDiscounts();
 		modelAndView.setViewName("index");
@@ -70,7 +74,7 @@ public class MarketplaceController {
 
 	@GetMapping("/marketPlace/user")
 	public ModelAndView getMarketPlace_USER(ModelAndView modelAndView) {
-		List<Category> allCategories = categoryDao.getListOfCategory();
+		List<Category> allCategories = categoryService.getListOfCategory();
 		List<Item>     NewArrival    = itemDao.getNewArrival();
 		List<Item>     highDiscount  = itemDao.getHighDiscounts();
 		modelAndView.setViewName("index");
@@ -82,7 +86,7 @@ public class MarketplaceController {
 
 	@GetMapping("/marketPlace_trader")
 	public ModelAndView getMarketPlace_trader(ModelAndView modelAndView) {
-		List<Category> allCategories = categoryDao.getListOfCategory();
+		List<Category> allCategories = categoryService.getListOfCategory();
 		List<Item>     NewArrival    = itemDao.getNewArrival();
 		List<Item>     highDiscount    = itemDao.getHighDiscounts_trader();
 		modelAndView.setViewName("index_trader");
@@ -92,13 +96,12 @@ public class MarketplaceController {
 		return modelAndView;
 	}
 	@GetMapping("/subCategory/{categoryId}")
-	public List<SubCategory> gettingSubCategory(@PathVariable long categoryId){
-		List<SubCategory> sub =  subCategoryDao.getSubCategoryInSuchGategory(categoryId);
-		if(sub.size() == 0) {
-			return null;
-		}
-		    return sub;
+	public List<SubCategory> gettingSubCategory(@PathVariable long categoryId) {
+			List<SubCategory> subCategoryList =  subCategoryService.getSubCategoryInSuchGategory(categoryId);
+			System.out.println("print data size of list of sub "+subCategoryList.size());
+			return  subCategoryList;
 	}
+
 	
 	@GetMapping("/items/{pageNumber}/{categoryID}/{subCategoryId}/{role}")
 	public List<ItemDto> gettingItemInSubCategory(@PathVariable int pageNumber ,@PathVariable long categoryID ,@PathVariable  long subCategoryId , @PathVariable  String role){

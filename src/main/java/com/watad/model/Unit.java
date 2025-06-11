@@ -1,11 +1,9 @@
 package com.watad.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="unit")
@@ -21,7 +19,10 @@ public class Unit {
 	
 	@Column(name ="unitDecription" , unique = true)
 	private String unitDecription ;
-	
+
+	@OneToMany(mappedBy = "unit", fetch = FetchType.LAZY)
+	private List<Item> items;
+
 	public long getId() {
 		return id;
 	}
@@ -40,7 +41,12 @@ public class Unit {
 	public void setUnitDecription(String unitDecription) {
 		this.unitDecription = unitDecription;
 	}
-	
-	
-	
+
+	public List<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
 }

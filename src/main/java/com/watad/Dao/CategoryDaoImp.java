@@ -15,57 +15,47 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.watad.model.Category;
+import org.springframework.stereotype.Repository;
 
 
-@Component
+@Repository
 public class CategoryDaoImp implements CategoryDao{
 
-	@Autowired
-	private SessionFactory mySessionFactory;
-	
-	public void setMySessionFactory(SessionFactory mySessionFactory) {
+
+	private final SessionFactory mySessionFactory;
+
+
+	public CategoryDaoImp(SessionFactory mySessionFactory) {
 		this.mySessionFactory = mySessionFactory;
 	}
-	
-	@Override	
+
+	@Override
 	public void insertNewCategory(Category category) {
 	Session session = this.mySessionFactory.getCurrentSession();
-	session.save(category);	
-}
+	session.save(category);
+	}
 	
 	@Override
 	public Category getCategory(long id) {
 		Session session = this.mySessionFactory.getCurrentSession();
-		Category category = session.get(Category.class, id);
-		
-		if(category.getCategoryName().equals(""))
-			return null ; 
-		
-		return category;
+		return session.get(Category.class, id);
 	}
 	
 
 
 	@Override
 	public List<Category> getListOfCategory() {
-			Session session = this.mySessionFactory.getCurrentSession();
-		    CriteriaBuilder cb = session.getCriteriaBuilder();
-		    CriteriaQuery<Category> cq = cb.createQuery(Category.class);
-		    Root<Category> rootEntry = cq.from(Category.class);
-		    CriteriaQuery<Category> all = cq.select(rootEntry);
-		    TypedQuery<Category> allQuery = session.createQuery(all);
-		    return allQuery.getResultList();
+		Session session = mySessionFactory.getCurrentSession();
+		return session.createQuery("FROM Category", Category.class).getResultList();
 	}
 
 
 	@Override
 	public Category deleteCategory(long categoryId) {
-		 Session session = this.mySessionFactory.getCurrentSession();
-		 Category category = session.get(Category.class, categoryId);
-		 if(category != null) {
-		 session.delete(category);
-		 }
-		 return category;
+		Session session = mySessionFactory.getCurrentSession();
+		Category category = session.get(Category.class, categoryId);
+		session.delete(category); // Safe to call even if category is null
+		return category;
 	}
 
 	@Override

@@ -1,37 +1,24 @@
 package com.watad.services;
 
-import javax.transaction.Transactional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.watad.Dao.UserDao;
+import com.watad.Dto.RegistrationDto;
 import com.watad.model.User;
 
-@Service
-public class UserService {
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
-	
-	@Autowired
-	private UserDao userDao;
-	
-	@Transactional
-	public void changeUserAddress(long userId,String goverment , String city , String userAdress) {
-		userDao.updateUserAddress(userId, goverment, city, userAdress);
-	}
-	
-	@Transactional
-	public String getUserRole(long id) {
-		User user = userDao.findById(id); 
-		if (user == null )return "USER"; // this normal user
-		
-		return user.getRoles().get(0).getRoleName();
-	}
-	
-	@Transactional
-	public String getEmailByPhone(String phone) {
-		return userDao.findEmailByPhone(phone);
-	}
-	
-	
-}
+public interface UserService {
+
+    public void changeUserAddress(long userId,String goverment , String city , String userAdress) ;
+    public String getUserRole(long id) ;
+    public String getEmailByPhone(String phone);
+    void saveUser(User user);
+    void saveUser(RegistrationDto registrationDto , HttpServletRequest req);
+    User findByEmail(String email);
+    User findByPhone(String phone);
+    User findById(long id);
+    void activeUserAccount(long id );
+    void updateUserAddress(long userId , String goverment , String city , String userAddress);
+    void updatePassword (String userName , String newPassword);
+    List<User> getAllUser() ;
+
+    }

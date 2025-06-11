@@ -7,51 +7,45 @@ import java.util.Arrays;
 import java.util.List;
 import javax.persistence.Query;
 import javax.servlet.http.HttpServletRequest;
+
+import com.watad.services.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import com.watad.Dto.RegistrationDto;
 import com.watad.model.Role;
 import com.watad.model.User;
-import com.watad.services.EmailValidationService;
-import com.watad.services.UrlManipulator;
-import com.watad.services.VerificationTokenService;
 
 
-@Component
+@Repository
+@Transactional
 public class UserDaoImp implements UserDao{
 
-	private final Logger logger = LogManager.getLogger(UserDaoImp.class);
-	@Autowired
-	private SessionFactory mySessionFactory;
-	
-	@Autowired
-	private VerificationTokenService verificationTokenService;
-	
+	private  Logger logger = LogManager.getLogger(UserDaoImp.class);
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-    
-    @Autowired
-    private PasswordResetTokenDao passwordResetTokenDao;
-	
-	public void setMySessionFactory(SessionFactory mySessionFactory) {
+
+	private  final  SessionFactory mySessionFactory;
+
+	private  PasswordEncoder passwordEncoder;
+	private final RoleService roleService;
+
+
+	public UserDaoImp(SessionFactory mySessionFactory, VerificationTokenService verificationTokenService, RoleService roleService, EmailService emailValidationService, UrlManipulatorService urlManipulatorService) {
 		this.mySessionFactory = mySessionFactory;
+		this.roleService = roleService;
 	}
+
 	@Autowired
-	private RoleDao roleDao;
-	
-	@Autowired
-	private EmailValidationService emailValidationService;
-	
-	@Autowired
-	private UrlManipulator urlManipulator;
+	public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+		this.passwordEncoder = passwordEncoder;
+	}
+
 	@Override
 	@Transactional(propagation = Propagation.SUPPORTS)
 	public void saveUser(User user) {
@@ -61,8 +55,7 @@ public class UserDaoImp implements UserDao{
 
 
 	@Override
-	@Transactional
-	public void saveUser(RegistrationDto registrationDto , HttpServletRequest req) {
+	public User saveUser(RegistrationDto registrationDto , HttpServletRequest req) {
 
 		User user = new User();
 		user.setUserName(registrationDto.getUserName());
@@ -75,32 +68,15 @@ public class UserDaoImp implements UserDao{
 		String password = registrationDto.getPassword();
 		String passwordEncoded = passwordEncoder.encode(password);
 		user.setPassword(passwordEncoded);
-		
 		user.setUserAddress(registrationDto.getAddress());
-		Role role = roleDao.findByName("USER");
+		Role role = roleService.findByName("USER");
 		user.setRoles(Arrays.asList(role));
 		saveUser(user);
-		
-		sendEmail(user, req);
-		logger.info("Email Sent sucessfully");
+		return user;
 	}
 
-	public  void sendEmail(User user , HttpServletRequest req) {
-		String token = verificationTokenService
-		        .generateToken();
 
-		long expirationMilliSeconds = System.currentTimeMillis()+(60*60*1000);
-		token+= "-expireIn-"+expirationMilliSeconds;
-		String encodedUserId = encodeURLComponent(user.getId()+"");// Encode user ID for URL safety
-		token+="?id="+encodedUserId;
-		System.out.println("the token is :"+token);
-		String encryptToken = urlManipulator.encrypt(token);
-		System.out.println("the token after encrept :"+ encryptToken);
-		emailValidationService.sendValidationEmail(user,encryptToken, req);
-
-	}
 	
-	@Transactional
 	@Override
 	public User findByEmail(String email) {
 
@@ -109,18 +85,12 @@ public class UserDaoImp implements UserDao{
 		Query  query = session.createQuery(Hql,User.class);
 		query.setParameter("userEmail", email);
 		@SuppressWarnings("unchecked")
-		List <User> resultList = query.getResultList(); 
-		
-		if(!resultList.isEmpty()) {
-			System.out.println("running well and find user by email ");
-			System.out.println(resultList.get(0));
-			return resultList.get(0);	
-			
-		}
-			return null ;	
+		List <User> resultList = query.getResultList();
+		if (resultList.isEmpty())
+			return null;
+		return  resultList.get(0);
 	}
 
-	@Transactional
 	@Override
 	public User findByPhone(String phone) {
 
@@ -129,13 +99,12 @@ public class UserDaoImp implements UserDao{
 		Query  query = session.createQuery(Hql,User.class);
 		query.setParameter("phone", phone);
 		@SuppressWarnings("unchecked")
-		List <User> resultList = query.getResultList(); 
-		
-		if(!resultList.isEmpty()) {
-			System.out.println(resultList.get(0).getCity());
-			return resultList.get(0);	
-		}
-			return null ;	
+		List <User> resultList = query.getResultList();
+		if ((resultList.isEmpty()))
+			return null;
+
+		return  resultList.get(0);
+
 	}
 
 	@Override
@@ -162,61 +131,47 @@ public class UserDaoImp implements UserDao{
 	        }
 	    }
 
-	 
 	public User findById(long id) {
-		
 		Session session = this.mySessionFactory.getCurrentSession();
 		User user = session.get(User.class,id);
+		if(user == null)
+			return  null ;
 		return user ; 
 	}
 
 
 	@Override
-	@Transactional
 	public void activeUserAccount(long userId) {
-		System.out.println("the id is "+userId);
 		User user = findById(userId);
 		user.setActive(true);
 		Session session = this.mySessionFactory.getCurrentSession();
 		session.merge(user);
 	}
 
-
 	@Override
 	public void updateUserAddress(long userId, String goverment, String city, String userAddress) {
 		User user = findById(userId);
-		
 		user.setGovernment(goverment);
 		user.setCity(city);
 		user.setUserAddress(userAddress);
-		
 		Session session = mySessionFactory.getCurrentSession();
 		session.merge(user);
 	}
 
 
 	@Override
-	@Transactional
 	public void updatePassword(String userName, String newPassword) {
 		Session session = mySessionFactory.getCurrentSession();
 		User user = findByEmail(userName);
-		
 		if(user != null) {
 			String hashedPassword = passwordEncoder.encode(newPassword);
 			user.setPassword(hashedPassword);
 			session.update(user);
 		}
 	}
-	@Transactional
 	public List<User> getAllUser(){
 		Session session = mySessionFactory.getCurrentSession();
-		List<User> users  =  session.createQuery("FROM users ",User.class).getResultList();
-		if (users == null ) return new ArrayList<>();
-		else 
-			logger.info("users size : "+users.size());
-		
-		return users;
+		return session.createQuery("FROM users ",User.class).getResultList();
 	}
-
 	
 }

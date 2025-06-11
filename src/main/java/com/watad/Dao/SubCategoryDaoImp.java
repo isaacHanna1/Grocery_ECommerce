@@ -1,6 +1,7 @@
 package com.watad.Dao;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,21 +19,21 @@ import org.springframework.stereotype.Component;
 import com.watad.Dto.SubCategoryDto;
 import com.watad.model.Category;
 import com.watad.model.SubCategory;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class SubCategoryDaoImp implements SubCategoryDao {
 
 
-	@Autowired
 	private SessionFactory mySessionFactory;
 	
-	@Autowired
-	private CategoryDao categoryDao ; 
-	
-	public void setMySessionFactory(SessionFactory mySessionFactory) {
+	private final  CategoryDao categoryDao ;
+
+	public SubCategoryDaoImp(SessionFactory mySessionFactory, CategoryDao categoryDao) {
 		this.mySessionFactory = mySessionFactory;
+		this.categoryDao = categoryDao;
 	}
-	
+
 	@Override
 	public SubCategory insertNewSubCategory(SubCategory subCategory)  {
 		Session session = this.mySessionFactory.getCurrentSession();
@@ -43,26 +44,27 @@ public class SubCategoryDaoImp implements SubCategoryDao {
 	@Override
 	public List<SubCategoryDto> allSubCategories() {
 		Session session = this.mySessionFactory.getCurrentSession();
-		CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<SubCategoryDto> criteriaQuery = builder.createQuery(SubCategoryDto.class);
+		Query<SubCategory> fromSubCategory = session.createQuery(
+				"SELECT sc FROM SubCategory sc JOIN FETCH sc.category", SubCategory.class);
 
-        Root<SubCategory> subCategoryRoot = criteriaQuery.from(SubCategory.class);
-        Join<SubCategory, Category> categoryJoin = subCategoryRoot.join("category", JoinType.INNER);
+		List<SubCategory> allCategories = fromSubCategory.getResultList();
 
-        criteriaQuery.select(builder.construct(
-                SubCategoryDto.class,
-                subCategoryRoot.get("id"),
-                subCategoryRoot.get("subCategoryName"),
-                categoryJoin.get("categoryName")
-        ));
-        criteriaQuery.orderBy(builder.asc(categoryJoin.get("categoryName")));
-        List<SubCategoryDto> results = session.createQuery(criteriaQuery).getResultList();
-        return results;
+		List<SubCategoryDto> subCategoryDtoList = new ArrayList<>();
+		for (SubCategory subCategory : allCategories) {
+			String categoryName = subCategory.getCategory().getCategoryName();
+			SubCategoryDto dto = new SubCategoryDto(
+					subCategory.getId(),
+					subCategory.getSubCategoryName(),
+					categoryName
+			);
+			subCategoryDtoList.add(dto);
 		}
+		return subCategoryDtoList;
+	}
 
 	@Override
 	public void deleteSubCategory(long id ) {
-		Session session = this.mySessionFactory.getCurrentSession();
+		Session session = mySessionFactory.getCurrentSession();
 		SubCategory subCategory = session.get(SubCategory.class, id);
 		session.delete(subCategory);
 	}
@@ -92,6 +94,7 @@ public class SubCategoryDaoImp implements SubCategoryDao {
 	public List<SubCategory> getSubCategoryInSuchGategory(long CategoryId) {
 		Category category  = categoryDao.getCategory(CategoryId);
 		category.getSubCategory().size();
+		System.out.println("the size is "+category.getSubCategory());// It is better to use join => but neednot to ehnace not cost anything
 		return category.getSubCategory();
 	}
 
@@ -104,7 +107,13 @@ public class SubCategoryDaoImp implements SubCategoryDao {
 		List<SubCategory> results = query.list();
 		return results;
 	}
-	
-	
+
+	@Override
+	public SubCategory findById(long id) {
+		Session session = mySessionFactory.getCurrentSession();
+		return  session.find(SubCategory.class,id);
+	}
+
+
 }
 

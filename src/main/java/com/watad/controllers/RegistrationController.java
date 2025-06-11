@@ -7,6 +7,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import javax.validation.Valid;
+
+import com.watad.services.UrlManipulatorService;
+import com.watad.services.UserService;
 import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +22,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,22 +30,23 @@ import javax.validation.ConstraintViolationException;
 import com.watad.Dao.UserDao;
 import com.watad.Dto.RegistrationDto;
 import com.watad.model.User;
-import com.watad.services.UrlManipulator;
+import com.watad.services.UrlManipulatorServiceImp;
 
 
 @Controller
 @Validated
 public class RegistrationController {
 
-	@Autowired
-	private UserDao userDao;
-	
-	@Autowired
-	private UrlManipulator urlManipulator ;
 
-	
+	private final UserService userService;
+	private  final UrlManipulatorService urlManipulatorService;
+
+	public RegistrationController(UserService userService, UrlManipulatorService urlManipulatorService) {
+		this.userService = userService;
+		this.urlManipulatorService = urlManipulatorService;
+	}
+
 	@GetMapping("/signUp")
-	@Transactional
 	public ModelAndView getRegisteration() {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("signUp");
@@ -51,10 +54,9 @@ public class RegistrationController {
 	}
 	
 	@GetMapping("/userData/{userId}")
-	@Transactional
 	public ModelAndView getRegisteration(@PathVariable long userId) {
 		ModelAndView modelAndView = new ModelAndView();
-		User user = userDao.findById(userId);
+		User user = userService.findById(userId);
 		modelAndView.addObject("userData",user);
 		modelAndView.setViewName("userData");
 		return modelAndView;
@@ -70,12 +72,12 @@ public class RegistrationController {
 			return "signUp";
 		}else {
 		try {
-			User user = userDao.findByEmail(dto.getEmail());
+			User user = userService.findByEmail(dto.getEmail());
 			System.out.println(user);
 			if(user == null) {
-				user = userDao.findByPhone(dto.getPhone());
+				user = userService.findByPhone(dto.getPhone());
 				if(user == null) {
-					userDao.saveUser(dto , req);
+					userService.saveUser(dto , req);
 					return "login";
 				}else {
 					model.addAttribute("errorOf", " رقم الهاتف مسجل من قبل ");
@@ -100,18 +102,17 @@ public class RegistrationController {
 	@GetMapping("/active/{token}")
 	public String activeUser(@PathVariable String token , Model model) {
 
-		System.out.println("the active token that arraived :"+token);
-		String url = urlManipulator.decrypt(token);
-		long milliSeconds = Long.parseLong(urlManipulator.extractExpireDate(url));
+		String url = urlManipulatorService.decrypt(token);
+		long milliSeconds = Long.parseLong(urlManipulatorService.extractExpireDate(url));
 		System.out.println("the mill:"+milliSeconds);
 		if(isNotExpired(milliSeconds)) {
 			String message = "لقد انتهت صلاحية التفعيل حاول مرة اخري";
 			model.addAttribute("errorMessage", message);
 			return "errorPage";
 		}else {
-			long id = Long.parseLong(urlManipulator.extractId(url));
+			long id = Long.parseLong(urlManipulatorService.extractId(url));
 			System.out.println("the id is :"+id);
-			userDao.activeUserAccount(id);
+			userService.activeUserAccount(id);
 		    model.addAttribute("message", "تم التفعيل بنجاح");
 		    return "login";
 		}

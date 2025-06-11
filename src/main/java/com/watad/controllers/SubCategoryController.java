@@ -1,5 +1,7 @@
 package com.watad.controllers;
 
+import com.watad.services.CategoryService;
+import com.watad.services.SubCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,22 +20,31 @@ import com.watad.Dao.SubCategoryDao;
 import com.watad.Dto.SubCategoryDto;
 import com.watad.model.Category;
 import com.watad.model.SubCategory;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-@Transactional
 @RestController
 public class SubCategoryController {
 
-	@Autowired
-	private CategoryDao categoryDao;
-	@Autowired
-	private SubCategoryDao subCategoryDao;
-	
+
+	private final CategoryService categoryService;
+
+	private final SubCategoryService subCategoryService;
+
+	public SubCategoryController(CategoryService categoryService, SubCategoryService subCategoryService) {
+		this.categoryService = categoryService;
+		this.subCategoryService = subCategoryService;
+	}
+
 	@GetMapping(path = "/subCategory")
 	public ModelAndView gettingAllCategory(ModelAndView modelAndView) {
-		 List<Category> listOfCategory = categoryDao.getListOfCategory();
-		 List<SubCategoryDto> listOfSubCategory =subCategoryDao.allSubCategories();
+		 List<Category> listOfCategory 			= categoryService.getListOfCategory();
+		 List<SubCategoryDto> listOfSubCategory = subCategoryService.allSubCategories();
+
+		 System.out.println("the subCategory size is "+listOfSubCategory);
 		 modelAndView.setViewName("addSubSection");
 		 modelAndView.addObject("allCategories", listOfCategory);
 		 modelAndView.addObject("allSubCategories", listOfSubCategory);
@@ -42,41 +53,47 @@ public class SubCategoryController {
 	
 	@PostMapping(path = "/addSubCategory")
 	public ResponseEntity<?> addNewSubCategory(@RequestBody SubCategory subCategory) {		
-		boolean result = subCategoryDao.findByName(subCategory);
+		boolean result = subCategoryService.findByName(subCategory);
 			if(result) {
-				System.out.println("we not bad ");	
 				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Duplicate entry.");
 			}
-	     	return ResponseEntity.ok(subCategoryDao.insertNewSubCategory(subCategory));
+	     	return ResponseEntity.ok(subCategoryService.insertNewSubCategory(subCategory));
 			
         
     }
 	@GetMapping(path = "/getAllSubCategory")
 	public List<SubCategoryDto> gettingAllsubCategory(){
-		return subCategoryDao.allSubCategories();
+		return subCategoryService.allSubCategories();
 	}
-	
+
+
 	@GetMapping(path = "/getSubCategoriesByCategoryID/{categoryId}")
 	public List<SubCategory> getSubCategoriesByCategoryID(@PathVariable long categoryId){
-		return subCategoryDao.getSubCategoryInSuchGategory(categoryId);
+		return subCategoryService.getSubCategoryInSuchGategory(categoryId);
 	}
 
 
 	@DeleteMapping(path = "/deleteSubCategory/{id}")
-	public String deleteSubCategory(@PathVariable long id) {
-		subCategoryDao.deleteSubCategory(id);
-		String deleted = ""+id;
-	
-		return "{\"deleted\":"+deleted+"}";
+	public ResponseEntity<Map<String, Object>> deleteSubCategory(@PathVariable long id)  {
+		Map<String, Object> response = new HashMap<>();
+		try {
+			subCategoryService.deleteSubCategory(id);
+			response.put("status", "success");
+			response.put("message", "SubCategory deleted successfully!");
+		} catch (RuntimeException e) {
+			response.put("status", "error");
+			response.put("message", "Failed to delete SubCategory: " + e.getMessage());
+		}
+		return ResponseEntity.ok(response);
 	}
 	
 
 	@PutMapping("/editSubCategory")
 	public ResponseEntity<?> updateCategory(@RequestBody SubCategory subCategory ) {
-		boolean result = subCategoryDao.findByName(subCategory);
+		boolean result = subCategoryService.findByName(subCategory);
 		if(result) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("sub Category Name aready exists");
 		}
-			return ResponseEntity.ok(subCategoryDao.editSubCategory(subCategory));	
+			return ResponseEntity.ok(subCategoryService.editSubCategory(subCategory));
 	}
 }

@@ -15,4 +15,5 @@ public interface SubCategoryDao {
 	public SubCategory editSubCategory(SubCategory subCategory);
 	public List<SubCategory> getSubCategoryInSuchGategory(long CategoryId);
 	public List<SubCategory> getSubCategoryInGategory(String CategoryName);
+	SubCategory findById(long id );
 }

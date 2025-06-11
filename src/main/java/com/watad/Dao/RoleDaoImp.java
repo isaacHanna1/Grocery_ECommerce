@@ -7,20 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.watad.model.Role;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class RoleDaoImp implements RoleDao {
 
 
-	@Autowired
-	private SessionFactory mySessionFactory;
-	
-	
+
+	private final SessionFactory mySessionFactory;
+
+	public RoleDaoImp(SessionFactory mySessionFactory) {
+		this.mySessionFactory = mySessionFactory;
+	}
+
 	@Override
 	public Role findByName(String roleName) {
 	  Session session = this.mySessionFactory.getCurrentSession();
 	  String hql = "FROM roles WHERE roleName = :roleName";
-	    @SuppressWarnings("unchecked")
 		Query<Role> query = session.createQuery(hql);
 	    query.setParameter("roleName", roleName);
         return query.uniqueResult();
