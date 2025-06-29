@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Mochiy+Pop+One&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,600;0,700;0,800;0,900;1,100;1,500;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=Mochiy+Pop+One&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,600;0,700;0,800;0,900;1,100;1,500;1,700;1,800;1,900&display=swap");
 :root {
---main-color: #00a886;
-  --second-background: #ddeeeb;
-  --btn-background: #ff9b50;
-  --edit-color: #f8ff95;
-  --semi-black:#121110;
-  --distinct-price:#F79327;
+  --main-color: #0E8388;
+  --second-background: #f2f7f6;
+  --btn-background: #ff6f61;
+  --edit-color: #fff3a0;
+  --semi-black: #2e2e2e;
+  --distinct-price: #e07a5f;
 }
 
 * {
@@ -639,10 +639,10 @@ cursor: pointer;
   box-shadow: 4px 3px 0 var(--btn-background);
 }
 .section_items .card-top .img {
-  width: 150px;
-  height: 150px;
-  padding: 10px;
-  margin: auto;
+    width: 200px;
+    height: 200px;
+    padding: 0px;
+    margin: auto;
 }
 @media (max-width: 599px) {
 	.section_items .card-top .img{
