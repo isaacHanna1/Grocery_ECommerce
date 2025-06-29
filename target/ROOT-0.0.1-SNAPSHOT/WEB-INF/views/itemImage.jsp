@@ -120,7 +120,7 @@
     				<div class="forms">
     				<label>تعديل الصورة الرئيسية </label>
     					<form action ="/updateImageItem/${itemDto.id}"class="updateImage" method="POST" enctype="multipart/form-data" >
-    						<input type="file" name ="image" required="required" placeholder="اختر الصور الرئيسية" >
+    						<input type="file" name ="imageFile" required="required" placeholder="اختر الصور الرئيسية" >
     						<button class="btn update-img"> تعديل</button>
     					</form>
     			    <label>تعديل الصورة الفرعية</label>

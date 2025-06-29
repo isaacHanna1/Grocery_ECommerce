@@ -22,7 +22,7 @@ public interface itemDao {
 	public Item deleteItem(long id);
 	public ItemDto getItemById(long id);
     public byte[] getImageDataById(long itemId);
-    public void updateImage (byte[]image,long itemID);
+    public void updateImage (MultipartFile image,long itemID)throws IOException;
     public Item updateItem(long itemId , Item item);
     void uploadImages(long itemID, MultipartFile[] images) throws IOException;
     List<itemImages> getSubImages(long itemId);

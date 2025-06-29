@@ -52,9 +52,12 @@ public class UserServiceImp implements UserService{
 	@Override
 	@Transactional
 	public void saveUser(RegistrationDto registrationDto, HttpServletRequest req) {
-		User user =  userDao.saveUser(registrationDto,req);
-		String message = prepareMessageForActiviation(user,req);
-		emailService.sendEmail(user,"Active Account ",message, req);
+		User user 				=  userDao.saveUser(registrationDto,req);
+		String activieLink  	=  prepareMessageForActiviation(user,req);
+		System.out.println("the activelink is "+activieLink);
+		String htmlMessage		= buildHtmlActivationEmail(user,activieLink);
+		System.out.println("Message :-> " +htmlMessage);
+		emailService.sendEmail(user,"Active Account ",htmlMessage, req);
 	}
 
 	@Override
@@ -110,6 +113,22 @@ public class UserServiceImp implements UserService{
 		String encryptToken = urlManipulatorService.encrypt(token);
 		encryptToken        = Utils.getDomain(req)+"/active/"+encryptToken;
 		return  encryptToken;
+	}
 
+	private String buildHtmlActivationEmail(User user, String activationLink) {
+		return "<!DOCTYPE html>" +
+				"<html>" +
+				"<head><meta charset='UTF-8'></head>" +
+				"<body style='font-family: Arial; background-color: #fff8fb; padding: 20px;'>" +
+				"<table style='max-width:600px; margin:auto; background-color:#ffffff; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);'>" +
+				"<tr><td style='padding:30px; text-align:center;'>" +
+				"<h1 style='color:#e91e63;'> Welcome to Glammy!</h1>" +
+				"<p>Hi <strong>" + user.getUserName() + "</strong>,</p>" +
+				"<p>Thanks for signing up! Please click the button below to activate your account:</p>" +
+				"<a href='" + activationLink + "' style='display:inline-block; padding:12px 25px; margin-top:20px;" +
+				"background-color:#e91e63; color:white; text-decoration:none; border-radius:5px; font-weight:bold;'>Activate My Account</a>" +
+				"<p style='font-size:12px; color:#888; margin-top:20px;'>This link will expire in 1 hour.</p>" +
+				"<p style='font-size:12px; color:#aaa;'>With love,<br>The Glammy Team</p>" +
+				"</td></tr></table></body></html>";
 	}
 }

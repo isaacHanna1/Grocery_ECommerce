@@ -240,11 +240,11 @@ public class itemDaoImp implements itemDao  ,Subject{
 
 
 	@Override
-	public void updateImage(byte[] image , long itemID) {
+	public void updateImage(MultipartFile image , long itemID) throws IOException {
 		Item item = getItem(itemID);
-		item.setImage(image);
+		item.setImageFile(image);
 		Session session = this.mySessionFactory.getCurrentSession();
-		session.update(item);
+		session.merge(item);
 	}
 
 

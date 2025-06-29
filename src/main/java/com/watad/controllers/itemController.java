@@ -94,7 +94,7 @@ public class itemController {
 	}
 	
 	@PostMapping(path = "/addItemImages/{itemId}")
-	public ModelAndView addItemImages(@PathVariable("itemId") long itemId, @RequestParam("images") MultipartFile[] images) throws IOException {		
+	public ModelAndView addItemImages(@PathVariable("itemId") long itemId, @RequestParam("images") MultipartFile[] images) throws IOException {
 		itemDao.uploadImages(itemId, images);
 		ModelAndView modelAndView = new ModelAndView("redirect:/image/"+itemId);
 	    return modelAndView;
@@ -158,7 +158,7 @@ public class itemController {
 
 	     // Convert each itemImage to a byte array and then to Base64
 	     for (itemImages itemImage : allSubImages) {
-	         byte[] imageBytes = itemImage.getImage(); // Assuming you have a method to get the image bytes from itemImages
+	         byte[] imageBytes = itemImage.getImage();
 	         String base64Image = Base64.getEncoder().encodeToString(imageBytes);
 	         ImageDeleteRequest image = new ImageDeleteRequest(itemImage.getId(),base64Image); 
 	         imageDeleteRequest.add(image);
@@ -181,18 +181,16 @@ public class itemController {
             for (itemImages image: subImage) {
                 String base64Image = Base64.getEncoder().encodeToString(image.getImage());
                 base64SubImages.add(base64Image);
-            }	
-
-           
+            }
         }
         // Return base64 encoded sub images in the response body
         return ResponseEntity.ok(base64SubImages);
     }
 
 	@PostMapping(path="/updateImageItem/{ItemId}")
-	public ModelAndView updateingImage(@ModelAttribute Item item ,@RequestParam("image") MultipartFile image,@PathVariable("ItemId") long ItemId) throws IOException {
-		byte[] imageBytes = image.getBytes();
-		itemDao.updateImage(imageBytes, ItemId);
+	public ModelAndView updateingImage(@RequestParam("image") MultipartFile image,@PathVariable("ItemId") long ItemId) throws IOException {
+		//byte[] imageBytes = image.getBytes();
+		itemDao.updateImage(image, ItemId);
 		ModelAndView modelAndView = new ModelAndView("redirect:/allItems/1");
 		return modelAndView;
 	}
